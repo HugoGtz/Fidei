@@ -2,6 +2,21 @@
 <html>
 <head>
   <title>Fidei</title>
+  <!--CDN FIREBASE-->
+  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+  
+  <!--FIREBASE-->
+  <script>
+    var config = {
+    apiKey: "AIzaSyCb_DKQCaa3uGuWV-IFqtAYvkfdrQ16Qus",
+    authDomain: "fidei-b3cd0.firebaseapp.com",
+    databaseURL: "https://fidei-b3cd0.firebaseio.com",
+    projectId: "fidei-b3cd0",
+    storageBucket: "fidei-b3cd0.appspot.com",
+    messagingSenderId: "340461259388"
+  };
+  firebase.initializeApp(config);
+  </script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
