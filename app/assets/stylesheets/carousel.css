@@ -100,13 +100,13 @@
   background-repeat: no-repeat;
 }
 .fade-carousel .slides .slide-1 {
-  background-image: url(slider.jpg); 
+  background-image: url(/assets/home/slider.jpg); 
 }
 .fade-carousel .slides .slide-2 {
-  background-image: url(slider2.jpg);
+  background-image: url(/assets/home/slider2.jpg);
 }
 .fade-carousel .slides .slide-3 {
-  background-image: url(slidr3.jpg);
+  background-image: url(/assets/home/slidr3.jpg);
 }
 
 /********************************/
