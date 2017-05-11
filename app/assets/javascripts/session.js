@@ -11,6 +11,9 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
+  if (errorMessage) {
+      errorRegister(errorMessage);
+  }
   
 });
  
@@ -39,5 +42,18 @@ var saveDataUser = function writeUserData() {
     name: name
    
   });
+      swal(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+    )
 }
 
+var errorRegister = function errorRegister(errorMessage){
+    swal(
+  'Oops...',
+  errorMessage,
+  'error'
+);
+}
+ 
