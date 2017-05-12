@@ -1,5 +1,5 @@
- 
-        <nav class="navbar navbar-fixed-top navbar-inverse">
+
+        <nav class="navbar navbar-fixed-top" style="background-color: #1551a7; padding-bottom: 15px; padding-top: 15px;">
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -11,27 +11,59 @@
               </button>
               <a class="navbar-brand" href="#">
                 
-                <%= image_tag("logo.png", :style => "width: 150px; margin-top: -15px;") %>
+                <%= image_tag("logo.png", :style => "width: 200px; margin-top: -20px;") %>
                 </a>
             </div>
         
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Inicio</a></li>
-                <li><a href="#">Empresa</a></li>
-                <li><a href="#">Forma de Operación</a></li>
-                <li><a href="#">Proyección</a></li>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="#">Sugerencias</a></li>
+                <li class="active"><a href="#" class="linksop">Inicio</a></li>
+                <li><a class="linksop" href="#">Proyección</a></li>
+                <li><a class="linksop" href="#">Forma de Operación</a></li>
+                <li><a class="linksop" href="#">Empresa</a></li>
+                <li><a class="linksop" href="#">Contacto</a></li>
+                <li><a class="linksop" href="#">Sugerencias</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inicio de Sesión<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Inicio de Sesión</a></li>
-                    <li><a href="#">Registro</a></li>
-                  </ul>
+                  <a href="#" class="dropdown-toggle linksop" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inicio de Sesión<span class="caret"></span></a>
+                  			<ul id="login-dp" class="dropdown-menu">
+				<li>
+					 <div class="row">
+							<div class="col-md-12">
+								Inicia Sesión Vía
+								<div class="social-buttons">
+									<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+								</div>
+                                - o -</br>
+								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputEmail2">Correo Electrónico</label>
+											 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email" required>
+										</div>
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
+											 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Contraseña" required>
+                                             <div class="help-block text-right"><a href="">¿Olvidaste tu Contaseña?</a></div>
+										</div>
+										<div class="form-group">
+											 <button type="submit" class="btn btn-hero btn-block">Ingresar</button>
+										</div>
+										<div class="checkbox">
+											 <label>
+											 <input type="checkbox"> Recordar Contraseña
+											 </label>
+										</div>
+								 </form>
+							</div>
+							<div class="bottom text-center">
+								¿Eres Nuevo? <a href="#"><b>Registrate</b></a>
+							</div>
+					 </div>
+				</li>
+			</ul>
                 </li>
               </ul>
             </div><!-- /.navbar-collapse -->
@@ -90,12 +122,54 @@
         </div>
         </div> 
         
+        <section style="background-color: #1551a7;" >
+          <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                  <div style="padding-top: 30px; padding-bottom: 30px;">
+                    <h1 style="color: white; font-size: 40px;" class="text-center">PROYECCIÓN</h1>
+                    <div class="row">
+                      <div class="col-sm-offset-3">
+                      <div class="col-sm-4">
+                          <form>
+                            
+                            <div class="col-xs-6">
+                              <h3 style="color: white; text-align: center;">INVERSIÓN</h3>
+                              <div class="range" style="width: 250px;">
+                                <input id="barValue" type="range" name="range" min="0" max="100" value="0" step="25">
+                                <output class="barValue" id="range">0</output>
+                              </div>
+                            </div>
+                          </form>
+                      </div>
+                      </div>
+                      
+                         <div class="col-sm-4">
+                           <h3 class="text-center"style="color: white;">MONTO OBTENIDO</h3>
+                           <h3 class="text-center monto" style="color: white; font-size: 20px;">$0</h3>
+                        </div>
+                        
+                    </div>
+                    
+          
+                    
+                    
+                    
+                    <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p>
+                  </div>
+                  
+                  
+                </div>
+            </div>
+
+          </div>
+        </section>
         
-        <section class="foperacion">
+        <section style="padding-top: 30px; padding-bottom: 30px;">
             <div class="container">
                 <div class="row">
                 <div class="col-sm-12">
-                    <h1 class="text-center" style="margin-top: 70px;">FORMA DE OPERACIÓN</h1>
+                    <h1 class="text-center" style="margin-top: 70px; color: #004467;"><strong>FORMA DE OPERACIÓN</strong></h1>
 
                     <p class="p1">
                     Inicia con el registro del usuario, posterior confirmación y aceptación a la plataforma, se elige la cantidad de inversión inicial, se realiza el depósito a la cuenta de FIDEI, asignando de manera automática una posición numérica dentro de nuestra plataforma, misma que podrá ser monitoreada por el propio usuario para ver los avances que lleva de registros posteriores al del usuario y con esto revisar los lugares que faltan para llegar a la meta requerida para la obtención del monto final garantizado, la importancia de este sistema de autofinanciamiento es que el propio usuario tiene el control de su dinero y puede hacer el retiro en el momento que el decida, sin estar sujeto a tiempo. sin embargo es importante para llegar a la obtención del monto final, se llenen los lugares de usuarios requeridos para cada caso.
@@ -104,47 +178,119 @@
 
                 </div>
                 <div class="col-md-6 piramide">
-                   <%= image_tag("home/piramide.png", :style => "width: 500px; position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px;") %>
+                   <%= image_tag("home/piramide.png", :style => "width: 400px; display:block; margin:auto; filter: invert(100%); -webkit-filter: invert(100%);") %>
                   </div>
                   <div class="col-md-6">
                     </br>
                     </br>
                     <ul>
-                      <li><h5>NIVEL 1: QUE ES USTED 1 POSICION</h5></li>
-                      <li><h5>NIVEL 2: CONSTA DE 2 POSICIONES</h5></li>
-                      <li><h5>NIVEL 3: CONSTA DE 4 POSICIONES</h5></li>
-                      <li><h5>NIVEL 4: CONSTA DE 8 POSICIONES</h5></li>
-                      <li><h5>NIVEL 5: CONSTA DE 16 POSICIONES</h5></li>
-                      <h5>AL COMPLETAR ESTA SERIE DE CASILLAS SERA BENEFICIARIO DEL MONTO FINAL</h5>
+                      <p class="empresatext"><li>NIVEL 1: QUE ES USTED 1 POSICION</li></p>
+                      <p class="empresatext"><li>NIVEL 2: CONSTA DE 2 POSICIONES</li></p>
+                      <p class="empresatext"><li>NIVEL 3: CONSTA DE 4 POSICIONES</li></p>
+                      <p class="empresatext"><li>NIVEL 4: CONSTA DE 8 POSICIONES</li></p>
+                      <p class="empresatext"><li>NIVEL 5: CONSTA DE 16 POSICIONES</li></p></br>
+                      <p class="empresatext"><stron>Al completar esta serie de casillas será beneficiario del monto final.</stron></p>
                     </ul>
                   </div>
                 </div>
             </div>
-        </section style="margin-top: 100px;">
-        <div class="container">
+        </section>
+
+        <section style="padding-top: 30px; padding-bottom: 30px;  background-image: url(/assets/home/manos.jpg); ">
+          <div class="container">
           <div class="row">
-            <div class="col-12">
-              <h2 class="text-center">F  I  D  E  I</h2>
-              <p class="p1"> Somos una empresa 100% Mexicana que nace a raíz de la problemática financiera que actualmente vivimos. Es una empresa con el objetivo ofrecer alternativas financiaras para las personas y empresas, donde nuestros clientes puedan construir e incrementar su patrimonio a través de un plan de inversión por medio de redes de mercadeo que les permita obtener un gran rendimiento por medio del apalancamiento mutuo de un grupo de personas con un mismo fin en común, logrando su objetivo en poco tiempo, con menos esfuerzo, sin investigación en Buró de crédito, sin descapitalizarse, sin pagar intereses, sin sacrificar su flujo de efectivo. </p>
+            <div class="col-md-10">
+              <h1 class="text-center" style="color: #004467;"><strong>FIDEI</strong></h1></br>
+              <h4 class="text-center">Somos una empresa 100% Mexicana que nace a raíz de la problemática financiera que actualmente vivimos.</h4></br> <p class="empresatext">Es una empresa con el objetivo ofrecer alternativas financiaras para las personas y empresas, donde nuestros clientes puedan construir e incrementar su patrimonio a través de un plan de inversión por medio de redes de mercadeo que les permita obtener un gran rendimiento por medio del apalancamiento mutuo de un grupo de personas con un mismo fin en común, logrando su objetivo en poco tiempo, con menos esfuerzo, sin investigación en Buró de crédito, sin descapitalizarse, sin pagar intereses, sin sacrificar su flujo de efectivo. </p>
             </div>
-            <div class="col-md-4">
-              <h3 class="text-center">MISIÓN</h3>
-              <p class="p2">Hacer realidad los sueños de nuestros clientes Lo logramos con: propuestas y soluciones claras, asesoría personalizada y beneficios tangibles</p>
+            
+            <div class="row">
+            <div class="col-md-3">
+              <h3 class="text-center" style="color: #004467;"><strong>MISIÓN</strong></h3>
+              <p>Hacer realidad los sueños de nuestros clientes Lo logramos con: propuestas y soluciones claras, asesoría personalizada y beneficios tangibles</p>
               </div>
-            <div class="col-md-4">
-              <h3 class="text-center">VISIÓN</h3>
-              <p class="p2">Ser el sistema de autofinanciamiento personal líder a nivel mundial</p>
+            <div class="col-md-3">
+              <h3 class="text-center" style="color: #004467;"><strong>VISIÓN</strong></h3>
+              <p>Ser el sistema de autofinanciamiento personal líder a nivel mundial</p>
             </div>
-            <div class="col-md-4">
-              <h3 class="text-center">VALORES</h3>
-              <p class="p2">Honestidad, transparencia e integridad en procesos.<br> Calidez y respeto en el desempeño del personal.<br> Empatía y dignidad con los clientes.<br> Compromiso, trabajo en equipo y comunicación efectiva.<br> Motivación constante y confianza mutua
+            <div class="col-md-3">
+              <h3 class="text-center" style="color: #004467;"><strong>VALORES</strong></h3>
+              <p><li>Honestidad, transparencia e integridad en procesos.</li> <li>Calidez y respeto en el desempeño del personal.<br></li> <li>Empatía y dignidad con los clientes.<br></li> <li>Compromiso, trabajo en equipo y comunicación efectiva.<br></li> <li>Motivación constante y confianza mutua</li>
               </p>
             </div>
+            </div>
+            
           </div>
         </div>
-        <section>
-          
         </section>
         
         </div>
+        
+        <section style="padding-top: 30px; padding-bottom: 30px; background-color: #fcf7f7;">
+                    <div class="container">
+                      <h1 class="text-center" style="color: #004467;"><strong>¿TIENES ALGUNA DUDA?</strong></h1>
+                      <h2 class="text-center" style="color: #004467;">CONTÁCTANOS</h2></br>
+              <div class="row">
+                  <div class="col-md-8">
+                          <form>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="name">
+                                          Nombre</label>
+                                      <input type="text" class="form-control" id="name" placeholder="Nombre Completo" required="required" />
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="email">
+                                          Correo Electrónico</label>
+                                      <div class="input-group">
+                                          <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                          </span>
+                                          <input type="email" class="form-control" id="email" placeholder="Correo" required="required" /></div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="subject">Telefono</label>
+                                      <input type="text" class="form-control" id="name" placeholder="Telefono" required="required" />
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="name">Mensaje</label>
+                                      <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required" placeholder=""></textarea>
+                                  </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <p style="text-align: right;"><button class="btn btn-hero btn-lg" role="button">Enviar</button></p>
+                              </div>
+                          </div>
+                          </form>
+                  </div>
+                  <div class="col-md-4">
+                      <form>
+                        
+                      <legend><span class="glyphicon glyphicon-globe"></span> Oficinas</legend>
+                      <address>
+                          <strong>ENPRENMONEY, S.A DE C.V.</strong><br>
+                          (Domicilio)<br>
+                          Guadalajara, Jalisco<br>
+                          <abbr title="Phone">
+                              P:</abbr>
+                          (331) 333-3333
+                      </address>
+                      <address>
+                          <strong>Correo Electrónico</strong><br>
+                          <a href="mailto:#">contacto@fidei.com.mx</a>
+                      </address>
+                      </form>
+                  </div>
+              </div>
+          </div>
+        </section>
+        
+        <footer class="footer">
+        	<div class="container text-center">
+        		<span class="linksop">FIDEI 2016.  Marca registrada | <a class="linksop"> Aviso de Privacidad</a> | <a class="linksop"> Términos y condiciones del servicio</a> | Todos los derechos reservados.</span>
+          	</div>
+        
+        </footer>
     

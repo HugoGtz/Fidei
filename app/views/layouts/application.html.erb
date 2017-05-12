@@ -4,6 +4,7 @@
   <title>Fidei</title>
   <!--CDN FIREBASE-->
   <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   
   <!--FIREBASE-->
   <script>
@@ -17,11 +18,12 @@
   };
   firebase.initializeApp(config);
   </script>
+  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body style="background-color: #f0f0f0;">
+<body style="background-color: #fcf7f7;">
 
 <%= yield %>
 
