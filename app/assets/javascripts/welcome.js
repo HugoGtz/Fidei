@@ -14,20 +14,20 @@ var barValue = function  barValue(){
                $(".monto").text("$0");
                break;
            case "25":
-                $(".barValue").text("$6000");
-                $(".monto").text("$60000");
+                $(".barValue").text("$6,000");
+                $(".monto").text("$60,000");
                break;
            case "50":
-               $(".barValue").text("$20000");
-               $(".monto").text("$200000");
+               $(".barValue").text("$20,000");
+               $(".monto").text("$200,000");
                break;
            case "75":
-           $(".barValue").text("$50000");
-           $(".monto").text("$500000");
+           $(".barValue").text("$50,000");
+           $(".monto").text("$500,000");
                break;
            case "100":
-               $(".barValue").text("$   100000");
-               $(".monto").text("$  1000000");
+               $(".barValue").text("$   100,000");
+               $(".monto").text("$  1'000,000");
                break;
                
            default:

@@ -1,5 +1,4 @@
-
-        <nav class="navbar navbar-fixed-top" style="background-color: #1551a7; padding-bottom: 15px; padding-top: 15px;">
+        <nav class="navbar navbar-fixed-top" style="background-color: #1551a7; padding-bottom: 15px; padding-top: 15px;" data-turbolinks-permanent>
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -37,7 +36,7 @@
 									<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
 									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
 								</div>
-                                - o -</br>
+                </br>
 								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
 										<div class="form-group">
 											 <label class="sr-only" for="exampleInputEmail2">Correo Electrónico</label>
@@ -49,7 +48,7 @@
                                              <div class="help-block text-right"><a href="">¿Olvidaste tu Contaseña?</a></div>
 										</div>
 										<div class="form-group">
-											 <button type="submit" class="btn btn-hero btn-block">Ingresar</button>
+											 <button type="submit" class="btn btn-hero btn-block">Iniciar Sesión</button>
 										</div>
 										<div class="checkbox">
 											 <label>
@@ -59,7 +58,7 @@
 								 </form>
 							</div>
 							<div class="bottom text-center">
-								¿Eres Nuevo? <a href="#"><b>Registrate</b></a>
+								¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'session/new' %> 
 							</div>
 					 </div>
 				</li>
@@ -69,8 +68,7 @@
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
-        
-        
+
         <div style="margin-top: -75px;">
             
             
@@ -125,36 +123,24 @@
         <section style="background-color: #1551a7;" >
           <div class="container">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-md-12">
                   <div style="padding-top: 30px; padding-bottom: 30px;">
                     <h1 style="color: white; font-size: 40px;" class="text-center">PROYECCIÓN</h1>
                     <div class="row">
-                      <div class="col-sm-offset-3">
-                      <div class="col-sm-4">
+                      <div class="col-md-offset-4">
                           <form>
-                            
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                               <h3 style="color: white; text-align: center;">INVERSIÓN</h3>
-                              <div class="range" style="width: 250px;">
+                              <div class="range">
                                 <input id="barValue" type="range" name="range" min="0" max="100" value="0" step="25">
                                 <output class="barValue" id="range">0</output>
-                              </div>
+                              </div></br>
+                              <h3 class="text-center"style="color: white;">MONTO OBTENIDO</h3>
+                           <h3 class="text-center monto" style="color: white; font-size: 35px;">$0</h3>
                             </div>
                           </form>
                       </div>
-                      </div>
-                      
-                         <div class="col-sm-4">
-                           <h3 class="text-center"style="color: white;">MONTO OBTENIDO</h3>
-                           <h3 class="text-center monto" style="color: white; font-size: 20px;">$0</h3>
-                        </div>
-                        
                     </div>
-                    
-          
-                    
-                    
-                    
                     <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p>
                   </div>
                   
@@ -189,14 +175,14 @@
                       <p class="empresatext"><li>NIVEL 3: CONSTA DE 4 POSICIONES</li></p>
                       <p class="empresatext"><li>NIVEL 4: CONSTA DE 8 POSICIONES</li></p>
                       <p class="empresatext"><li>NIVEL 5: CONSTA DE 16 POSICIONES</li></p></br>
-                      <p class="empresatext"><stron>Al completar esta serie de casillas será beneficiario del monto final.</stron></p>
+                      <p class="empresatext"><strong>*Al completar esta serie de casillas será beneficiario del monto final.</strong></p>
                     </ul>
                   </div>
                 </div>
             </div>
         </section>
 
-        <section style="padding-top: 30px; padding-bottom: 30px;  background-image: url(/assets/home/manos.jpg); ">
+        <section style="padding-top: 30px; padding-bottom: 30px;  background-image: url(/assets/home/manos.jpg); background-color: white;">
           <div class="container">
           <div class="row">
             <div class="col-md-10">
@@ -231,7 +217,7 @@
                       <h1 class="text-center" style="color: #004467;"><strong>¿TIENES ALGUNA DUDA?</strong></h1>
                       <h2 class="text-center" style="color: #004467;">CONTÁCTANOS</h2></br>
               <div class="row">
-                  <div class="col-md-8">
+                  <div class="col-md-9">
                           <form>
                           <div class="row">
                               <div class="col-md-6">
@@ -265,16 +251,16 @@
                           </div>
                           </form>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                       <form>
                         
                       <legend><span class="glyphicon glyphicon-globe"></span> Oficinas</legend>
                       <address>
                           <strong>ENPRENMONEY, S.A DE C.V.</strong><br>
-                          (Domicilio)<br>
-                          Guadalajara, Jalisco<br>
-                          <abbr title="Phone">
-                              P:</abbr>
+                          Kabah #1475, Colonia Jardines del Sol<br>
+                          Zapopan, Jalisco<br>
+                          <abbr title="Teléfono">
+                              Tel:</abbr>
                           (331) 333-3333
                       </address>
                       <address>
