@@ -56,4 +56,3 @@ var errorRegister = function errorRegister(errorMessage){
   'error'
 );
 }
- 
