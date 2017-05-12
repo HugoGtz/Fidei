@@ -18,4 +18,12 @@
 //
 
 // Initialize Firebase
+  document.addEventListener('turbolinks:request-start',function(){
+      document.querySelector('.main-container').classList.add('fadeOut');
+      console.log("1");
+  });
   
+  document.addEventListener('turbolinks:render',function(){
+      document.querySelector('.main-container').classList.add('fadeIn');
+      console.log("2");
+  });

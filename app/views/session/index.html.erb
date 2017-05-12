@@ -1,0 +1,56 @@
+<nav class="navbar navbar-fixed-top" style="background-color: #1551a7; padding-bottom: 15px; padding-top: 15px;" data-turbolinks-permanent>
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">
+                
+                <%= image_tag("logo.png", :style => "width: 200px; margin-top: -20px;") %>
+                </a>
+            </div>
+        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#" class="linksop">Inicio</a></li>
+                <li><a class="linksop" href="#">Proyección</a></li>
+                <li><a class="linksop" href="#">Forma de Operación</a></li>
+                <li><a class="linksop" href="#">Empresa</a></li>
+                <li><a class="linksop" href="#">Contacto</a></li>
+                <li><a class="linksop" href="#">Sugerencias</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+<div style="margin-top: 75px;">
+<div class="container">
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin">
+                <h3 class="text-center">INICIA SESIÓN</h3>
+				<div class="social-buttons">
+					<a href="#" class="btn btn-fb" style="width: 132px;"><i class="fa fa-facebook"></i> Facebook</a>
+			         <a href="#" class="btn btn-tw" style="width: 132px;"><i class="fa fa-twitter"></i> Twitter</a></br>
+				</div></br>
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Usuario o Correo" required autofocus>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+                <a href="#" class="forgot-password">
+                ¿Olvidaste la contraseña?
+                </a>
+                <button class="btn btn-hero btn-block" type="submit">Iniciar Sesión</button>
+            </form><!-- /form -->
+            <div class="bottom text-center">
+				¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'session/new' %> 
+			</div>
+            
+        </div><!-- /card-container -->
+    </div>
+    </div>
