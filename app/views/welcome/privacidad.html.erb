@@ -1,0 +1,155 @@
+<nav class="navbar navbar-fixed-top" style="background-color: #1551a7; padding-bottom: 15px; padding-top: 15px;" data-turbolinks-permanent>
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">
+                
+                <%= image_tag("logo.png", :style => "width: 200px; margin-top: -20px;") %>
+                </a>
+            </div>
+        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#" class="linksop">Inicio</a></li>
+                <li><a class="linksop" href="#">Proyección</a></li>
+                <li><a class="linksop" href="#">Forma de Operación</a></li>
+                <li><a class="linksop" href="#">Empresa</a></li>
+                <li><a class="linksop" href="#">Contacto</a></li>
+                <li><a class="linksop" href="#">Sugerencias</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle linksop" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inicio de Sesión<span class="caret"></span></a>
+                  			<ul id="login-dp" class="dropdown-menu">
+				<li>
+					 <div class="row">
+							<div class="col-md-12">
+								Inicia Sesión Vía
+								<div class="social-buttons">
+								  <button onClick="logInFace()" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a></button>
+									<!--<a onClick="logInFace()" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>-->
+									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+								</div>
+                </br>
+								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputEmail2">Correo Electrónico</label>
+											 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email" required>
+										</div>
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
+											 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Contraseña" required>
+                                             <div class="help-block text-right"><a href="">¿Olvidaste tu Contaseña?</a></div>
+										</div>
+										<div class="form-group">
+											 <button type="submit" class="btn btn-hero btn-block">Iniciar Sesión</button>
+										</div>
+										<div class="checkbox">
+											 <label>
+											 <input type="checkbox"> Recordar Contraseña
+											 </label>
+										</div>
+								 </form>
+							</div>
+							<div class="bottom text-center">
+								¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'session/new' %> 
+							</div>
+					 </div>
+				</li>
+			</ul>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+<div class="container" style="margin-top: 75px; padding-top: 30px; padding-bottom: 30px;">
+    <div class="row">
+        <div class="col-md-12">
+        <h2 class="text-center"><strong>AVISO DE PRIVACIDAD</strong></h2>
+          <span style="text-align: justify;"><br>
+                  
+             <p>ENPRENMONEY, S.A DE C.V. Con nombre comercial FIDEI con domicilio en GUADALAJARA, JALISCO, México,  a la que en lo sucesivo se le denominará “la responsable”, emite el siguiente aviso de privacidad, en el que se establece que serán las únicas encargadas y responsables de los datos personales que se incorporaron a la plataforma ELECTRONICA propiedad de la RESPONSABLE, datos que se resguardaran dentro de sus archivos digitales y electronicos por lo que se garantiza en terminos de ley  el manejo y uso que se le dé a los mismos por parte de la RESPONSABLE.</p>
+             <p>Los datos personales que Usted proporciono dentro de la Plataforma Elelectronica de la RESPONSABLE  fueron, entre otros, nombre, domicilio, estado civil, teléfono, correo electronico, fecha de nacimiento, registro federal de contribuyentes. Especificamente y para el fin comercial requerido en el momento de la Suscripcion a los servicios que Proporciona FIDEI, con el fin de poder elaborar un expediente interno de control y generar el contrato respectivo al titular de los datos personales, poderle notificar cualquier aviso referente a este aviso de privacidad, proveerle de servicios ò de bienes que solicite, ò bien para identificarlo en cualquier tipo de relación jurídica ò de negocios o preguntarle por la calidad de nuestros  servicios o de cualquier modificación u actualización a los datos personales que le fueron recabados o proporcionados por el Usuario.</p>
+             <p>Cabe aclarar que usted, como titular de los datos personales recabados por la responsable, en cualquier momento que lo desee tiene el derecho de acceder, rectificar y cancelar sus datos personales conforme a la ley federal de protección de datos personales en posesión de los particulares (la “ley”), siempre y cuando así lo desee, a sabiendas de las consecuencias que se generen en los procesos internos para el cumplimiento de los fines de la responsable. el procedimiento para llevar a cabo el acceso, rectificación u cancelación de los datos personales lo podrás hacer valer mediante un escrito presentado en el domicilio de la responsable dirigido al departamento de datos personales, quien dará trámite a las solicitudes de conformidad con la ley. Así mismo, los datos que le fueron recabados podrán ser utilizados por otras personas morales, con la finalidad de poder lograr la consecución del fin para el que fueron recabados. De la misma forma, la responsable podrá hacer uso de los datos para enviarle promociones y notificaciones respecto de los productos y servicios que ésta ofrece. Lo establecido en este párrafo podrá realizarlo la responsable a excepción que el titular de los datos manifieste lo contrario. Aclarando que el uso de terceras personas morales ajenas a la que recaba deberá manejarse en estricto apego a este aviso.</p>
+             <p>Por otro lado, se le hace saber que cualquier modificación al aviso de privacidad aquí plasmado, podrá consultar la página de internet en la siguiente liga: www.fidei.com.mx dirigiendo correo en contacto al departamento de datos personales de la responsable. Estos medios de contacto con la responsable le servirán a su vez para cualquier duda o aclaración respecto al aviso de privacidad. </p>
+
+          </span>
+        </div>
+    </div>
+</div>
+<section style="padding-top: 30px; padding-bottom: 30px; background-color: #faf3f3;">
+                    <div class="container">
+                      <h1 class="text-center" style="color: #004467;"><strong>¿TIENES ALGUNA DUDA?</strong></h1>
+                      <h2 class="text-center" style="color: #004467;">CONTÁCTANOS</h2></br>
+              <div class="row">
+                  <div class="col-md-9">
+                          <form>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="name">
+                                          Nombre</label>
+                                      <input type="text" class="form-control" id="name" placeholder="Nombre Completo" required="required" />
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="email">
+                                          Correo Electrónico</label>
+                                      <div class="input-group">
+                                          <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                          </span>
+                                          <input type="email" class="form-control" id="email" placeholder="Correo" required="required" /></div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="subject">Telefono</label>
+                                      <input type="text" class="form-control" id="name" placeholder="Telefono" required="required" />
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="name">Mensaje</label>
+                                      <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required" placeholder=""></textarea>
+                                  </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <p style="text-align: right;"><button class="btn btn-hero btn-lg" role="button">Enviar</button></p>
+                              </div>
+                          </div>
+                          </form>
+                  </div>
+                  <div class="col-md-3">
+                      <form>
+                        
+                      <legend><span class="glyphicon glyphicon-globe"></span> Oficinas</legend>
+                      <address>
+                          <strong>ENPRENMONEY, S.A DE C.V.</strong><br>
+                          Kabah #1475, Colonia Jardines del Sol<br>
+                          Zapopan, Jalisco<br>
+                          <abbr title="Teléfono">
+                              Tel:</abbr>
+                          (331) 333-3333
+                      </address>
+                      <address>
+                          <strong>Correo Electrónico</strong><br>
+                          <a href="mailto:#">contacto@fidei.com.mx</a>
+                      </address>
+                      </form>
+                  </div>
+              </div>
+          </div>
+        </section>
+        
+        <footer class="footer">
+        	<div class="container text-center">
+        		<span style="color: white;">FIDEI 2016.  Marca registrada | <%= link_to 'Aviso de Privacidad', 'privacidad' %>| <%= link_to 'Términos y Condiciones del Servicio', 'terminos' %> | Todos los derechos reservados.</span>
+          	</div>
+        
+        </footer>
+    
