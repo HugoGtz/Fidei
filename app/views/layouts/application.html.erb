@@ -2,23 +2,19 @@
 <html>
 <head>
   <title>Fidei</title>
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
   <!--CDN FIREBASE-->
   <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <meta name="turbolinks-cache-control" content="no-cache">
+  
   <!--FIREBASE-->
   <script>
     var config = {
     apiKey: "AIzaSyCb_DKQCaa3uGuWV-IFqtAYvkfdrQ16Qus",
-<<<<<<< HEAD
     authDomain: "https://fidei-b3cd0.firebaseapp.com",
-=======
-<<<<<<< HEAD
-    authDomain: "fidei-b3cd0.firebaseapp.com/__/auth/handler",
-=======
-    authDomain: "https://fidei-b3cd0.firebaseapp.com/__/auth/handler",
->>>>>>> e3e24b544dd51447408f1e94671e76e69620b609
->>>>>>> 9aa0081ba06ad86627e3c4fc53e86a4eaa7fc0f1
     databaseURL: "https://fidei-b3cd0.firebaseio.com",
     projectId: "fidei-b3cd0",
     storageBucket: "fidei-b3cd0.appspot.com",
@@ -26,10 +22,10 @@
   };
   firebase.initializeApp(config);
   </script>
-  
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
 </head>
 <body style="background-color: #fcf7f7; position: relative;">
 

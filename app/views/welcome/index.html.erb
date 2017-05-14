@@ -26,53 +26,18 @@
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle linksop" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inicio de Sesión<span class="caret"></span></a>
-                  			<ul id="login-dp" class="dropdown-menu">
-				<li>
-					 <div class="row">
-							<div class="col-md-12">
-								Inicia Sesión Vía
-								<div class="social-buttons">
-								  <button onClick="logInFace()" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a></button>
-									<!--<a onClick="logInFace()" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>-->
-									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-								</div>
-<<<<<<< HEAD
-                                - o -</br>
-								
-=======
-                </br>
-								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
->>>>>>> 9aa0081ba06ad86627e3c4fc53e86a4eaa7fc0f1
-										<div class="form-group">
-											 <label class="sr-only" for="exampleInputEmail2">Correo Electrónico</label>
-											 <input type="email" class="form-control" id="email" placeholder="Email" required>
-										</div>
-										<div class="form-group">
-											 <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
-											 <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
-                                             <div class="help-block text-right"><a href="">¿Olvidaste tu Contaseña?</a></div>
-										</div>
-										<div class="form-group">
-<<<<<<< HEAD
-											 <button onClick="logIn()" class="btn btn-hero btn-block">Ingresar</button>
-=======
-											 <button type="submit" class="btn btn-hero btn-block">Iniciar Sesión</button>
->>>>>>> 9aa0081ba06ad86627e3c4fc53e86a4eaa7fc0f1
-										</div>
-										<div class="checkbox">
-											 <label>
-											 <input type="checkbox"> Recordar Contraseña
-											 </label>
-										</div>
-								
-							</div>
-							<div class="bottom text-center">
-								¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'session/new' %> 
-							</div>
-					 </div>
-				</li>
-			</ul>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inicio de Sesión<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <% if user_signed_in? %>
+                      <li>
+                      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+                      </li>
+                    <% else %>
+                      <li>
+                      <%= link_to('Login', new_user_session_path)  %>  
+                      </li>
+                    <% end %>
+                  </ul>
                 </li>
               </ul>
             </div><!-- /.navbar-collapse -->
