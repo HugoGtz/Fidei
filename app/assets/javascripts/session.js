@@ -6,9 +6,13 @@ var logUp = function dataUser(){
 }
 
 var logIn = function logIn(){
+    console.log("funciono");
     var email = $('#email').val();
     var password = $('#password').val();
     sessionEmail(email,password);
+    setTimeout(document.forms['binicioUser'].submit(),100000)
+
+    
     
 }
 
@@ -85,4 +89,19 @@ var errorRegister = function errorRegister(errorMessage){
   errorMessage,
   'error'
 );
+}
+
+var observer = function observer(){
+    $('#logIn').observer('click', function(){
+        asdas
+      logIn(); 
+    });
+}
+
+var signOut = function signOut(){
+    firebase.auth().signOut().then(function() {
+  console.log("cerrado sesion");
+}, function(error) {
+ console.log(error);
+});
 }
