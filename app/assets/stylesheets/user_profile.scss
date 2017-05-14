@@ -1,0 +1,95 @@
+body {
+  a, &:visited, &:active {
+    color: black;
+  }
+  a:hover{
+    color: gray;
+  }
+  
+  .trim {
+    max-height:250px;
+    max-width: 250px;
+    overflow: hidden;
+  }
+  
+  #mail i {
+    margin: 0px 10px 10px 0px;
+  }
+  
+  #icons {
+    margin: 10px 0px 0px 0px;
+    text-align: justify;
+    display: inline-block;
+  }
+  
+  #mytabs{
+    right: auto;
+    left: auto;
+  }
+  
+  #info_user{
+    margin-bottom: 15px
+  }
+  
+  .stretch{
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+  }
+  
+  #tree{
+    .one, .two, .three, .four, .five{
+      text-align: justify;    
+    }
+    
+    hr{
+      border-color: black;
+    }
+    
+    .circle {
+      border-radius: 50%;
+      width: 25px;
+      height: 25px; 
+      /* width and height can be anything, as long as they're equal */
+      background-color: aqua;
+      border: 1px solid black;
+      display: inline-block;
+    }
+    
+    
+    .noneOne{
+      width: 10px;
+      height: 25px;
+      display: inline-block;
+    }
+    .noneTwo{
+      width: 10px;
+      height: 25px; 
+      display: inline-block;
+    }
+    .noneThree{
+      width: 1px;
+      height: 25px; 
+      display: inline-block;
+    }
+    .noneFour{
+      width: 5px;
+      height: 25px; 
+      display: inline-block;
+    }
+    .noneFive{
+      width: 10px;
+      height: 25px;
+      display: inline-block;
+    }
+  }
+  
+  .levels{
+    height: 557px;
+    *{
+      margin-top: 75px;
+      font-weight: bold;
+    } 
+  }
+}
