@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170515193328) do
     t.boolean  "superadmin_role",        default: false
     t.boolean  "supervisor_role",        default: false
     t.boolean  "user_role",              default: true
+    t.boolean  "firebase_form",          default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
