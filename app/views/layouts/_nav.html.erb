@@ -1,0 +1,93 @@
+        <nav class="navbar navbar-fixed-top" style="background-color: #1551a7; padding-bottom: 15px; padding-top: 15px;" data-turbolinks-permanent>
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">
+                
+                <%= image_tag("logo.png", :style => "width: 200px; margin-top: -20px;") %>
+                </a>
+            </div>
+        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a class="linksop">Inicio</a></li>
+                <li><a class="linksop">Proyección</a></li>
+                <li><a class="linksop">Forma de Operación</a></li>
+                <li><a class="linksop">Empresa</a></li>
+                <li><a class="linksop">Contacto</a></li>
+                <li><a class="linksop">Sugerencias</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a class="dropdown-toggle linksop" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inicio de Sesión<span class="caret"></span></a>
+                  			<ul id="login-dp" class="dropdown-menu">
+				<li>
+					 <div class="row">
+							<div class="col-md-12">
+								Inicia Sesión Vía
+								<div class="social-buttons">
+								  <button onClick="logInFace()" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a></button>
+									<!--<a onClick="logInFace()" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>-->
+									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+								</div>
+
+                                - o -</br>
+								
+
+                </br>
+								 
+
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputEmail2">Correo Electrónico</label>
+											 <input type="email" class="form-control" id="email" placeholder="Email" required>
+										</div>
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
+											 <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+                                             <div class="help-block text-right"><a href="">¿Olvidaste tu Contaseña?</a></div>
+										</div>
+										<div class="form-group">
+
+											 <button onClick="logIn()" class="btn btn-hero btn-block">Inciar Sesion</button>
+
+											 
+
+										</div>
+										<div class="checkbox">
+											 <label>
+											 <input type="checkbox"> Recordar Contraseña
+											 </label>
+										</div>
+								
+							</div>
+							<div class="bottom text-center">
+								¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'session/new' %> 
+							</div>
+					 </div>
+				</li>
+			</ul>
+
+                  <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inicio de Sesión<span class="caret"></span></a>-->
+                  <ul class="dropdown-menu">
+                    <% if user_signed_in? %>
+                      <li>
+                      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+                      </li>
+                    <% else %>
+                      <li>
+                      <%= link_to('Login', new_user_session_path)  %>  
+                      </li>
+                    <% end %>
+                  </ul>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>

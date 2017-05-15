@@ -1,96 +1,4 @@
-        <nav class="navbar navbar-fixed-top" style="background-color: #1551a7; padding-bottom: 15px; padding-top: 15px;" data-turbolinks-permanent>
-          <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">
-                
-                <%= image_tag("logo.png", :style => "width: 200px; margin-top: -20px;") %>
-                </a>
-            </div>
-        
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#" class="linksop">Inicio</a></li>
-                <li><a class="linksop" href="#">Proyección</a></li>
-                <li><a class="linksop" href="#">Forma de Operación</a></li>
-                <li><a class="linksop" href="#">Empresa</a></li>
-                <li><a class="linksop" href="#">Contacto</a></li>
-                <li><a class="linksop" href="#">Sugerencias</a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle linksop" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inicio de Sesión<span class="caret"></span></a>
-                  			<ul id="login-dp" class="dropdown-menu">
-				<li>
-					 <div class="row">
-							<div class="col-md-12">
-								Inicia Sesión Vía
-								<div class="social-buttons">
-								  <button onClick="logInFace()" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a></button>
-									<!--<a onClick="logInFace()" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>-->
-									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-								</div>
-
-                                - o -</br>
-								
-
-                </br>
-								 
-
-										<div class="form-group">
-											 <label class="sr-only" for="exampleInputEmail2">Correo Electrónico</label>
-											 <input type="email" class="form-control" id="email" placeholder="Email" required>
-										</div>
-										<div class="form-group">
-											 <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
-											 <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
-                                             <div class="help-block text-right"><a href="">¿Olvidaste tu Contaseña?</a></div>
-										</div>
-										<div class="form-group">
-
-											 <button onClick="logIn()" class="btn btn-hero btn-block">Inciar Sesion</button>
-
-											 
-
-										</div>
-										<div class="checkbox">
-											 <label>
-											 <input type="checkbox"> Recordar Contraseña
-											 </label>
-										</div>
-								
-							</div>
-							<div class="bottom text-center">
-								¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'session/new' %> 
-							</div>
-					 </div>
-				</li>
-			</ul>
-
-                  <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inicio de Sesión<span class="caret"></span></a>-->
-                  <ul class="dropdown-menu">
-                    <% if user_signed_in? %>
-                      <li>
-                      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-                      </li>
-                    <% else %>
-                      <li>
-                      <%= link_to('Login', new_user_session_path)  %>  
-                      </li>
-                    <% end %>
-                  </ul>
-                </li>
-              </ul>
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
+          <%= render 'layouts/nav.html.erb' %>
 
         <div style="margin-top: -75px;">
             
@@ -174,6 +82,8 @@
           </div>
         </section>
         
+
+        
         <section style="padding-top: 30px; padding-bottom: 30px;">
             <div class="container">
                 <div class="row">
@@ -203,6 +113,107 @@
                   </div>
                 </div>
             </div>
+        </section>
+        
+        
+        <section style="background-color: white; padding-top: 30px; padding-bottom: 30px;">
+          <div class="container">
+            <div class="row">
+                  <h1 class="text-center" style=" color: #004467;"><strong>DISEÑADO PARA TÍ</strong></h1>
+                  <h5 class="text-center">Fidei.com se creó precisamente para satisfacer la necesidad básica del mercado para que los usuarios puedan incrementar su patrimonio y capitalizarse en el menor tiempo posible.</h5></br></br>
+                  <h2 class="text-center" style=" color: #004467;"><strong>BENEFICIOS EXCLUSIVOS</strong></h2></br>
+                  <div class="col-md-4 col-xs-6">
+                    <%= image_tag("home/coins.png", :style => "width: 50px;display:block; margin:auto;") %>
+                    <h4 class="tituloBene">INCREMENTE SU CAPITAL</h4>
+                    <p class="txtBene">Multiplique el valor del plan que ha elegido a un 500%.</p>
+                  </div>
+                  <div class="col-md-4 col-xs-6">
+                    <%= image_tag("home/checkHome.png", :style => "width: 50px;display:block; margin:auto;") %>
+                    <h4 class="tituloBene">SIN ACTIVIDADES TEDIOSAS</h4>
+                    <p class="txtBene">Aquí su dinero se multiplicara sin que tenga usted que realizar actividades tediosas.</p>
+                  </div>
+                  <div class="col-md-4 col-xs-6">
+                    <%= image_tag("home/home.png", :style => "width: 50px; display:block; margin:auto;") %>
+                    <h4 class="tituloBene">SEGUIMIENTO EN TIEMPO REAL</h4>
+                    <p class="txtBene">Tiene una parte administrativa completa a su disposición para realizar el seguimiento de todo 24 horas al día, 7 días de la semana.</p>
+                  </div>
+                  <div class="col-md-4 col-xs-6">
+                    <%= image_tag("home/mobile.png", :style => "width: 50px;display:block; margin:auto;") %>
+                    <h4 class="tituloBene">SIMPLE Y FÁCIL DE UTILIZAR</h4>
+                    <p class="txtBene">Todo se ha diseñado para facilitar su gestión, incluyendo el acceso a nuestra plataforma a través del ordenador, tableta o teléfono móvil.</p>
+                  </div>
+                  <div class="col-md-4 col-xs-6">
+                    <%= image_tag("home/persons.png", :style => "width: 50px;display:block; margin:auto;") %>
+                    <h4 class="tituloBene">RED BINARIA</h4>
+                    <p class="txtBene">Acelere sus resultados utilizando el poder de la red binaria.</p>
+                  </div>
+                  <div class="col-md-4 col-xs-6">
+                    <%= image_tag("home/global.png", :style => "width: 50px;display:block; margin:auto;") %>
+                    <h4 class="tituloBene">PRESENCIA GLOBAL</h4>
+                    <p class="txtBene">Nuestros potentes servidores operan nuestros sistemas sofisticados en una plataforma global.</p>
+                  </div>
+                  
+
+            </div>
+          </div>
+        </section>
+        
+        <section style="padding-top: 30px; padding-bottom: 30px;">
+          <div class="container">
+            <div class="row">
+              <h1 class="text-center" style=" color: #004467;"><strong>ELIJA SU PLAN</strong></h1>
+              <h5 class="text-center">Es importante tener en cuenta que plan elegir y recuerda puedes retirar tu inversión inicial en el momento que tú elijas solo que perderás la posición adquirida. </h5>
+              <p class="empresatext">!Es muy sencillo! Solo tienes que elegir qué plan se ajusta a tu perfil financiero, proporcionar información de registro básica, pagar el plan y esperar la activación de su cuenta,  que se producirá solo con una posterior confirmación de blockhain que normalmente tarda menos de 30 minutos</p></br>
+              <div class="col-md-3 estru">
+                <div class="tituloC">
+                  <h2><strong>PLAN 1</strong></h2>
+                </div>
+                <div class="contenidoC">
+                  <h3 style="color: #004467;"><strong>INVIERTE:</strong></h3>
+                  <h3>$6,000</h3>
+                  <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>
+                  <h3>30,000</h3>
+                  <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Ingresar</button></p>
+                </div>
+              </div>
+              <div class="col-md-3 estru">
+                <div class="tituloC">
+                  <h2><strong>PLAN 2</strong></h2>
+                </div>
+                <div class="contenidoC">
+                  <h3 style="color: #004467;"><strong>INVIERTE:</strong></h3>
+                  <h3>$ 20,000</h3>
+                  <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>
+                  <h3>$ 100,000</h3>
+                  <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Ingresar</button></p>
+                </div>
+              </div>
+              <div class="col-md-3 estru">
+                <div class="tituloC">
+                  <h2><strong>PLAN 3</strong></h2>
+                </div>
+                <div class="contenidoC">
+                  <h3 style="color: #004467;"><strong>INVIERTE:</strong></h3>
+                  <h3>$ 50,000</h3>
+                  <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>
+                  <h3>$ 250,000</h3>
+                  <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Ingresar</button></p>
+                </div>
+              </div>
+              <div class="col-md-3 estru">
+                <div class="tituloC">
+                  <h2><strong>PLAN 4</strong></h2>
+                </div>
+                <div class="contenidoC">
+                  <h3 style="color: #004467;"><strong>INVIERTE:</strong></h3>
+                  <h3>$ 100,000</h3>
+                  <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>
+                  <h3>$ 500,000</h3>
+                  <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Ingresar</button></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section style="padding-top: 30px; padding-bottom: 30px;  background-image: url(/assets/home/manos.jpg); background-color: white;">

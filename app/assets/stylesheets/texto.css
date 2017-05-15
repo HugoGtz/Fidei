@@ -1,4 +1,4 @@
-.navsito {
+.navbar {
     background-color: transparent;
     border-color: transparent;
     margin-bottom: 0px;
@@ -200,4 +200,51 @@ h5, .h5 {
     margin-bottom: 30px;
     font-size: 16px;
     text-align: justify;
+}
+.nav > li > a:hover{
+    background-color:#4C71A4;
+    color: white;
+}
+
+.tituloC{
+    text-align: center;
+    background-color: #1551a7;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: solid;
+    border-left: solid;
+    border-right: solid;
+    border-color: gray;
+    border-width:  1px;
+    color: white;
+}
+
+.contenidoC{
+    text-align: center;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.contenido{
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.estru{
+    margin-bottom: 10px;
+}
+
+.tituloBene{
+    text-align: center;
+    color: #004467;
+    font-weight: bold;
+}
+
+.txtBene{
+    text-align: justify;
+    
 }
