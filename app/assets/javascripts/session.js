@@ -45,6 +45,9 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
   var errorMessage = error.message;
   if (errorMessage) {
       errorRegister(errorMessage);
+      return false;
+  }else{
+      return true;
   }
   
 });

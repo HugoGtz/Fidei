@@ -36,8 +36,6 @@ var dataUser = function dataUser() {
             contrato = false;
         }
         
-     console.log(terminos);
-     console.log(contrato);
      
     if (terminos && contrato) {
         writeUserData(id,nombre,apellidoP,apellidoM,RFC,identifiacion,ciudad,colonia,calle,CP,TP,CEL,CURP,Monto);

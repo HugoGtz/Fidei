@@ -6,5 +6,12 @@ $(document).ready(function(){
     var password = $('#password').val();
     return sessionEmail(email,password);
   });
+  
+  $("#formSigIn").submit(function(){
+     var email = $("#email").val();
+     var password = $("#password").val();
+     return newUser(email,password);
+  });
 });
+
 
