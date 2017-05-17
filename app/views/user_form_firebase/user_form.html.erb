@@ -1,3 +1,75 @@
 <h2>User form after the user sign up</h2>
 <h3> <%= @id %></h3>
 <h3> <%= @email %></h3>
+
+<form id="dataUser">
+    <input type="hidden" id="email" value='<%= @email %>'></input>
+    <input type="hidden" id="id_user" value='<%= @id %>'></input>
+    <label>Nombre</label>
+    <input name="nombre" id="nombre" type="text"></input>
+    
+    <label>Apellido Paterno</label>
+    <input name="apellidoP" id="apellidoP" type="text"></input>
+    
+    <label>Apellido Materno</label>
+    <input name="apellidoM" id="apellidoM" type="text"></input>
+    
+    <label>RFC</label>
+    <input name="RFC" id="RFC" type="text"></input>
+    
+    <label>No. Identificacion</label>
+    <input name="identifiacion" id="identifiacion" type="text"></input>
+    
+    <h4>Direccion</h4>
+    
+    <label>Ciudad</label>
+    <input name="Ciudad" id="Ciudad" type="text"></input>
+    
+    <label>Colonia</label>
+    <input name="Colonia" id="Colonia" type="text"></input>
+    
+    <label>Calle y Numero</label>
+    <input name="calle" id="calle" type="text"></input>
+    
+    <label>Codigo Postal</label>
+    <input name="CP" id="CP" type="text"></input>
+
+    <label>Telefono Particular</label>
+    <input name="TP" id="TP" type="tel"></input>
+    
+    <label>Telefono Celular</label>
+    <input name="Cel" id="Cel" type="tel"></input>
+    
+    <label>CURP</label>
+    <input name="CURP" id="CURP" type="text"></input>
+    
+    <h4>Monto de Afiliacion</h4>
+    
+    <label class="radio-inline">
+      <input type="radio" name="monto" id="inlineRadio1" value="6000">$6,000 M.N
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="monto" id="inlineRadio2" value="20000"> $20,000 M.N
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="monto" id="inlineRadio3" value="50000"> $50,000 M.N
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="monto" id="inlineRadio3" value="100000"> $100,000 M.N
+    </label>
+    
+    <div class="checkbox">
+  <label>
+    <input type="checkbox" id="terminos" name="t1" value="true" aria-label="...">
+      Acepto Terminos y Condiciones.
+  </label>
+    </div>
+    
+      <div class="checkbox">
+  <label>
+    <input type="checkbox" id="contrato" name="c1" value="true" aria-label="...">
+      He leído y acepto el contrato y los terminos legales.
+  </label>
+    </div>
+    <Button>Registrarme.</Button>
+</form>

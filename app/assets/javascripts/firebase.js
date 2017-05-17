@@ -1,3 +1,10 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready(function(){
+   
+  $("#inicioUser").submit(function(){
+    console.log("funciono");
+    var email = $('#email').val();
+    var password = $('#password').val();
+    return sessionEmail(email,password);
+  });
+});
+
