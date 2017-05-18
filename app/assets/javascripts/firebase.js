@@ -4,10 +4,12 @@ $(document).ready(function(){
     console.log("funciono");
     var email = $('#email').val();
     var password = $('#password').val();
-    return sessionEmail(email,password);
+    
+    setTimeout(sessionEmail(email,password),5000)
+    return true;
   });
   
-  $("#formSigIn").submit(function(){
+  $("#formSigUp").submit(function(){
      var email = $("#email").val();
      var password = $("#password").val();
      return newUser(email,password);
