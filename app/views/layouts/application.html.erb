@@ -40,7 +40,9 @@
 <body style="background-color: #fcf7f7; position: relative;">
 
 
-
+<% if(controller.controller_name == "user_profile") %>
+ <%= render 'layouts/navUser.html.erb' %>
+<% end %>
 <div class="main-container">
 <%= yield %>
 </div>
