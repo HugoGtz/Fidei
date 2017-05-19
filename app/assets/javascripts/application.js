@@ -14,7 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require Chart
 //= require_tree 
+
 //
 
 // Initialize Firebase
