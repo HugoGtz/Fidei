@@ -1,101 +1,5 @@
-<<<<<<< HEAD
           <%= render 'layouts/nav.html.erb' %>
-=======
-        <nav class="navbar navbar-fixed-top" style="background-color: #1551a7; padding-bottom: 15px; padding-top: 15px;" data-turbolinks-permanent>
-          <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">
-                
-                <%= image_tag("logo.png", :style => "width: 200px; margin-top: -20px;") %>
-                </a>
-            </div>
         
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#" class="linksop">Inicio</a></li>
-                <li><a class="linksop" href="#">Proyección</a></li>
-                <li><a class="linksop" href="#">Forma de Operación</a></li>
-                <li><a class="linksop" href="#">Empresa</a></li>
-                <li><a class="linksop" href="#">Contacto</a></li>
-                <li><a class="linksop" href="#">Sugerencias</a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle linksop" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inicio de Sesión<span class="caret"></span></a>
-                  			<ul id="login-dp" class="dropdown-menu">
-				<li>
-					 <div class="row">
-							<div class="col-md-12">
-								Inicia Sesión Vía
-								<div class="social-buttons">
-								  <button onClick="logInFace()" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a></button>
-									<!--<a onClick="logInFace()" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>-->
-									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-								</div>
-
-                                - o -</br>
-								
-
-                </br>
-								 
-
-										<div class="form-group">
-											 <label class="sr-only" for="exampleInputEmail2">Correo Electrónico</label>
-											 <input type="email" class="form-control" id="email" placeholder="Email" required>
-										</div>
-										<div class="form-group">
-											 <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
-											 <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
-                                             <div class="help-block text-right"><a href="">¿Olvidaste tu Contaseña?</a></div>
-										</div>
-										<div class="form-group">
-
-											 <button onClick="logIn()" class="btn btn-hero btn-block">Inciar Sesion</button>
-
-											 
-
-										</div>
-										<div class="checkbox">
-											 <label>
-											 <input type="checkbox"> Recordar Contraseña
-											 </label>
-										</div>
-								
-							</div>
-							<div class="bottom text-center">
-								¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'session/new' %> 
-							</div>
-					 </div>
-				</li>
-			</ul>
-
-                  <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inicio de Sesión<span class="caret"></span></a>-->
-                  <ul class="dropdown-menu">
-                    <% if user_signed_in? %>
-                   
-                      <li>
-                      <%= link_to'Logout', destroy_user_session_path, :method => :delete,  onClick: 'signOut()' %>        
-                      </li>
-                    <% else %>
-                      <li>
-                      <%= link_to 'Login', new_user_session_path %>  
-                      </li>
-                    <% end %>
-                  </ul>
-                </li>
-              </ul>
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
->>>>>>> 020240b543970d46b74d287f2b78ee65cde09c6f
 
         <div style="margin-top: -75px;">
             
@@ -148,7 +52,7 @@
         </div>
         </div> 
         
-        <section style="background-color: #1551a7;" >
+        <section style="background-color: #2c3e50;" >
           <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -260,8 +164,9 @@
             <div class="row">
               <h1 class="text-center" style=" color: #004467;"><strong>ELIJA SU PLAN</strong></h1>
               <h5 class="text-center">Es importante tener en cuenta que plan elegir y recuerda puedes retirar tu inversión inicial en el momento que tú elijas solo que perderás la posición adquirida. </h5>
-              <p class="empresatext">!Es muy sencillo! Solo tienes que elegir qué plan se ajusta a tu perfil financiero, proporcionar información de registro básica, pagar el plan y esperar la activación de su cuenta,  que se producirá solo con una posterior confirmación de blockhain que normalmente tarda menos de 30 minutos</p></br>
-              <div class="col-md-3 estru">
+              <p class="empresatext">!Es muy sencillo! Solo tienes que elegir qué plan se ajusta a tu perfil financiero, proporcionar información de registro básica, pagar el plan y esperar la activación de su cuenta,  que se producirá solo con una posterior confirmación de Correo Electrónico que normalmente tarda menos de 30 minutos</p></br>
+              <div class="col-md-3">
+                <div class="AniConten">
                 <div class="tituloC">
                   <h2><strong>PLAN 1</strong></h2>
                 </div>
@@ -272,8 +177,10 @@
                   <h3>30,000</h3>
                   <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Ingresar</button></p>
                 </div>
+                </div>
               </div>
               <div class="col-md-3 estru">
+                <div class="AniConten">
                 <div class="tituloC">
                   <h2><strong>PLAN 2</strong></h2>
                 </div>
@@ -284,8 +191,10 @@
                   <h3>$ 100,000</h3>
                   <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Ingresar</button></p>
                 </div>
+                </div>
               </div>
               <div class="col-md-3 estru">
+                <div class="AniConten">
                 <div class="tituloC">
                   <h2><strong>PLAN 3</strong></h2>
                 </div>
@@ -297,7 +206,9 @@
                   <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Ingresar</button></p>
                 </div>
               </div>
+              </div>
               <div class="col-md-3 estru">
+                <div class="AniConten">
                 <div class="tituloC">
                   <h2><strong>PLAN 4</strong></h2>
                 </div>
@@ -308,6 +219,7 @@
                   <h3>$ 500,000</h3>
                   <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Ingresar</button></p>
                 </div>
+              </div>
               </div>
             </div>
           </div>
@@ -406,7 +318,7 @@
         
         <footer class="footer">
         	<div class="container text-center">
-        		<span class="linksop">FIDEI 2016.  Marca registrada | <a class="linksop"> Aviso de Privacidad</a> | <a class="linksop"> Términos y condiciones del servicio</a> | Todos los derechos reservados.</span>
+        		<span style="color: white;">FIDEI 2016.  Marca registrada | <%= link_to 'Aviso de Privacidad', '../welcome/privacidad' %>| <%= link_to 'Términos y Condiciones del Servicio', '../welcome/terminos' %> | Todos los derechos reservados.</span>
           	</div>
         
         </footer>

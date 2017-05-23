@@ -19,7 +19,7 @@ var barValue = function  barValue(){
                break;
            case "50":
                $(".barValue").text("$ 20,000");
-               $(".monto").text("$ 50,000");
+               $(".monto").text("$ 100,000");
                break;
            case "75":
            $(".barValue").text("$ 50,000");
