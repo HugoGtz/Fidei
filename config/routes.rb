@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   get 'welcome/privacidad'
   get 'welcome/terminos'
   get 'user_form_firebase/user_form'
-  devise_for :users
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
   resources :user_profile
   resources :user_settings
 end

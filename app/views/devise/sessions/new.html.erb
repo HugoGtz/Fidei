@@ -1,6 +1,6 @@
 <h2>Log in</h2>
 
-<%= form_for resource, as: resource_name, url: session_path(resource_name), :html => {:id => "inicioUser"} do |f| %>
+<%= form_for resource, url: session_path(:user), remote: true do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, :id => 'email' %>
@@ -20,8 +20,25 @@
 
   <div class="actions">
     <button >Inciar sesion</button>
-    
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+<script type="text/javascript">
+  $(document).ready(function() {
+    //form id
+    $('#new_user')
+    .bind('ajax:success', function(evt, data, status, xhr) {
+      //function called on status: 200 (for ex.)
+      var firebaseLogin = new Promise( (resolve, reject) => {
+        email = $('#email').val();
+        password = $('#password').val();
+        sessionEmail(email,password);
+        resolve('Success!');
+      } );
+      firebaseLogin.then()// location.reload() aqui haria el reload de pagina para que entre el metodo de devise de redireccionamiento por que se supone que el controlador solo regresa un json en vez de hacer el reload, para eso la promise para hacer el login en firebase, checate en la consola como ya inicia sesion en el firebase y si das reload de pagina ya te manda al form 
+    })
+    .bind("ajax:error", function(evt, xhr, status, error) {
+      //function called on status: 401 or 500 (for ex.)
+      console.log(xhr.responseText);
+    });
+  });
+</script>
