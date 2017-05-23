@@ -34,15 +34,22 @@
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  
+  <%= csrf_meta_tags %> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
 </head>
 <body style="background-color: #fcf7f7; position: relative;">
 
-
+<!--Navbar de users_profile-->
 <% if(controller.controller_name == "user_profile") %>
  <%= render 'layouts/navUser.html.erb' %>
 <% end %>
+
+<!--Navbar de admin_panel-->
+<% if (controller.controller_name == "admin_panel") %>
+<%= render 'layouts/navAdmin.html.erb' %>
+<% end %>
+
 <div class="main-container">
 <%= yield %>
 </div>

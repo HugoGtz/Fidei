@@ -1,0 +1,158 @@
+<div id="page-content-wrapper">
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row" style="margin-top: 20px;">
+                    
+                    <h1 class="text-center" style="color: #004467;"><strong>PRINCIPAL</strong></h1>
+                    
+                       <div class="panel-group" id="accordion">
+                          <div class="panel panel-default">
+                            <div class="panel-heading" data-target="#collapse1" data-toggle="collapse"  data-parent="#accordion">
+                              <h4 class="panel-title"><i class="glyphicon glyphicon-chevron-right"></i></i> Usuarios Registrados por Mes</h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse in">
+                              <div class="panel-body">
+                                <div class="col-md-offset-1">
+                                <div class="col-md-11">
+                                    <div class="contenido">
+                                        <h4 class="text-center">PERSONAS REGISTRADAS POR MES</h4>
+                                        <canvas id="myChart" width="800" height="470"></canvas>
+                                        <p style="margin: 10px; text-align: center"><button type="submit" class="btn btn-success btn-sm" formaction="">Ver Más</button></p>
+                                    </div>
+                                </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading" data-target="#collapse2" data-toggle="collapse"  data-parent="#accordion">
+                              <h4 class="panel-title"><i class="glyphicon glyphicon-chevron-right"></i> Usuarios Registrados por Semana</h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <div class="col-md-offset-1">
+                                <div class="col-md-11">
+                                    <div class="contenido">
+                                        <h4 class="text-center">PERSONAS REGISTRADAS POR SEMANA</h4>
+                                        <canvas id="myChart2" width="800" height="400"></canvas>
+                                        <p style="margin: 10px; text-align: center"><button type="submit" class="btn btn-success btn-sm" formaction="">Ver Más</button></p>
+                                    </div>
+                                </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                     
+                     
+                     
+                </div>
+                </div>
+            </div>
+        </div>
+    </div></br>
+    </br>
+    <center>
+        <strong>Powered by <a href="#" target="_blank">COCOSOURCE</a></strong>
+    </center>
+</div>
+
+<script>
+    var ctx = document.getElementById('myChart');
+    var myChart2 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+            datasets: [{
+                label: 'Personas',
+                data: [5, 3, 4, 7, 8, 10, 3, 4, 12, 7, 6, 15],
+                backgroundColor: [
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    
+    var ctx = document.getElementById('myChart2');
+    var myChart2 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
+            datasets: [{
+                label: 'Personas',
+                data: [9, 4, 4, 7, 8, 3, 10],
+                backgroundColor: [
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    
+    
+</script>
+
+
+
+
+
+
