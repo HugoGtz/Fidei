@@ -27,18 +27,28 @@
     //form id
     $('#new_user')
     .bind('ajax:success', function(evt, data, status, xhr) {
-      //function called on status: 200 (for ex.)
-      var firebaseLogin = new Promise( (resolve, reject) => {
-        email = $('#email').val();
-        password = $('#password').val();
-        sessionEmail(email,password);
-        resolve('Success!');
-      } );
-      firebaseLogin.then()// location.reload() aqui haria el reload de pagina para que entre el metodo de devise de redireccionamiento por que se supone que el controlador solo regresa un json en vez de hacer el reload, para eso la promise para hacer el login en firebase, checate en la consola como ya inicia sesion en el firebase y si das reload de pagina ya te manda al form 
+      var promise = new Promise(
+      function (resolve, reject) {
+          email = $('#email').val();
+          password = $('#password').val();
+          sessionEmail(email,password);
+          firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              resolve(user);
+            }
+          });
+      });
+
+      promise.then(
+          function (user) { location.reload(); }
+      );
     })
+
     .bind("ajax:error", function(evt, xhr, status, error) {
       //function called on status: 401 or 500 (for ex.)
       console.log(xhr.responseText);
     });
   });
 </script>
+
+
