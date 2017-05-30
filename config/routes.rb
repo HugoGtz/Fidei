@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get 'user_form_firebase/user_form'
 
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
+
   resources :user_profile
   resources :user_settings
 end
