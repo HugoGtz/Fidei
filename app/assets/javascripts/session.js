@@ -11,9 +11,6 @@ var logIn = function logIn(){
     var password = $('#password').val();
     sessionEmail(email,password);
     setTimeout(document.forms['binicioUser'].submit(),100000)
-
-    
-    
 }
 
 var sessionEmail = function sessionEmail(email,password){

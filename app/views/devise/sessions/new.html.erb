@@ -2,7 +2,7 @@
 <div style="margin-top: 75px; padding-bottom: 40px;">
 <div class="container">
         <div class="card card-container">
-            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <img id="profile-img" class="profile-img-card" src="http://api.adorable.io/avatar/<%= rand(1..100) %>" />
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin">
                 <h3 class="text-center">INICIA SESIÓN</h3>
@@ -16,10 +16,10 @@
                 <a href="#" class="forgot-password">
                 ¿Olvidaste la contraseña?
                 </a>
-                <button class="btn btn-hero btn-block" type="submit">Iniciar Sesión</button>
+                <button onClick="logIn()" class="btn btn-hero btn-block" type="submit">Iniciar Sesión</button>
             </form><!-- /form -->
             <div class="bottom text-center">
-				¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'session/new' %> 
+				¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'sign_up' %> 
 			</div>
             
         </div><!-- /card-container -->
@@ -31,7 +31,7 @@
           	</div>
         
         </footer>
-
+<!--
 <h2>Log in</h2>
 
 <%= form_for resource, as: resource_name, url: session_path(resource_name), :html => {:id => "inicioUser"} do |f| %>
@@ -59,3 +59,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+-->

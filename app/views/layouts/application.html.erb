@@ -50,6 +50,14 @@
 <%= render 'layouts/navAdmin.html.erb' %>
 <% end %>
 
+<% if((controller.controller_name == "welcome")) %>
+<%= render 'layouts/nav.html.erb' %>
+<% end %>
+
+<% if(controller.controller_name == "users") %>
+<%= render 'layouts/nav.html.erb' %>
+<% end %>
+
 <div class="main-container">
 <%= yield %>
 </div>

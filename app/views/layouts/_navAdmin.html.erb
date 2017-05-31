@@ -4,9 +4,8 @@
 		<div class="container-fluid">
 			<div class="navbar-header">
                 <div  class="navbar-brand">
-                    <a id="menu-toggle" href="#" class="glyphicon glyphicon-align-justify btn-menu toggle">
-                    </a>
-    				<a href="#"><%= image_tag("logo.png", :style => "width: 200px; margin-top: -20px;") %></a>
+                    <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle"> </a>
+    				<a href="index"><%= image_tag("logo.png", :style => "width: 200px; margin-top: -20px;") %></a>
                 </div>
 			</div>
 		</div>
@@ -31,7 +30,7 @@
 				</div>
 
 				<div class="profile-userbuttons">
-					<button type="button" class="btn btn-danger btn-sm">Cerrar Sesión</button>
+					<a href="../"><button type="button" class="btn btn-danger btn-sm">Cerrar Sesión</button></a>
 				</div>
 				<div class="profile-usermenu">
 					<ul class="nav">
@@ -42,7 +41,7 @@
 							<!--Principal </a>-->
 						</li>
 						<li>
-						    <%= link_to " Reportes", {controller: "admin_panel", action: "reportes"}, class: "glyphicon glyphicon-user" %>
+						    <%= link_to " Reportes", {controller: "admin_panel", action: "reportes"}, class: "glyphicon glyphicon-stats" %>
 							<!--<a href="#">-->
 							<!--<i class="glyphicon glyphicon-user"></i>-->
 							<!--Ajustes</a>-->
@@ -54,7 +53,7 @@
 							<!--Validación </a>-->
 						</li>
 						<li>
-						    <%= link_to "Mensajes", {controller: "admin_panel", action: "ayuda"}, class: "glyphicon glyphicon-flag" %>
+						    <%= link_to " Mensajes", {controller: "admin_panel", action: "ayuda"}, class: "glyphicon glyphicon-flag" %>
 							<!--<a href="#">-->
 							<!--<i class="glyphicon glyphicon-flag"></i>-->
 							<!--Ayuda </a>-->

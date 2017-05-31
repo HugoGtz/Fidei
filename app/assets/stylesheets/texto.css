@@ -192,8 +192,8 @@ h5, .h5 {
     text-align: justify;
 }
 .nav > li > a:hover{
-    background-color:#4C71A4;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 .tituloC{

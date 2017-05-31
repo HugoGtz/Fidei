@@ -1,10 +1,8 @@
-          <%= render 'layouts/nav.html.erb' %>
-        
 
         <div style="margin-top: -75px;">
             
             
-           <div class="Slider">
+        <div class="Slider" id="sInicio">
         <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
           <!-- Overlay -->
           <div class="overlay"></div>
@@ -25,7 +23,7 @@
                     <h1>Inicia ahora</h1>        
                     <h3>ESTABILIDAD A LARGO PLAZO Y ASESORÍA EN TODO MOMENTO </h3>
                 </hgroup>
-                <button class="btn btn-hero btn-lg" role="button">Registrate</button>
+                <a href="users/sign_up"><button class="btn btn-hero btn-lg" role="button">Registrate</button></a>
               </div>
             </div>
             <div class="item slides">
@@ -35,7 +33,7 @@
                     <h1>invierte ahora</h1>        
                     <h3>Pasa más tiempo con los tuyos</h3>
                 </hgroup>       
-                <button class="btn btn-hero btn-lg" role="button">Registrate</button>
+                <a href="users/sign_up"><button class="btn btn-hero btn-lg" role="button">Registrate</button></a>
               </div>
             </div>
             <div class="item slides">
@@ -45,18 +43,18 @@
                     <h1>Trabaja en equipo</h1>        
                     <h3>Trabajando en equipo todo es posible </h3>
                 </hgroup>
-                <button class="btn btn-hero btn-lg" role="button">Registrate</button>
+                <a href="users/sign_up"><button class="btn btn-hero btn-lg" role="button">Registrate</button></a>
               </div>
             </div>
           </div> 
         </div>
         </div> 
-        
-        <section style="background-color: #2c3e50;" >
+      <!--
+        <section style="background-color: #2c3e50; padding-top: 75px; padding-bottom: 75px;" id="sProyeccion">
           <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                  <div style="padding-top: 30px; padding-bottom: 30px;">
+                  <div>
                     <h1 style="color: white; font-size: 40px;" class="text-center">PROYECCIÓN</h1>
                     <div class="row">
                       <div class="col-md-offset-4">
@@ -73,7 +71,7 @@
                           </form>
                       </div>
                     </div>
-                    <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p>
+                    <a href="users/sign_up"><p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p></a>
                   </div>
                   
                   
@@ -82,14 +80,14 @@
 
           </div>
         </section>
-        
+        -->
 
         
-        <section style="padding-top: 30px; padding-bottom: 30px;">
+        <section style="padding-top: 75px; padding-bottom: 75px;" id="sOperacion">
             <div class="container">
                 <div class="row">
                 <div class="col-sm-12">
-                    <h1 class="text-center" style="margin-top: 70px; color: #004467;"><strong>FORMA DE OPERACIÓN</strong></h1>
+                    <h1 class="text-center" style="color: #004467;"><strong>FORMA DE OPERACIÓN</strong></h1>
 
                     <p class="p1">
                     Inicia con el registro del usuario, posterior confirmación y aceptación a la plataforma, se elige la cantidad de inversión inicial, se realiza el depósito a la cuenta de FIDEI, asignando de manera automática una posición numérica dentro de nuestra plataforma, misma que podrá ser monitoreada por el propio usuario para ver los avances que lleva de registros posteriores al del usuario y con esto revisar los lugares que faltan para llegar a la meta requerida para la obtención del monto final garantizado, la importancia de este sistema de autofinanciamiento es que el propio usuario tiene el control de su dinero y puede hacer el retiro en el momento que el decida, sin estar sujeto a tiempo. sin embargo es importante para llegar a la obtención del monto final, se llenen los lugares de usuarios requeridos para cada caso.
@@ -117,7 +115,7 @@
         </section>
         
         
-        <section style="background-color: white; padding-top: 30px; padding-bottom: 30px;">
+        <section style="background-color: white; padding-top: 75px; padding-bottom: 75px;">
           <div class="container">
             <div class="row">
                   <h1 class="text-center" style=" color: #004467;"><strong>DISEÑADO PARA TÍ</strong></h1>
@@ -159,7 +157,7 @@
           </div>
         </section>
         
-        <section style="padding-top: 30px; padding-bottom: 30px;">
+        <section style="padding-top: 75px; padding-bottom: 75px;" id="sPlan">
           <div class="container">
             <div class="row">
               <h1 class="text-center" style=" color: #004467;"><strong>ELIJA SU PLAN</strong></h1>
@@ -175,7 +173,7 @@
                   <h3>$6,000</h3>
                   <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>
                   <h3>30,000</h3>
-                  <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Ingresar</button></p>
+                  <a href="../users/sign_up"><p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p></a>
                 </div>
                 </div>
               </div>
@@ -189,7 +187,7 @@
                   <h3>$ 20,000</h3>
                   <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>
                   <h3>$ 100,000</h3>
-                  <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Ingresar</button></p>
+                  <a href="../users/sign_up"><p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p></a>
                 </div>
                 </div>
               </div>
@@ -203,7 +201,7 @@
                   <h3>$ 50,000</h3>
                   <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>
                   <h3>$ 250,000</h3>
-                  <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Ingresar</button></p>
+                  <a href="../users/sign_up"><p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p></a>
                 </div>
               </div>
               </div>
@@ -217,7 +215,7 @@
                   <h3>$ 100,000</h3>
                   <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>
                   <h3>$ 500,000</h3>
-                  <p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Ingresar</button></p>
+                  <a href="../users/sign_up"><p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p></a>
                 </div>
               </div>
               </div>
@@ -225,15 +223,16 @@
           </div>
         </section>
 
-        <section style="padding-top: 30px; padding-bottom: 30px;  background-image: url(/assets/home/manos.jpg); background-color: white;">
+        <section style="padding-top: 75px; padding-bottom: 75px;  background-image: url(/assets/home/manos.jpg); background-color: white;" id="sEmpresa">
           <div class="container">
           <div class="row">
             <div class="col-md-10">
               <h1 class="text-center" style="color: #004467;"><strong>FIDEI</strong></h1></br>
               <h4 class="text-center">Somos una empresa 100% Mexicana que nace a raíz de la problemática financiera que actualmente vivimos.</h4></br> <p class="empresatext">Es una empresa con el objetivo ofrecer alternativas financiaras para las personas y empresas, donde nuestros clientes puedan construir e incrementar su patrimonio a través de un plan de inversión por medio de redes de mercadeo que les permita obtener un gran rendimiento por medio del apalancamiento mutuo de un grupo de personas con un mismo fin en común, logrando su objetivo en poco tiempo, con menos esfuerzo, sin investigación en Buró de crédito, sin descapitalizarse, sin pagar intereses, sin sacrificar su flujo de efectivo. </p>
             </div>
-            
+            <div class="container">
             <div class="row">
+
             <div class="col-md-3">
               <h3 class="text-center" style="color: #004467;"><strong>MISIÓN</strong></h3>
               <p>Hacer realidad los sueños de nuestros clientes Lo logramos con: propuestas y soluciones claras, asesoría personalizada y beneficios tangibles</p>
@@ -248,6 +247,7 @@
               </p>
             </div>
             </div>
+            </div>
             
           </div>
         </div>
@@ -255,7 +255,7 @@
         
         </div>
         
-        <section style="padding-top: 30px; padding-bottom: 30px; background-color: #fcf7f7;">
+        <section style="padding-top: 75px; padding-bottom: 75px; background-color: #fcf7f7;" id="sContacto">
                     <div class="container">
                       <h1 class="text-center" style="color: #004467;"><strong>¿TIENES ALGUNA DUDA?</strong></h1>
                       <h2 class="text-center" style="color: #004467;">CONTÁCTANOS</h2></br>
@@ -277,9 +277,19 @@
                                           </span>
                                           <input type="email" class="form-control" id="email" placeholder="Correo" required="required" /></div>
                                   </div>
-                                  <div class="form-group">
-                                      <label for="subject">Telefono</label>
-                                      <input type="text" class="form-control" id="name" placeholder="Telefono" required="required" />
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <div class="form-group">
+                                              <label for="subject">Telefono Fíjo</label>
+                                              <input type="text" class="form-control" id="name" placeholder="Telefono" required="required" />
+                                          </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <div class="form-group">
+                                              <label for="subject">Telefono Móvil</label>
+                                              <input type="text" class="form-control" id="name" placeholder="Telefono" required="required" />
+                                          </div>
+                                      </div>
                                   </div>
                               </div>
                               <div class="col-md-6">
@@ -300,7 +310,6 @@
                       <legend><span class="glyphicon glyphicon-globe"></span> Oficinas</legend>
                       <address>
                           <strong>ENPRENMONEY, S.A DE C.V.</strong><br>
-                          Kabah #1475, Colonia Jardines del Sol<br>
                           Zapopan, Jalisco<br>
                           <abbr title="Teléfono">
                               Tel:</abbr>
