@@ -1,27 +1,41 @@
-<h2>Log in</h2>
-
-<%= form_for resource, url: session_path(:user), remote: true do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, :id => 'email' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off", :id => 'password' %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div style="margin-top: 75px; padding-bottom: 40px;">
+<div class="container">
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="http://api.adorable.io/avatar/<%= rand(1..100) %>" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <%= form_for resource, url: session_path(:user), remote: true do |f| %>
+                <h3 class="text-center">INICIA SESIÓN</h3>
+				<div class="social-buttons">
+					<a href="#" class="btn btn-fb" style="width: 132px;"><i class="fa fa-facebook"></i> Facebook</a>
+			         <a href="#" class="btn btn-tw" style="width: 132px;"><i class="fa fa-twitter"></i> Twitter</a></br>
+				</div></br>
+                <span id="reauth-email" class="reauth-email"></span>
+                <!--<input type="email" name="email" id="email" class="form-control" placeholder="Correo" required autofocus>-->
+                <%= f.email_field :email, autofocus: true, :id =>"email",:class => "form-control" %>
+                <!--<input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required>-->
+                    <%= f.password_field :password, autocomplete: "off", :id => "password", :class => "form-control" %>
+               
+                <%= link_to "¿Olvidaste la contraseña?", new_password_path(resource_name), :class => "forgot-password" %><br />
+                <button class="btn btn-hero btn-block" type="submit">Iniciar Sesión</button>
+            <% end %>
+            <div class="bottom text-center">
+				¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'sign_up' %> 
+				
+			</div>
+            
+        </div><!-- /card-container -->
     </div>
-  <% end -%>
+    </div>
+    
+    <footer class="footer">
+        	<div class="container text-center">
+        		<span style="color: white;">FIDEI 2016.  Marca registrada | <%= link_to 'Aviso de Privacidad', '../welcome/privacidad' %>| <%= link_to 'Términos y Condiciones del Servicio', '../welcome/terminos' %> | Todos los derechos reservados.</span>
+          	</div>
+        
+        </footer>
 
-  <div class="actions">
-    <button >Inciar sesion</button>
-  </div>
-<% end %>
+
+ 
 <script type="text/javascript">
   $(document).ready(function() {
     //form id
