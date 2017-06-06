@@ -18,7 +18,7 @@
         <nav id="spy">
             <div class="profile-sidebar">
 				<div class="profile-userpic">
-					<%= image_tag("http://api.adorable.io/avatar/"+(rand(1..100)).to_s, :style => "display:block; margin:auto;") %>
+					<%= image_tag("http://api.adorable.io/avatar/"+(rand(1..100)).to_s , :style => "display:block; margin:auto;") %>
 				</div>
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
@@ -31,7 +31,7 @@
 				</div>
 
 				<div class="profile-userbuttons">
-					<a href="../"><button type="button" class="btn btn-danger btn-sm">Cerrar Sesión</button></a>
+					<%= link_to 'Cerrar Sesion', destroy_user_session_path, :method => :delete, :class =>  "btn btn-danger btn-sm", :onClick => "signOut()" %>      
 				</div>
 				<div class="profile-usermenu">
 					<ul class="nav">
