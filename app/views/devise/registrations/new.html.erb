@@ -1,1 +1,73 @@
-<%= render 'layouts/nav.html.erb' %>
+
+<% @adorable = rand(1..100) %>
+<div style="margin-top: 75px; padding-bottom: 40px;">
+<div class="container">
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="http://api.adorable.io/avatar/<%= @adorable %>" />
+            <p id="profile-name" class="profile-name-card"></p>
+  <%= form_for resource, url: registration_path(resource_name), remote: true do |f| %>
+                <h3 class="text-center">Nuevo Usuario</h3>
+				<div class="social-buttons">
+					<a href="#" class="btn btn-fb" style="width: 132px;"><i class="fa fa-facebook"></i> Facebook</a>
+			         <a href="#" class="btn btn-tw" style="width: 132px;"><i class="fa fa-twitter"></i> Twitter</a></br>
+				</div></br>
+                <span id="reauth-email" class="reauth-email"></span>
+                <!--<input type="email" name="email" id="email" class="form-control" placeholder="Correo" required autofocus>-->
+                <%= f.email_field :email, autofocus: true, :id =>"email",:class => "form-control", :placeholder => "Ingrese su Email." %>
+                <!--<input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required>-->
+                <div class="field">
+                <%= f.label :password %>
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                    <%= f.password_field :password, autocomplete: "off", :id => "password", :class => "form-control" %>
+                <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "Repetir Contraseñ" %>
+              </div>
+               
+                <%= link_to "¿Olvidaste la contraseña?", new_password_path(resource_name), :class => "forgot-password" %><br />
+                <button class="btn btn-hero btn-block" type="submit">Iniciar Sesión</button>
+            <% end %>
+            <div class="bottom text-center">
+				¿Ya tienes una cuenta? <%= link_to 'Inicia Sesión.', 'sign_in' %>
+			</div>
+            
+        </div><!-- /card-container -->
+    </div>
+    </div>
+    
+    <footer class="footer">
+        	<div class="container text-center">
+        		<span style="color: white;">FIDEI 2016.  Marca registrada | <%= link_to 'Aviso de Privacidad', '../welcome/privacidad' %>| <%= link_to 'Términos y Condiciones del Servicio', '../welcome/terminos' %> | Todos los derechos reservados.</span>
+          	</div>
+        
+        </footer>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    //form id
+    $('#new_user')
+    .bind('ajax:success', function(evt, data, status, xhr) {
+      var promise = new Promise(
+      function (resolve, reject) {
+          email = $('#email').val();
+          password = $('#password').val();
+          logUp(email,password);
+             firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              resolve(user);
+            }
+          });
+      });
+      
+      promise.then(
+          function (user) { } //
+      );
+    })
+
+    .bind("ajax:error", function(evt, xhr, status, error) {
+      //function called on status: 401 or 500 (for ex.)
+      console.log(xhr.responseText);
+    });
+  });
+</script>

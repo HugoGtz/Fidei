@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   
     # Overwriting the sign_in, redirect path to user form for firebase
     def after_sign_in_path_for(resource_or_scope)
-      if(current_user.firebase_form === false) 
+      if(current_user.firebase_form === false)
         user_form_firebase_user_form_path
       else
         root_path

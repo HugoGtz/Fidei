@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fidei</title>
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-  <!--CDN FIREBASE-->
-  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <meta name="turbolinks-cache-control" content="no-cache">
-  
-  <!--FIREBASE-->
-  <script>
-    var config = {
-    apiKey: "AIzaSyA6OL-zRhqlAwzwCTK_eZ1_Gb4KIPhjA2c",
-    authDomain: "fidei-df894.firebaseapp.com",
-    databaseURL: "https://fidei-df894.firebaseio.com",
-    projectId: "fidei-df894",
-    storageBucket: "fidei-df894.appspot.com",
-    messagingSenderId: "717833398004"
-  };
-  firebase.initializeApp(config);
-  </script>
+	<title>Fidei</title>
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<!--CDN FIREBASE-->
+	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<meta name="turbolinks-cache-control" content="no-cache">
+	<script src="https://cdn.firebase.com/js/client/2.0.2/firebase.js"></script>
+	<!--FIREBASE-->
+	<script>
+		var config = {
+			apiKey: "AIzaSyA6OL-zRhqlAwzwCTK_eZ1_Gb4KIPhjA2c",
+			authDomain: "fidei-df894.firebaseapp.com",
+			databaseURL: "https://fidei-df894.firebaseio.com",
+			projectId: "fidei-df894",
+			storageBucket: "fidei-df894.appspot.com",
+			messagingSenderId: "717833398004"
+		};
+		firebase.initializeApp(config);
+	</script>
 
-  <% unless flash.empty? %>
-     <script type="text/javascript">
-          <% flash.each do |f| %>
-        <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
-         toastr['<%= type %>']('<%= f[1] %>');
-     <% end %>
-     </script>
-  <% end %>
+	<% unless flash.empty? %>
+	<script type="text/javascript">
+		<% flash.each do |f| %>
+		<% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+		toastr['<%= type %>']('<%= f[1] %>');
+		<% end %>
+	</script>
+	<% end %>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+
 </head>
 <body style="background-color: #fcf7f7; position: relative;">
 
@@ -58,9 +59,9 @@
 <%= render 'layouts/nav.html.erb' %>
 <% end %>
 
-<div class="main-container">
-<%= yield %>
-</div>
+	<div class="main-container">
+		<%= yield %>
+	</div>
 
 </body>
 </html>

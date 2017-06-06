@@ -7,10 +7,14 @@ Rails.application.routes.draw do
   
   # route user_form_firebase
   get 'user_form_firebase/user_form'
-  
-  # routes devise
-  devise_for :users
-  
+
+  get 'user_form_firebase/changeFormStatus'
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+
   # routes user profile
   get 'user_profile/index'
   get 'user_profile/ajustes'
@@ -22,7 +26,7 @@ Rails.application.routes.draw do
   get 'admin_panel/validacion'
   get 'admin_panel/reportes'
   get 'admin_panel/ayuda'
-  
+
   resources :user_profile
   resources :user_settings
 end
