@@ -22,11 +22,11 @@
 				</div>
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
-						Martín Eduardo </br>
-						Villaseñor Merino
+						<span id="nombres"></span></br>
+						<span id="apellidos"></span>
 					</div>
 					<div class="profile-usertitle-job">
-						maedvim@gmail.com
+						<span id="emails"></span>
 					</div>
 				</div>
 
@@ -64,7 +64,7 @@
 			</div>
         </nav>
     </div>
-    
+    <input type="hidden" value="<%= @id %>" id="id_user_to_data"></input>
 <script>
   $("#menu-toggle").click(function(e) {
         e.preventDefault();
