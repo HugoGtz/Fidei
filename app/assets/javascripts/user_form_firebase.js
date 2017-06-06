@@ -111,7 +111,7 @@ var dataUser = function dataUser() {
               'success'
                 )
                 
-        return false;
+        return true;
       
     }else{
         alert("Aun no has Aceptado terminos y condiciones o el contrato.")
@@ -144,7 +144,8 @@ var writeUserData = function writeUserData(
 
 ) {
     
-  firebase.database().ref('users/' + id).set({
+  var adaRef = firebase.database().ref('users/' + id);
+  adaRef.set({
     nombre: nombre,
     apellidoP: apellidoP,
     apellidoM: apellidoM,
@@ -163,7 +164,14 @@ var writeUserData = function writeUserData(
     B1: B1,
     B2: B2,
     Plan: Plan,
-   
+  }).then(function() {
+    $.ajax({
+      type: "GET",
+      url: "/user_form_firebase/changeFormStatus"
+    });
+  })
+  .catch(function(error) {
+    return false;
   });
 }
 
