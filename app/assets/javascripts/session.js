@@ -12,6 +12,7 @@ var logUp = function logUp(){
 //     sessionEmail(email,password);
 // }
 
+
 var sessionEmail = function sessionEmail(email,password){
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
   // Handle Errors here.

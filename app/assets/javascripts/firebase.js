@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
    
   /*$("#inicioUser").submit(function(){
@@ -15,6 +16,3 @@ $(document).ready(function(){
      return newUser(email,password);
   });
 });
-
-
-  

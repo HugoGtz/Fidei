@@ -1,79 +1,8 @@
-<nav class="navbar navbar-fixed-top" style="background-color: #1551a7; padding-bottom: 15px; padding-top: 15px;" data-turbolinks-permanent>
-          <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">
-                
-                <%= image_tag("logo.png", :style => "width: 200px; margin-top: -20px;") %>
-                </a>
-            </div>
-        
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#" class="linksop">Inicio</a></li>
-                <li><a class="linksop" href="#">Proyección</a></li>
-                <li><a class="linksop" href="#">Forma de Operación</a></li>
-                <li><a class="linksop" href="#">Empresa</a></li>
-                <li><a class="linksop" href="#">Contacto</a></li>
-                <li><a class="linksop" href="#">Sugerencias</a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle linksop" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inicio de Sesión<span class="caret"></span></a>
-                  			<ul id="login-dp" class="dropdown-menu">
-				<li>
-					 <div class="row">
-							<div class="col-md-12">
-								Inicia Sesión Vía
-								<div class="social-buttons">
-								  <button onClick="logInFace()" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a></button>
-									<!--<a onClick="logInFace()" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>-->
-									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-								</div>
-                </br>
-								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-										<div class="form-group">
-											 <label class="sr-only" for="exampleInputEmail2">Correo Electrónico</label>
-											 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email" required>
-										</div>
-										<div class="form-group">
-											 <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
-											 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Contraseña" required>
-                                             <div class="help-block text-right"><a href="">¿Olvidaste tu Contaseña?</a></div>
-										</div>
-										<div class="form-group">
-											 <button type="submit" class="btn btn-hero btn-block">Iniciar Sesión</button>
-										</div>
-										<div class="checkbox">
-											 <label>
-											 <input type="checkbox"> Recordar Contraseña
-											 </label>
-										</div>
-								 </form>
-							</div>
-							<div class="bottom text-center">
-								¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'session/new' %> 
-							</div>
-					 </div>
-				</li>
-			</ul>
-                </li>
-              </ul>
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
 
 <div class="container" style="margin-top: 75px; padding-top: 30px; padding-bottom: 30px;">
     <div class="row">
         <div class="col-md-12">
-        <h2 class="text-center"><strong>AVISO DE PRIVACIDAD</strong></h2>
+        <h2 class="text-center" style="color: #004467;"><strong>AVISO DE PRIVACIDAD</strong></h2>
           <span style="text-align: justify;"><br>
                   
              <p>ENPRENMONEY, S.A DE C.V. Con nombre comercial FIDEI con domicilio en GUADALAJARA, JALISCO, México,  a la que en lo sucesivo se le denominará “la responsable”, emite el siguiente aviso de privacidad, en el que se establece que serán las únicas encargadas y responsables de los datos personales que se incorporaron a la plataforma ELECTRONICA propiedad de la RESPONSABLE, datos que se resguardaran dentro de sus archivos digitales y electronicos por lo que se garantiza en terminos de ley  el manejo y uso que se le dé a los mismos por parte de la RESPONSABLE.</p>
@@ -107,9 +36,19 @@
                                           </span>
                                           <input type="email" class="form-control" id="email" placeholder="Correo" required="required" /></div>
                                   </div>
-                                  <div class="form-group">
-                                      <label for="subject">Telefono</label>
-                                      <input type="text" class="form-control" id="name" placeholder="Telefono" required="required" />
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <div class="form-group">
+                                              <label for="subject">Telefono Fíjo</label>
+                                              <input type="text" class="form-control" id="name" placeholder="Telefono" required="required" />
+                                          </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <div class="form-group">
+                                              <label for="subject">Telefono Móvil</label>
+                                              <input type="text" class="form-control" id="name" placeholder="Telefono" required="required" />
+                                          </div>
+                                      </div>
                                   </div>
                               </div>
                               <div class="col-md-6">
@@ -130,7 +69,6 @@
                       <legend><span class="glyphicon glyphicon-globe"></span> Oficinas</legend>
                       <address>
                           <strong>ENPRENMONEY, S.A DE C.V.</strong><br>
-                          Kabah #1475, Colonia Jardines del Sol<br>
                           Zapopan, Jalisco<br>
                           <abbr title="Teléfono">
                               Tel:</abbr>

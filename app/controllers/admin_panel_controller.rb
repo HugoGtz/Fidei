@@ -1,14 +1,14 @@
-class UserProfileController < ApplicationController
+class AdminPanelController < ApplicationController
     def index
         render 'principal'
     end
     
-    def ajustes
-        render 'ajustes'
-    end
-    
     def validacion
         render 'validacion'
+    end     
+    
+    def reportes
+        render 'reportes'
     end
     
     def ayuda

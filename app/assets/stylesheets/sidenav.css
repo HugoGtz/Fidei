@@ -1,0 +1,221 @@
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+  background-color: white;
+}
+
+.FotoUsuario img {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+  background-color: white;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+    
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-right: 8px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+#wrapper {
+  padding-left: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+#sidebar-wrapper {
+  margin-left: -250px;
+  padding-top: 60px;
+  top: 51px;
+  left: 250px;
+  width: 250px;
+  background-color: #2c3e50;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+}
+
+#wrapper.active {
+  padding-left: 0;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 0;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  padding-top: 70px;
+  transition: all 0.4s ease 0s;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu-toggle {
+    text-decoration: none;
+    float: left;
+    color: #fff;
+    padding-right: 15px;
+}
+
+@media (max-width:767px) {
+
+#wrapper {
+  padding-left: 0;
+}
+
+#sidebar-wrapper {
+  left: 0;
+}
+
+#wrapper.active {
+  position: relative;
+  left: 250px;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 250px;
+  width: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+#menu-toggle {
+  display: inline-block;
+}
+
+}
+
+.inver{
+  padding: 10px;
+  border: solid;
+  border-width: 1px;
+  border-color: gray;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #fbfcfc;
+}
+
+.tituloinver{
+  background-color: #2c3e50;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-left: solid;
+  border-right: solid;
+  border-top: solid;
+  border-width: 1px;
+  border-color: gray;
+  border-radius: 5px;
+}
+
+.plan{
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px
+}
+
+.plan:hover{
+  background-color: #a4e5ff;
+  border-radius: 5px;
+}
+
+.panel-default > .panel-heading {
+    background-color:#2c3e50;
+    color: white;
+}
+
+.panel-heading {
+    cursor: pointer;
+}
+
+.table{
+  text-align: center;
+}
+
+th{
+  text-align: center;
+}
+
+.headertr{
+  background-color: #2c3e50;
+}

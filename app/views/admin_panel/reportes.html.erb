@@ -1,0 +1,555 @@
+<div id="page-content-wrapper">
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row" style="margin-top: 20px;">
+                    
+                    <h1 class="text-center" style="color: #004467;"><strong>REPORTES</strong></h1>
+                    
+                       <div class="panel-group" id="accordion">
+                          <div class="panel panel-default">
+                            <div class="panel-heading" data-target="#collapse1" data-toggle="collapse"  data-parent="#accordion">
+                              <h4 class="panel-title"><i class="glyphicon glyphicon-chevron-right"></i></i> Usuarios Registrados por Mes</h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <div class="col-md-offset-2">
+                                <div class="col-md-10">
+                                    <div class="contenido">
+                                        <h3 class="text-center" style="color: #004467;"><strong>TOTAL PERSONAS REGISTRADAS</strong></h3>
+                                        <canvas id="myChart" width="800" height="470"></canvas>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contenido">
+                                        <h4 class="text-center">PERSONAS REGISTRADAS PLAN 1</h4>
+                                        <canvas id="myChart2" width="800" height="470"></canvas>
+                                    </div>
+                                </div>
+                                 <div class="col-md-6">
+                                    <div class="contenido">
+                                        <h4 class="text-center">PERSONAS REGISTRADAS PLAN 2</h4>
+                                        <canvas id="myChart3" width="800" height="470"></canvas>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contenido">
+                                        <h4 class="text-center">PERSONAS REGISTRADAS PLAN 3</h4>
+                                        <canvas id="myChart4" width="800" height="470"></canvas>
+                                    </div>
+                                </div>
+                                 <div class="col-md-6">
+                                    <div class="contenido">
+                                        <h4 class="text-center">PERSONAS REGISTRADAS PLAN 4</h4>
+                                        <canvas id="myChart5" width="800" height="470"></canvas></p>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="panel panel-default">
+                            <div class="panel-heading" data-target="#collapse3" data-toggle="collapse"  data-parent="#accordion">
+                              <h4 class="panel-title"><i class="glyphicon glyphicon-chevron-right"></i> Usuarios Registrados por Semana</h4>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <div class="col-md-offset-2">
+                                <div class="col-md-10">
+                                    <div class="contenido">
+                                        <h3 class="text-center" style="color: #004467;"><strong>TOTAL PERSONAS REGISTRADAS</strong></h3>
+                                        <canvas id="myChart6" width="800" height="470"></canvas>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contenido">
+                                        <h4 class="text-center">PERSONAS REGISTRADAS PLAN 1</h4>
+                                        <canvas id="myChart7" width="800" height="470"></canvas>
+                                    </div>
+                                </div>
+                                 <div class="col-md-6">
+                                    <div class="contenido">
+                                        <h4 class="text-center">PERSONAS REGISTRADAS PLAN 2</h4>
+                                        <canvas id="myChart8" width="800" height="470"></canvas>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contenido">
+                                        <h4 class="text-center">PERSONAS REGISTRADAS PLAN 3</h4>
+                                        <canvas id="myChart9" width="800" height="470"></canvas>
+                                    </div>
+                                </div>
+                                 <div class="col-md-6">
+                                    <div class="contenido">
+                                        <h4 class="text-center">PERSONAS REGISTRADAS PLAN 4</h4>
+                                        <canvas id="myChart10" width="800" height="470"></canvas></p>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                     
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var ctx = document.getElementById('myChart');
+    var myChart2 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+            datasets: [{
+                label: 'Personas',
+                data: [5, 3, 4, 7, 0, 0, 0, 0, 0, 0, 0, 0],
+                backgroundColor: [
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    
+    var ctx = document.getElementById('myChart2');
+    var myChart2 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+            datasets: [{
+                label: 'Personas',
+                data: [1, 5, 4, 8, 0, 0, 0, 0, 0, 0, 0, 0],
+                backgroundColor: [
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    
+     var ctx = document.getElementById('myChart3');
+    var myChart3 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+            datasets: [{
+                label: 'Personas',
+                data: [5, 3, 4, 7, 0, 0, 0, 0, 0, 0, 0, 0],
+                backgroundColor: [
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    
+    var ctx = document.getElementById('myChart4');
+    var myChart4 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+            datasets: [{
+                label: 'Personas',
+                data: [1, 5, 4, 8, 0, 0, 0, 0, 0, 0, 0, 0],
+                backgroundColor: [
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    
+     var ctx = document.getElementById('myChart5');
+    var myChart5 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+            datasets: [{
+                label: 'Personas',
+                data: [5, 3, 4, 7, 0, 0, 0, 0, 0, 0, 0, 0],
+                backgroundColor: [
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    
+    //COMIENZA POR SEMANA
+    
+    var ctx = document.getElementById('myChart6');
+    var myChart6 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
+            datasets: [{
+                label: 'Personas',
+                data: [9, 4, 4, 7, 8, 3, 10],
+                backgroundColor: [
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)',
+                    'rgba(127, 0, 0, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                    'rgba(127, 0, 0, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    
+    var ctx = document.getElementById('myChart7');
+    var myChart7 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
+            datasets: [{
+                label: 'Personas',
+                data: [9, 4, 4, 7, 8, 3, 10],
+                backgroundColor: [
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)',
+                    'rgba(0, 0, 127, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)',
+                    'rgba(0, 0, 127, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    
+    
+
+    
+     var ctx = document.getElementById('myChart8');
+    var myChart8 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
+            datasets: [{
+                label: 'Personas',
+                data: [5, 3, 4, 7, 0, 0, 0],
+                backgroundColor: [
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)',
+                    'rgba(127, 124, 0, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)',
+                    'rgba(127, 124, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    
+    var ctx = document.getElementById('myChart9');
+    var myChart9 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
+            datasets: [{
+                label: 'Personas',
+                data: [1, 5, 4, 8, 0, 0, 0],
+                backgroundColor: [
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)',
+                    'rgba(39, 174, 96, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)',
+                    'rgba(39, 174, 96, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    
+     var ctx = document.getElementById('myChart10');
+    var myChart10 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
+            datasets: [{
+                label: 'Personas',
+                data: [5, 3, 4, 7, 0, 0, 0],
+                backgroundColor: [
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)',
+                    'rgba(211, 84, 0, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)',
+                    'rgba(211, 84, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    
+</script>
