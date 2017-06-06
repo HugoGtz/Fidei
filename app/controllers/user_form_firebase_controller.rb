@@ -9,9 +9,9 @@ class UserFormFirebaseController < ApplicationController
     @user.firebase_form = true
     @user.save
     if(current_user.superadmin_role === true)
-      render :js => "window.location = '/'"
+      render :js => "window.location = '/admin_panel'"
     else
-      render :js => "window.location = '/'"
+      render :js => "window.location = '/user_profile/index'"
     end
   end
 end
