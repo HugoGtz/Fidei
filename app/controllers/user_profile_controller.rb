@@ -2,7 +2,9 @@ class UserProfileController < ApplicationController
     before_action :user, only: [:index,:ajustes,:validacion,:ayuda]
     
     def user
+        if current_user
          @id = current_user.id
+        end
     end
     
     def index

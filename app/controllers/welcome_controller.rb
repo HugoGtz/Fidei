@@ -1,7 +1,9 @@
 class WelcomeController < ApplicationController
   before_action :user, only: [:index,:terminos,:privacidad]
   def user
+        if current_user
         @id = current_user.id
+        end
   end
   def index
     
