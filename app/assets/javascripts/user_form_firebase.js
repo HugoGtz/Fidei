@@ -1,4 +1,4 @@
-$(document).ready(function(){
+document.addEventListener("turbolinks:load", function() {
   $(".next-form").on("click", function(){
       var op = $(this).attr("alt");
       switch (op) {
