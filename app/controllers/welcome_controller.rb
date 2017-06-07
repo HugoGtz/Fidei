@@ -1,4 +1,8 @@
 class WelcomeController < ApplicationController
+  before_action :user, only: [:index,:terminos,:privacidad]
+  def user
+        @id = current_user.id
+  end
   def index
     
   end
