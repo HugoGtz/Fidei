@@ -3,13 +3,17 @@ document.addEventListener("turbolinks:load", function() {
 })
 
 var firebase_data_user = function firebase_data_user(){
-	var user = $("#id_user_to_data").val();
-	var commentsRef = firebase.database().ref('users/' + user);
+	
+	firebase.auth().onAuthStateChanged(function(user) {
+		if (user) {
+			
+	var commentsRef = firebase.database().ref('users/' + user.uid);
 	commentsRef.on('value', function(data) {
 		showdata(data.val());
 		
 	});
-	
+		}
+	});
 	
 }
 var showdata = function(data){

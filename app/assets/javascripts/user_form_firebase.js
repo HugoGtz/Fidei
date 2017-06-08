@@ -120,31 +120,16 @@ var dataUser = function dataUser() {
     
 }
 
-var writeUserData = function writeUserData(
-        id,
-        nombre,
-        apellidoP,
-        apellidoM,
-        CURP,
-        RFC,
-        Fecha,
-        Ide,
-        Identificacion,
-        Estado,
-        Ciudad,
-        Calle,
-        Colonia,
-        CP,
-        TF,
-        TM,
-        CB,
-        B1,
-        B2,
-        Plan
 
+
+var writeUserData = function writeUserData(
+    id, nombre, apellidoP, apellidoM, CURP, RFC, Fecha, Ide, Identificacion, Estado, Ciudad, Calle, Colonia, CP, TF, TM, CB, B1, B2, Plan
 ) {
     
-  var adaRef = firebase.database().ref('users/' + id);
+  
+  firebase.auth().onAuthStateChanged(function(user) {
+
+  var adaRef = firebase.database().ref('users/' + user.uid);
   adaRef.set({
     nombre: nombre,
     apellidoP: apellidoP,
@@ -154,6 +139,7 @@ var writeUserData = function writeUserData(
     Fecha: Fecha,
     Ide: Ide,
     Identificacion: Identificacion,
+    Estado: Estado,
     Ciudad: Ciudad,
     Colonia: Colonia,
     Calle: Calle,
@@ -173,7 +159,9 @@ var writeUserData = function writeUserData(
   .catch(function(error) {
     return false;
   });
+  });
 }
+
 
 
 
