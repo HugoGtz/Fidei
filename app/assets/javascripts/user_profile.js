@@ -1,7 +1,6 @@
-$(function(){
-    $('#changetabbutton').click(function(e){
-        e.preventDefault();
-        $('#mytabs a[href="#second"]').tab('show');
-    })
-
+document.addEventListener("turbolinks:load", function() {
+    $(".qwert").on('click', function(){
+       $(".qwert").removeClass('active');
+       $(this).addClass("active");
+    });
 });
