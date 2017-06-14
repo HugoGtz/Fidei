@@ -22,4 +22,8 @@ class UserProfileController < ApplicationController
     def ayuda
         render 'ayuda'
     end
+    
+    def ficha 
+        render  'ficha'
+    end
 end
