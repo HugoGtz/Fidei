@@ -268,10 +268,10 @@
                   </select>
                 </div> -->
                 <div class="checkbox">
-                  <label><input id="AP" name="t1" type="checkbox" value="true"><%= link_to 'Acepto el Aviso de Privacidad', '../welcome/privacidad' %></label>
+                  <label><input id="AP" name="t1" type="checkbox" value="true"><%= link_to 'Acepto el Aviso de Privacidad', '../welcome/privacidad', :target => "_blank" %></label>
                 </div>
                 <div class="checkbox">
-                  <label><input id="CT" name="c1" type="checkbox" value="true"><%= link_to 'He Leído y acepto el contrato y los términos legales', '../welcome/privacidad' %></label>
+                  <label><input id="CT" name="c1" type="checkbox" value="true"><%= link_to 'He Leído y acepto el contrato y los términos legales', '../welcome/privacidad', :target => "_blank" %></label>
                 </div>
 
                 <button onClick="dataUser()" class="btn btn-hero btn-block" type="submit">Registrarse </button>

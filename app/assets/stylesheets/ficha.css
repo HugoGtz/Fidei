@@ -1,0 +1,32 @@
+.contenedorFicha{
+    background-color: white;
+    padding: 20px;
+    border: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 5px;
+}
+
+.fichita{
+    border: solid;
+    border-width: 3px;
+    border-color: #fcf7f7;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.textoFicha{
+    display: block;
+    text-align: right;
+}
+
+.fichitados{
+    border: solid;
+    border-width: 3px;
+    border-color: #2c3e50;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+}
