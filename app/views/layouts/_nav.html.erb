@@ -38,16 +38,16 @@
                   			<ul id="login-dp" class="dropdown-menu">
                   			  <% if user_signed_in? %>
                   			  <div class="Top text-center">
-                  			    <li>
+                  			    <li class="btn" style="padding: 30px;">
                   			     <% if current_user.superadmin_role? %>
-                  			     <%= link_to "Mi Panel", admin_panel_index_path, :class => "logStyle" %>
+                  			     <%= link_to "Mi Panel", admin_panel_index_path, :class => "logStyle", :style => "padding: 10px;" %>
                   			     <% else %>
-                  			     <%= link_to "Mi Panel", user_profile_index_path, :class => "logStyle" %>
+                  			     <%= link_to "Mi Panel", user_profile_index_path, :class => "logStyle", :style => "padding: 10px;" %>
                   			     <% end %>
                   			    </li>
                   			    <br></br>
                   			    <li>
-                  			    <%= link_to 'Cerrar Sesion', destroy_user_session_path, :method => :delete, :class => "logStyle" %>
+                  			    <%= link_to 'Cerrar Sesion', destroy_user_session_path, :method => :delete, :class => "logStyle", :style => "padding: 10px;" %>
                   			    </li>
                           <% else %>
                           <li>
