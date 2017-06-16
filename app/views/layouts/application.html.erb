@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Fidei</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- FontAwesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
@@ -55,9 +56,11 @@
 <%= render 'layouts/nav.html.erb' %>
 <% end %>
 
-<% if(controller.controller_name == "users") %>
+
+<% if((controller.controller_name == "users")) %>
 <%= render 'layouts/nav.html.erb' %>
 <% end %>
+
 
 	<div class="main-container">
 		<%= yield %>
