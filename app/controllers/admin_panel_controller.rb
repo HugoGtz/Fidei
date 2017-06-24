@@ -4,7 +4,8 @@ class AdminPanelController < ApplicationController
     end
     
     def validacion
-        render 'validacion'
+        @payments = Payment.where.not(:avatar_file_name => nil)
+        
     end     
     
     def reportes

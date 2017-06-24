@@ -10,14 +10,18 @@
                 <%= f.email_field :email, autofocus: true, :id =>"email",:class => "form-control", :style => "margin-bottom: 5px;" %>
                 <!--<input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required>-->
                     <%= f.password_field :password, autocomplete: "off", :id => "password", :class => "form-control" %>
-               
+                <% if devise_mapping.rememberable? -%>
+                  <div class="field">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :recuerdame %>
+                  </div>
+                <% end -%>
                 <%= link_to "¿Olvidaste la contraseña?", new_password_path(resource_name), :class => "forgot-password" %><br />
                 <button class="btn btn-hero btn-block" type="submit">Iniciar Sesión</button>
             <% end %>
             <div class="bottom text-center">
-				¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'sign_up' %> 
-				
-			</div>
+				      ¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'sign_up' %> 
+			      </div>
             
         </div><!-- /card-container -->
     </div>
