@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dzf0ivij8
+  api_key: '516877288583357'
+  api_secret: qe_CRzeKJeOKxF3-40ZJ_B_OCM8
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dzf0ivij8
+  api_key: '516877288583357'
+  api_secret: qe_CRzeKJeOKxF3-40ZJ_B_OCM8
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dzf0ivij8
+  api_key: '516877288583357'
+  api_secret: qe_CRzeKJeOKxF3-40ZJ_B_OCM8
+  enhance_image_tag: true
+  static_image_support: false
