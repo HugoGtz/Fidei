@@ -38,7 +38,11 @@
       
                       <div class="inver">
                       <div> <!-- Sin Inversión -->
-                        <p style="text-align: center;"> <button class="btn btn-hero" style="margin-top: 33px; margin-bottom: 33px;" role="button">Generar Ficha</button></p>
+                        <p style="text-align: center;"> 
+                        <%= link_to "Generar Ficha", user_profile_gFicha_path(:data => {:tipo_paquetes => "2", :costo => "20000"}), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px " %>
+                        </p>
+                        
+
                       </div>
                     <div hidden> <!-- Tabla -->
                         <label>Personas: 20/30</label>
@@ -97,5 +101,3 @@
         </div>
     </div>
 </div>
-
-
