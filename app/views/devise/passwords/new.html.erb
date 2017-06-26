@@ -14,3 +14,32 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    //form id
+    $('#new_user')
+    .bind('ajax:success', function(evt, data, status, xhr) {
+      var promise = new Promise(
+      function (resolve, reject) {
+          email = $('#user_email').val();
+          alert
+           var auth = firebase.auth();
+    auth.sendPasswordResetEmail(email).then(function() {
+        success_reset();
+    }, function(error) {
+      // An error happened.
+    });
+      });
+
+      promise.then(
+          function (error) { location.reload(); }
+      );
+    })
+
+    .bind("ajax:error", function(evt, xhr, status, error) {
+      //function called on status: 401 or 500 (for ex.)
+      console.log(xhr.responseText);
+    });
+  });
+</script>

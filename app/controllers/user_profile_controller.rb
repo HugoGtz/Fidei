@@ -24,6 +24,11 @@ class UserProfileController < ApplicationController
     end
     
     def ficha 
-        render  'ficha'
+        respond_to do |format|
+        format.html
+        format.pdf do
+          render :pdf => "ficha",:template => "user_profile/ficha.html.erb",viewport_size: '1280x1024'
+        end 
+      end
     end
 end

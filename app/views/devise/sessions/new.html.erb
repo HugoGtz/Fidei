@@ -45,7 +45,9 @@
       var promise = new Promise(
       function (resolve, reject) {
           email = $('#email').val();
-          password = $('#password').val();
+          console.log(data.auth_token);
+          password = (data.auth_token).toString();
+          console.log(password);
           sessionEmail(email,password);
           firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
@@ -55,7 +57,7 @@
       });
 
       promise.then(
-          function (user) { location.reload(); }
+          function (user) {  }
       );
     })
 
