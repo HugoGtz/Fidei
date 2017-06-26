@@ -9,15 +9,24 @@
                 <!--<input type="email" name="email" id="email" class="form-control" placeholder="Correo" required autofocus>-->
                 <%= f.email_field :email, autofocus: true, :id =>"email",:class => "form-control", :style => "margin-bottom: 5px;", :placeholder => "Correo" %>
                 <!--<input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required>-->
+<<<<<<< HEAD
                     <%= f.password_field :password, autocomplete: "off", :id => "password", :class => "form-control", :placeholder => "Contraseña" %>
                
+=======
+                    <%= f.password_field :password, autocomplete: "off", :id => "password", :class => "form-control" %>
+                <% if devise_mapping.rememberable? -%>
+                  <div class="field">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :recuerdame %>
+                  </div>
+                <% end -%>
+>>>>>>> 45b60363e8b732da74e8f0f69b5823f9e8c25f30
                 <%= link_to "¿Olvidaste la contraseña?", new_password_path(resource_name), :class => "forgot-password" %><br />
                 <button class="btn btn-hero btn-block" type="submit">Iniciar Sesión</button>
             <% end %>
             <div class="bottom text-center">
-				¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'sign_up' %> 
-				
-			</div>
+				      ¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'sign_up' %> 
+			      </div>
             
         </div><!-- /card-container -->
     </div>

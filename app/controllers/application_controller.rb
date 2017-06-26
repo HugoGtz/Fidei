@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
       if(current_user.firebase_form === false)
         user_form_firebase_user_form_path
       else
-        if(current_user.superadmin_role === true)
+        if(current_user.supervisor_role === true)
           admin_panel_index_path
         else
           user_profile_index_path

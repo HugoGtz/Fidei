@@ -16,7 +16,7 @@ class UserProfileController < ApplicationController
     end
     
     def validacion
-        render 'validacion'
+        @payments = Payment.where(:user_id => current_user.id)
     end
     
     def ayuda
@@ -26,4 +26,25 @@ class UserProfileController < ApplicationController
     def ficha 
         render  'ficha'
     end
+    
+    def updatePayment
+        
+    end
+    def update
+        @id = params[:payment][:id]
+        @payment = Payment.find(@id)
+        respond_to do |format|
+            if @payment.update(payment_params)
+                format.html { redirect_to user_profile_validacion_path, notice: 'Recibo enviado satisfactoriamente.' }
+            else
+               
+            end
+        end
+    end
+    
+    private
+        def payment_params
+            params.require(:payment).permit(:avatar)
+        end
+        
 end
