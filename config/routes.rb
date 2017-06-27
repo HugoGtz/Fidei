@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get 'admin_panel/validacion'
   get 'admin_panel/reportes'
   get 'admin_panel/ayuda'
+  get 'admin_panel/validar'
 
   resources :user_profile
   resources :user_settings
