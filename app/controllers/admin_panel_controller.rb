@@ -15,4 +15,8 @@ class AdminPanelController < ApplicationController
     def ayuda
         render 'ayuda'
     end
+    
+    def validar
+        
+    end
 end
