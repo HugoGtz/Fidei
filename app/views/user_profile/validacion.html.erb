@@ -26,20 +26,20 @@
                                   <td>
                                     <%= form_for p, url: user_profile_update_path, html: { multipart: true } do |form| %>
                                     <% if p.avatar_file_name != nil %>
-                                        <button type="button" class="" data-ref="<%= p.avatar.url %>" data-toggle="modal" data-target="#myModal">
+                                        <button type="button" class="btn btn-default" data-ref="<%= p.avatar.url %>" data-toggle="modal" data-target="#myModal">
                                           Recibo
                                         </button>
                                       <% else %>
                                         
-                                          <%= form.file_field :avatar %>
+                                          <%= form.file_field :avatar, :class => "btn btn-default" %>
                                           <%= form.hidden_field :id, :value => p.id %>
                                     <% end %>  
                                   </td>
                                   <td>
                                       <% if p.avatar_file_name != nil %>
-                                        Validando pago
+                                        Enviado
                                       <% else %>
-                                        <%= form.submit 'Subir' %>
+                                        <%= form.submit 'Subir', :class => "btn btn-default" %>
                                       <% end %>
                                     <% end %>
                                   </td>

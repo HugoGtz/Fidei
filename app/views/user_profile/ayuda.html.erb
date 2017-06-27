@@ -7,17 +7,20 @@
                           <div class="row">
                               <div class="col-md-6">
                                   <div class="form-group">
-                                     <label for="">Asunto</label>
+                                     <label for="">Asunto*</label>
                                      <select class="form-control" id="AyudaAsunto">
+                                       <option hidden>Seleccionar Asunto</option>
                                        <option>Tengo problemas con mi cuenta</option>
-                                       <option>Tengo dudas</option>
-                                       <option>Tengo más dudas</option>
+                                       <option>No puedo cambiar mi información</option>
                                        <option>Quiero retirarme</option>
+                                       <option>No he recibido mi pago</option>
+                                       <option>No pude Realizar el Pago</option>
+                                       
                                      </select>
                                    </div>
                                   <div class="form-group">
                                       <label for="email">
-                                          Correo Electrónico</label>
+                                          Correo Electrónico*</label>
                                       <div class="input-group">
                                           <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
                                           </span>
@@ -27,7 +30,7 @@
                                   <div class="row">
                                       <div class="col-md-6">
                                           <div class="form-group">
-                                              <label for="subject">Telefono Fíjo</label>
+                                              <label for="subject">Telefono Fíjo*</label>
                                               <input type="text" class="form-control" id="TF_u" placeholder="Telefono" required="required" />
                                           </div>
                                       </div>
@@ -41,7 +44,7 @@
                               </div>
                               <div class="col-md-6">
                                   <div class="form-group">
-                                      <label for="name">Mensaje</label>
+                                      <label for="name">Describe tu situación*</label>
                                       <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required" placeholder=""></textarea>
                                   </div>
                               </div>
