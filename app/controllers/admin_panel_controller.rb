@@ -4,7 +4,7 @@ class AdminPanelController < ApplicationController
     end
     
     def validacion
-        @payments = Payment.where.not(:avatar_file_name => nil)
+        @payments = Payment.where.not(:avatar_file_name => nil, :status => true)
         
     end     
     
@@ -22,11 +22,9 @@ class AdminPanelController < ApplicationController
         payment = Payment.find(id)
             if payment.update(status: true)
                  if posicionar(id,tipo)
-                     render plain: "Ok"
+                     redirect_to admin_panel_validacion_path
                  else
-                     
                      render  inline: tipo
-                     
                  end
                  
             else
@@ -51,28 +49,63 @@ class AdminPanelController < ApplicationController
         
         case tipo
         when "1"
-            posicion = Arbol1.create(user_id: current_user.id)
+            posant = Arbol1.last
+            
+            if posant == nil
+                ant = 1
+            else
+                ant = posant.posicion
+            ant += 1
+            end
+            posicion = Arbol1.create(user_id: current_user.id, posicion: ant)
             if posicion.save
                 return true
             end
         
+    
+        
         
         when "2"
-            posicion = Arbol2.create(user_id: current_user.id)
+            posant = Arbol2.last
+            
+            if posant== nil
+                ant = 1
+            else
+                ant = posant.posicion
+                ant += 1
+            end
+            posicion = Arbol2.create(user_id: current_user.id, posicion: ant)
             if posicion.save
                 return true
             end
         
         
          when "3"
-            posicion = Arbol3.create(user_id: current_user.id)
+             posant = Arbol3.last
+            
+            if posant == nil
+                ant = 1
+            else
+                    ant = posant.posicion
+                    ant += 1
+                
+            end
+            posicion = Arbol3.create(user_id: current_user.id, posicion: ant)
             if posicion.save
                 return true
             end
         
         
          when "4"
-            posicion = Arbol4.create(user_id: current_user.id)
+             posant = Arbol4.last
+            
+            if posant == nil
+                ant = 1
+            else
+                ant = posant.posicion
+            ant += 1
+            end
+            posicion = Arbol4.create(user_id: current_user.id, posicion: ant)
             if posicion.save
                 return true
             end
@@ -80,6 +113,9 @@ class AdminPanelController < ApplicationController
             return false
         end
     end
+    
+    
+    
 
     
 end
