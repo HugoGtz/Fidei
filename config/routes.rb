@@ -19,14 +19,17 @@ Rails.application.routes.draw do
   get 'user_profile/index'
   get 'user_profile/ajustes'
   get 'user_profile/validacion'
+  get 'user_profile/update'
   get 'user_profile/ayuda'
   get 'user_profile/ficha'
+  get 'user_profile/gFicha'
   
   # routes admin_panel
   get 'admin_panel/index', path: 'admin_panel'
   get 'admin_panel/validacion'
   get 'admin_panel/reportes'
   get 'admin_panel/ayuda'
+  get 'admin_panel/validar'
 
   resources :user_profile
   resources :user_settings

@@ -66,7 +66,7 @@ var dataUser = function dataUser() {
     var CB = $("#CB").val();
     var B1 = $("#B1").val();
     var B2 = $("#B2").val();
-    var Plan = $("#Plan").val();
+    // var Plan = $("#Plan").val();
     
   
         if ($('input:checkbox[name=t1]:checked').val() == "true") {
@@ -102,8 +102,7 @@ var dataUser = function dataUser() {
         TM,
         CB,
         B1,
-        B2,
-        Plan
+        B2
             );
                swal(
               'Buen Trabajo!',
@@ -123,7 +122,7 @@ var dataUser = function dataUser() {
 
 
 var writeUserData = function writeUserData(
-    id, nombre, apellidoP, apellidoM, CURP, RFC, Fecha, Ide, Identificacion, Estado, Ciudad, Calle, Colonia, CP, TF, TM, CB, B1, B2, Plan
+    id, nombre, apellidoP, apellidoM, CURP, RFC, Fecha, Ide, Identificacion, Estado, Ciudad, Calle, Colonia, CP, TF, TM, CB, B1, B2
 ) {
     
   
@@ -149,7 +148,6 @@ var writeUserData = function writeUserData(
     CB: CB,
     B1: B1,
     B2: B2,
-    Plan: Plan,
   }).then(function() {
     $.ajax({
       type: "GET",

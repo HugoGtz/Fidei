@@ -1,4 +1,4 @@
- <div class="container" style="margin-top: 75px;">
+ <div class="container res" style="margin-top: 75px;">
                       <h1 class="text-center" style="color: #004467;"><strong>¿NECESITAS AYUDA?</strong></h1>
                       <h2 class="text-center" style="color: #004467;">CONTÁCTANOS</h2></br>
               <div class="row">
@@ -7,22 +7,30 @@
                           <div class="row">
                               <div class="col-md-6">
                                   <div class="form-group">
-                                      <label for="name">
-                                          Nombre</label>
-                                      <input type="text" class="form-control"  placeholder="Nombre Completo" required="required" value="MARTÍN EDUARDO VILLASEÑOR MERINO" id="nombres_ua" disabled/>
-                                  </div>
+                                     <label for="">Asunto*</label>
+                                     <select class="form-control" id="AyudaAsunto">
+                                       <option hidden>Seleccionar Asunto</option>
+                                       <option>Tengo problemas con mi cuenta</option>
+                                       <option>No puedo cambiar mi información</option>
+                                       <option>Quiero retirarme</option>
+                                       <option>No he recibido mi pago</option>
+                                       <option>No pude Realizar el Pago</option>
+                                       
+                                     </select>
+                                   </div>
                                   <div class="form-group">
                                       <label for="email">
-                                          Correo Electrónico</label>
+                                          Correo Electrónico*</label>
                                       <div class="input-group">
                                           <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
                                           </span>
                                           <input type="email" class="form-control" id="email_u" placeholder="Correo" required="required" value="martin@cocosource.com" disabled/></div>
                                   </div>
+                                  
                                   <div class="row">
                                       <div class="col-md-6">
                                           <div class="form-group">
-                                              <label for="subject">Telefono Fíjo</label>
+                                              <label for="subject">Telefono Fíjo*</label>
                                               <input type="text" class="form-control" id="TF_u" placeholder="Telefono" required="required" />
                                           </div>
                                       </div>
@@ -36,7 +44,7 @@
                               </div>
                               <div class="col-md-6">
                                   <div class="form-group">
-                                      <label for="name">Mensaje</label>
+                                      <label for="name">Describe tu situación*</label>
                                       <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required" placeholder=""></textarea>
                                   </div>
                               </div>

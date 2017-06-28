@@ -7,17 +7,22 @@
                 <h3 class="text-center">INICIA SESIÓN</h3>
                 <span id="reauth-email" class="reauth-email"></span>
                 <!--<input type="email" name="email" id="email" class="form-control" placeholder="Correo" required autofocus>-->
-                <%= f.email_field :email, autofocus: true, :id =>"email",:class => "form-control", :style => "margin-bottom: 5px;" %>
+                <%= f.email_field :email, autofocus: true, :id =>"email",:class => "form-control", :style => "margin-bottom: 5px;", :placeholder => "Correo" %>
                 <!--<input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required>-->
-                    <%= f.password_field :password, autocomplete: "off", :id => "password", :class => "form-control" %>
+                <%= f.password_field :password, autocomplete: "off", :id => "password", :class => "form-control", :placeholder => "Contraseña" %>
                
+                <% if devise_mapping.rememberable? -%>
+                  <div class="field">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :recuerdame %>
+                  </div>
+                <% end -%>
                 <%= link_to "¿Olvidaste la contraseña?", new_password_path(resource_name), :class => "forgot-password" %><br />
                 <button class="btn btn-hero btn-block" type="submit">Iniciar Sesión</button>
             <% end %>
             <div class="bottom text-center">
-				¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'sign_up' %> 
-				
-			</div>
+				      ¿Eres Nuevo? <%= link_to 'Registrate ahora.', 'sign_up' %> 
+			      </div>
             
         </div><!-- /card-container -->
     </div>
@@ -53,7 +58,7 @@
 
     <footer class="footer" style="margin-top: 75px;">
         	<div class="container text-center">
-        		<span style="color: white;">FIDEI 2016.  Marca registrada | <%= link_to 'Aviso de Privacidad', '../welcome/privacidad' %>| <%= link_to 'Términos y Condiciones del Servicio', '../welcome/terminos' %> | Todos los derechos reservados.</span>
+        		<span style="color: white;">FIDEI 2016.  Marca registrada | <%= link_to 'Aviso de Privacidad', '../welcome/privacidad' %> | <%= link_to 'Términos y Condiciones del Servicio', '../welcome/terminos' %> | Todos los derechos reservados.</span>
           	</div>
         </footer>
 
