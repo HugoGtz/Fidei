@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623011106) do
+ActiveRecord::Schema.define(version: 20170627195836) do
+
+  create_table "arbol1s", force: :cascade do |t|
+    t.integer "user_id",  limit: 3, default: 0
+    t.integer "posicion"
+  end
+
+  create_table "arbol2s", force: :cascade do |t|
+    t.integer "user_id",  limit: 3, default: 0
+    t.integer "posicion"
+  end
+
+  create_table "arbol3s", force: :cascade do |t|
+    t.integer "user_id",  limit: 3, default: 0
+    t.integer "posicion"
+  end
+
+  create_table "arbol4s", force: :cascade do |t|
+    t.integer "user_id",  limit: 3, default: 0
+    t.integer "posicion"
+  end
 
   create_table "payments", force: :cascade do |t|
     t.string   "user_id"

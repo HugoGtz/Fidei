@@ -39,7 +39,7 @@
                                             </button>
                                         </td>
                                         <td>
-                                            <button class="btn btn-default">Validar pago</button>
+                                            <%= link_to "Validar Pago.", admin_panel_validar_path(:payment_id => p.id, :tipo_paquete => p.tipo_paquete), data: { confirm: 'Estas seguro de validar este pago? Revisalo muy bien!' } ,:class => "btn btn-default", :style => "margin-bottom: 33px, margin-top: 33px " %>
                                         </td>
                                     </tr>
                               <% end %>
