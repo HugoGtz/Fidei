@@ -22,7 +22,7 @@
                         
                       
                       <% end %>
-                        <% if @p2<3 %> 
+                        <% if @p1<3 %> 
                        <p style="text-align: center;"> 
                         
                         <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "1", :costo => "6000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px " %>
@@ -72,7 +72,7 @@
                       </div>
                       <div class="inver">
                       <div> <!-- Sin Inversión -->
-                      <% @p2.times do %>
+                      <% @p3.times do %>
                       
                       <label>Personas: 12/30</label> 
                        <div class="progress">
@@ -83,7 +83,7 @@
                         
                       
                       <% end %>
-                        <% if @p2<3 %> 
+                        <% if @p3<3 %> 
                        <p style="text-align: center;"> 
                         
                         <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "3", :costo => "50000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px " %>
@@ -103,7 +103,7 @@
                       <div class="inver">
                       
                       <div> <!-- Sin Inversión -->
-                      <% @p2.times do %>
+                      <% @p4.times do %>
                       
                       <label>Personas: 12/30</label> 
                        <div class="progress">
@@ -114,7 +114,7 @@
                         
                       
                       <% end %>
-                        <% if @p2<3 %> 
+                        <% if @p4<3 %> 
                        <p style="text-align: center;"> 
                         
                         <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "4", :costo => "100000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px " %>
