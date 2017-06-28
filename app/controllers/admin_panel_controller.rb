@@ -52,7 +52,7 @@ class AdminPanelController < ApplicationController
             posant = Arbol1.last
             
             if posant == nil
-                ant = 1
+                ant = 0
             else
                 ant = posant.posicion
             ant += 1
@@ -69,7 +69,7 @@ class AdminPanelController < ApplicationController
             posant = Arbol2.last
             
             if posant== nil
-                ant = 1
+                ant = 0
             else
                 ant = posant.posicion
                 ant += 1
@@ -84,7 +84,7 @@ class AdminPanelController < ApplicationController
              posant = Arbol3.last
             
             if posant == nil
-                ant = 1
+                ant = 0
             else
                     ant = posant.posicion
                     ant += 1
@@ -100,7 +100,7 @@ class AdminPanelController < ApplicationController
              posant = Arbol4.last
             
             if posant == nil
-                ant = 1
+                ant = 0
             else
                 ant = posant.posicion
             ant += 1
