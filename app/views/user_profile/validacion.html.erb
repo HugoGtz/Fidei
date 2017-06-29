@@ -14,8 +14,16 @@
                                 <th>Archivo</th>
                                 <th>Validar</th>
                               </tr>
+                              
                               <% @payments.each do |p| %>
-                                <tr class="warning">
+                                <tr class="
+                                <% if p.status == false %>
+                                    warning
+                                    <% else %>
+                                    success
+                                    <% end %>
+                                    
+                                    ">
                                   <td>Plan <%= p.tipo_paquete %></td>
                                   <td><%= p.created_at %></td>
                                   <td>
@@ -84,6 +92,9 @@
                                 <td><input type="button" class="btn btn-default" value="Imagen"></td>
                               </tr> -->
                             </table>
+                            <% if @payments.size == 0 %>
+                            <h1 class="text-center">Aun no tienes ningun plan activado</h1>
+                            <% end %>
                         </div>
                     </div>
                   </div>
