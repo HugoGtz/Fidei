@@ -6,7 +6,7 @@
                     <div class="col-md-offset-1">
                         <div class="col-md-11">
                             <h1 class="text-center" style="color: #004467;"><strong>VALIDACIÓN</strong></h1>
-                            <table class="table table-hover table-striped">
+                            <table class="table table-hover table-striped" data-no-turbolink="true">
                               <tr style="background-color: #2c3e50; color: white;">
                                 <th>Plan</th>
                                 <th>Fecha de Inscripción</th>
@@ -14,7 +14,6 @@
                                 <th>Archivo</th>
                                 <th>Validar</th>
                               </tr>
-                              
                               <% @payments.each do |p| %>
                                 <tr class="
                                 <% if p.status == false %>
@@ -49,7 +48,7 @@
                                       <% if p.avatar_file_name != nil %>
                                         Enviado
                                       <% else %>
-                                        <%= form.submit 'Subir', :class => "btn btn-default" %>
+                                        <%= form.submit 'Subir', :class => "submit-btn btn btn-default" %>
                                       <% end %>
                                     <% end %>
                                   </td>
@@ -133,4 +132,6 @@
     var body = document.querySelector(".modal-body");
     body.innerHTML = `<img class="img-responsive" src="${recipient}">`
   })
+  $('document').on 'click', '.submit-btn', ->
+    $('form').submit()
 </script>

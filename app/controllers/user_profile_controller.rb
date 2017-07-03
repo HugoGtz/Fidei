@@ -5,9 +5,9 @@ class UserProfileController < ApplicationController
 
     def index
         @p1 = Payment.where(:user_id => current_user.id, :tipo_paquete => "1", :status => true )
-        positions1 = Array.new
         @fcount1 = Array.new
         @p1.each do |p|
+            positions1 = Array.new
             user = Arbol1.find_by(:payment_id => p.id, :user_id => p.user_id)
             start =  user.posicion
             @count1 = 0;
@@ -42,9 +42,9 @@ class UserProfileController < ApplicationController
         end
         
         @p2 = Payment.where(:user_id => current_user.id, :tipo_paquete => "2", :status => true )
-        positions2 = Array.new
         @fcount2 = Array.new
         @p2.each do |p|
+            positions2 = Array.new
             user = Arbol2.find_by(:payment_id => p.id, :user_id => p.user_id)
             start =  user.posicion
             @count2 = 0;
@@ -79,9 +79,9 @@ class UserProfileController < ApplicationController
         end
         
         @p3 = Payment.where(:user_id => current_user.id, :tipo_paquete => "3", :status => true )
-        positions3 = Array.new
         @fcount3 = Array.new
         @p3.each do |p|
+            positions3 = Array.new
             user = Arbol3.find_by(:payment_id => p.id, :user_id => p.user_id)
             start =  user.posicion
             @count3 = 0;
@@ -116,9 +116,9 @@ class UserProfileController < ApplicationController
         end
         
         @p4 = Payment.where(:user_id => current_user.id, :tipo_paquete => "4", :status => true )
-         positions3 = Array.new
         @fcount4 = Array.new
         @p4.each do |p|
+            positions4 = Array.new
             user = Arbol3.find_by(:payment_id => p.id, :user_id => p.user_id)
             start =  user.posicion
             @count4 = 0;
