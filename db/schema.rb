@@ -14,8 +14,9 @@
 ActiveRecord::Schema.define(version: 20170627195836) do
 
   create_table "arbol1s", force: :cascade do |t|
-    t.integer "user_id",  limit: 3, default: 0
+    t.integer "user_id",    limit: 3, default: 0
     t.integer "posicion"
+    t.integer "payment_id"
   end
 
   create_table "arbol2s", force: :cascade do |t|
