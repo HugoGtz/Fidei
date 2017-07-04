@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170627195836) do
+ActiveRecord::Schema.define(version: 20170704213856) do
 
   create_table "arbol1s", force: :cascade do |t|
     t.integer "user_id",    limit: 3, default: 0
@@ -42,12 +42,14 @@ ActiveRecord::Schema.define(version: 20170627195836) do
     t.integer  "tipo_paquete"
     t.integer  "costo"
     t.boolean  "status"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.boolean  "ready",               default: false
+    t.boolean  "canceled",            default: false
   end
 
   create_table "users", force: :cascade do |t|
