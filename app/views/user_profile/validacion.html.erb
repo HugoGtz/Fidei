@@ -132,6 +132,13 @@
     var body = document.querySelector(".modal-body");
     body.innerHTML = `<img class="img-responsive" src="${recipient}">`
   })
-  $('document').on 'click', '.submit-btn', ->
-    $('form').submit()
+  document.addEventListener('turbolinks:load',function(){
+    $('.submit-btn').on('click',function(){
+      $('form').submit()
+    });
+  });
+    
+
+  
+ 
 </script>
