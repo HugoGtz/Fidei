@@ -52,12 +52,12 @@ class AdminPanelController < ApplicationController
             posant = Arbol1.last
             
             if posant == nil
-                ant = 0
+                ant = 1
             else
                 ant = posant.posicion
             ant += 1
             end
-            posicion = Arbol1.create(user_id: current_user.id, posicion: ant)
+            posicion = Arbol1.create(user_id: current_user.id, posicion: ant, payment_id: id)
             if posicion.save
                 return true
             end
@@ -69,12 +69,12 @@ class AdminPanelController < ApplicationController
             posant = Arbol2.last
             
             if posant== nil
-                ant = 0
+                ant = 1
             else
                 ant = posant.posicion
                 ant += 1
             end
-            posicion = Arbol2.create(user_id: current_user.id, posicion: ant)
+            posicion = Arbol2.create(user_id: current_user.id, posicion: ant, payment_id: id)
             if posicion.save
                 return true
             end
@@ -84,13 +84,13 @@ class AdminPanelController < ApplicationController
              posant = Arbol3.last
             
             if posant == nil
-                ant = 0
+                ant = 1
             else
                     ant = posant.posicion
                     ant += 1
                 
             end
-            posicion = Arbol3.create(user_id: current_user.id, posicion: ant)
+            posicion = Arbol3.create(user_id: current_user.id, posicion: ant, payment_id: id)
             if posicion.save
                 return true
             end
@@ -100,12 +100,12 @@ class AdminPanelController < ApplicationController
              posant = Arbol4.last
             
             if posant == nil
-                ant = 0
+                ant = 1
             else
                 ant = posant.posicion
             ant += 1
             end
-            posicion = Arbol4.create(user_id: current_user.id, posicion: ant)
+            posicion = Arbol4.create(user_id: current_user.id, posicion: ant, payment_id: id)
             if posicion.save
                 return true
             end
