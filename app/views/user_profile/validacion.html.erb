@@ -92,7 +92,9 @@
                               </tr> -->
                             </table>
                             <% if @payments.size == 0 %>
-                            <h1 class="text-center">Aun no tienes ningun plan activado</h1>
+                            <h2 class="text-center">Aun no tienes ningun plan activado</h2>
+                            <center><%= link_to "Invertir", user_profile_index_path, :class => "btn btn-primary btn-lg"%></center>
+                            
                             <% end %>
                         </div>
                     </div>
