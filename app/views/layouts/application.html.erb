@@ -25,27 +25,15 @@
 		firebase.initializeApp(config);
 	</script>
 
-	<!--<% unless flash.empty? %>-->
-	<!--<script type="text/javascript">-->
-	<!--	<% flash.each do |f| %>-->
-	<!--	<% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>-->
-	<!--	toastr['<%= type %>']('<%= f[1] %>');-->
-	<!--	<% end %>-->
-	<!--</script>-->
-	<!--<% end %>-->
+	<% unless flash.empty? %>
+	<script type="text/javascript">
+		<% flash.each do |f| %>
+		<% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+		toastr['<%= type %>']('<%= f[1] %>');
+		<% end %>
+	</script>
+	<% end %>
 	
-	<!--<% if !flash.empty?%>-->
-	<!-- 	<script>-->
-	<!-- 		document.addEventListener("turbolinks:load", function() {-->
-	<!-- 	<% flash.each do |f| %>-->
-	<!-- 	<% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>-->
-	<!-- 			swal("<%= type.upcase! %>!",-->
-	<!-- 				 "<%= f[1] %>",-->
-	<!-- 				 "<%= type.downcase %>");-->
-	<!-- 		<% end %>-->
-	<!-- 		});-->
-	<!-- 	</script>-->
-	<!--<% end %>-->
 	
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
