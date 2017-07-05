@@ -1,4 +1,6 @@
 class AdminPanelController < ApplicationController
+        before_action :rol, only: [:index,:validacion,:validar,:reportes,:ayuda]
+
     def index
         render 'principal'
     end
@@ -38,10 +40,11 @@ class AdminPanelController < ApplicationController
     private
     
     def rol
-        if current_user.supervisor_role == true
+        if ((user_signed_in?)&&(current_user.supervisor_role == true))
             
         else
-            redirect_to root_path
+            @notice = true
+            redirect_to root_path, :flash => { :Error => "Aun no has inciado sesión" }
         end
     end
     

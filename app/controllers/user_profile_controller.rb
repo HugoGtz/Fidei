@@ -213,10 +213,11 @@ class UserProfileController < ApplicationController
     
     
     def user
-        if current_user
+        if ((user_signed_in?)&&(current_user))
             @id = current_user.id
         else
-            redirect_to root_path 
+            
+            redirect_to root_path, :flash => { :Error => "Aun no incias sesión!" }
         end
     end
 
