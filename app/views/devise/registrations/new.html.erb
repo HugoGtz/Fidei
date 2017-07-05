@@ -61,6 +61,11 @@
 
     .bind("ajax:error", function(evt, xhr, status, error) {
       //function called on status: 401 or 500 (for ex.)
+            swal(
+        'Error!',
+        xhr.responseText,
+        'error'
+      )
       console.log(xhr.responseText);
     });
   });

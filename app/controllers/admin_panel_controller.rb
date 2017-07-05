@@ -1,4 +1,6 @@
 class AdminPanelController < ApplicationController
+        before_action :rol, only: [:index,:validacion,:validar,:reportes,:ayuda]
+
     def index
         render 'principal'
     end
@@ -38,10 +40,11 @@ class AdminPanelController < ApplicationController
     private
     
     def rol
-        if current_user.supervisor_role == true
+        if ((user_signed_in?)&&(current_user.supervisor_role == true))
             
         else
-            redirect_to root_path
+            @notice = true
+            redirect_to root_path, :flash => { :Error => "Aun no has inciado sesión" }
         end
     end
     
@@ -52,12 +55,12 @@ class AdminPanelController < ApplicationController
             posant = Arbol1.last
             
             if posant == nil
-                ant = 0
+                ant = 1
             else
                 ant = posant.posicion
             ant += 1
             end
-            posicion = Arbol1.create(user_id: current_user.id, posicion: ant)
+            posicion = Arbol1.create(user_id: current_user.id, posicion: ant, payment_id: id)
             if posicion.save
                 return true
             end
@@ -69,12 +72,12 @@ class AdminPanelController < ApplicationController
             posant = Arbol2.last
             
             if posant== nil
-                ant = 0
+                ant = 1
             else
                 ant = posant.posicion
                 ant += 1
             end
-            posicion = Arbol2.create(user_id: current_user.id, posicion: ant)
+            posicion = Arbol2.create(user_id: current_user.id, posicion: ant, payment_id: id)
             if posicion.save
                 return true
             end
@@ -84,13 +87,13 @@ class AdminPanelController < ApplicationController
              posant = Arbol3.last
             
             if posant == nil
-                ant = 0
+                ant = 1
             else
                     ant = posant.posicion
                     ant += 1
                 
             end
-            posicion = Arbol3.create(user_id: current_user.id, posicion: ant)
+            posicion = Arbol3.create(user_id: current_user.id, posicion: ant, payment_id: id)
             if posicion.save
                 return true
             end
@@ -100,12 +103,12 @@ class AdminPanelController < ApplicationController
              posant = Arbol4.last
             
             if posant == nil
-                ant = 0
+                ant = 1
             else
                 ant = posant.posicion
             ant += 1
             end
-            posicion = Arbol4.create(user_id: current_user.id, posicion: ant)
+            posicion = Arbol4.create(user_id: current_user.id, posicion: ant, payment_id: id)
             if posicion.save
                 return true
             end

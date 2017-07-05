@@ -1,5 +1,5 @@
-<div id="page-content-wrapper">
-        <div class="page-content">
+<!--<div id="page-content-wrapper">-->
+        <!--<div class="page-content">-->
             <div class="container-fluid">
               <div class="container">
                   <div class="row" style="margin-top: 20px;">
@@ -11,18 +11,19 @@
                       </div>
                       <div class="inver">
                       <div> <!-- Sin Inversión -->
-                      <% @p1.times do %>
                       
-                      <label>Personas: 12/30</label> 
+                    
+                      <% @p1.each_with_index do |p, index| %>
+                      <label>Personas: <%= @fcount1[index] %>/30</label> 
                        <div class="progress">
-                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                          <strong style="font-weight: 900;">$ 12,000 </strong>
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <%= (@fcount1[index]*3.3) %>%">
+                          <strong style="font-weight: 900;"><%= (@fcount1[index]*3.3) %> %</strong>
                         </div>
                       </div>
                         
                       
                       <% end %>
-                        <% if @p1<3 %> 
+                        <% if @p1.count<3 %> 
                        <p style="text-align: center;"> 
                         
                         <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "1", :costo => "6000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px " %>
@@ -41,18 +42,18 @@
       
                       <div class="inver">
                       <div> <!-- Sin Inversión -->
-                      <% @p2.times do %>
+                      <% @p2.each_with_index do |p, index| %>
                       
-                      <label>Personas: 12/30</label> 
+                      <label>Personas: <%= @fcount2[index] %>/30</label> 
                        <div class="progress">
-                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                          <strong style="font-weight: 900;">$ 12,000 </strong>
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <%= (@fcount2[index]*3.333331) %>%">
+                          <strong style="font-weight: 900;"><%= (@fcount2[index]*3.333331) %></strong>
                         </div>
                       </div>
                         
                       
                       <% end %>
-                        <% if @p2<3 %> 
+                        <% if @p2.count<3 %> 
                        <p style="text-align: center;"> 
                         
                         <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "2", :costo => "20000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px " %>
@@ -72,18 +73,18 @@
                       </div>
                       <div class="inver">
                       <div> <!-- Sin Inversión -->
-                      <% @p3.times do %>
+                      <% @p3.each_with_index do |p, index| %>
                       
-                      <label>Personas: 12/30</label> 
+                      <label>Personas: <%= @fcount3[index] %>/30</label> 
                        <div class="progress">
-                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                          <strong style="font-weight: 900;">$ 12,000 </strong>
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <%= (@fcount3[index]*3.333331) %>%">
+                          <strong style="font-weight: 900;"><%= (@fcount3[index]*3.333331) %> </strong>
                         </div>
                       </div>
                         
                       
                       <% end %>
-                        <% if @p3<3 %> 
+                        <% if @p3.count<3 %> 
                        <p style="text-align: center;"> 
                         
                         <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "3", :costo => "50000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px " %>
@@ -98,23 +99,23 @@
                     
                     <div class="col-md-6 plan">
                       <div class="tituloinver">
-                      <h3 class="text-center">PLAN : $100,000 - BONO FINAL: $ 500,000</h3>
+                      <h3 class="text-center">PLAN 4: $100,000 - BONO FINAL: $ 500,000</h3>
                       </div>
                       <div class="inver">
                       
                       <div> <!-- Sin Inversión -->
-                      <% @p4.times do %>
+                      <% @p4.each_with_index do |p, index| %>
                       
-                      <label>Personas: 12/30</label> 
+                      <label>Personas: <%= @fcount4[index] %>/30</label> 
                        <div class="progress">
-                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                          <strong style="font-weight: 900;">$ 12,000 </strong>
+                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <%= (@fcount4[index]*3.3) %>%">
+                          <strong style="font-weight: 900;"><%= (@fcount4[index]*3.3) %> </strong>
                         </div>
                       </div>
                         
                       
                       <% end %>
-                        <% if @p4<3 %> 
+                        <% if @p4.count<3 %> 
                        <p style="text-align: center;"> 
                         
                         <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "4", :costo => "100000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px " %>
@@ -130,7 +131,7 @@
                  </div>
                 </div>
             </div>
-        </div>
-    </div>
+    <!--    </div>-->
+    <!--</div>-->
 </div>
 </div>

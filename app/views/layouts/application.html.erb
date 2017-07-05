@@ -33,6 +33,8 @@
 		<% end %>
 	</script>
 	<% end %>
+	
+	
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -45,12 +47,12 @@
 
 <!--Navbar de users_profile-->
 <% if(controller.controller_name == "user_profile") %>
- <%= render 'layouts/navUser.html.erb' %>
+ <%= render 'layouts/navUserDos.html.erb' %>
 <% end %>
 
 <!--Navbar de admin_panel-->
 <% if (controller.controller_name == "admin_panel") %>
-<%= render 'layouts/navAdmin.html.erb' %>
+<%= render 'layouts/navAdminDos.html.erb' %>
 <% end %>
 
 <% if((controller.controller_name == "welcome")) %>
