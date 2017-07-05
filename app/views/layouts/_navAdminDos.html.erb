@@ -1,0 +1,80 @@
+<div id="wrapper">
+    <nav class="navbar navbar-fixed-top" role="navigation">
+      <div  style="background-color: #273746; padding-bottom: 15px; padding-top: 15px;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+                <div  class="navbar-brand">
+                    <p id="menu-toggle" style="color: white;" class="glyphicon glyphicon-menu-hamburger btn-menu toggle" onclick="openNav()">
+                    </p>
+    				<a href="index"><%= image_tag("logo.png", :style => "width: 150px; margin-top: -20px;") %></a>
+                </div>
+			</div>
+		</div>
+		</div>
+	</nav>
+	
+	
+	<div id="mySidenav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  
+	  <nav id="spy">
+            <div class="profile-sidebar">
+				<div class="profile-userpic">
+					<%= image_tag("http://api.adorable.io/avatar/"+(rand(1..100)).to_s , :style => "display:block; margin:auto;") %>
+				</div>
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						<span id="nombres"></span></br>
+						<span id="apellidos"></span>
+					</div>
+					<div class="profile-usertitle-job">
+						<span id="emails"></span>
+					</div>
+				</div>
+
+				<div class="profile-userbuttons">
+					<%= link_to 'Cerrar Sesion', destroy_user_session_path, :method => :delete, :class =>  "btn btn-danger btn-sm", :onClick => "signOut()", :style => "color: white;" %>      
+				</div>
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li class="active">
+						    <%= link_to " Principal", {controller: "admin_panel", action: "index"}, class: "glyphicon glyphicon-home" %>
+							<!--<a href="#">-->
+							<!--<i class="glyphicon glyphicon-home"></i>-->
+							<!--Principal </a>-->
+						</li>
+						<li>
+						    <%= link_to " Reportes", {controller: "admin_panel", action: "reportes"}, class: "glyphicon glyphicon-stats" %>
+							<!--<a href="#">-->
+							<!--<i class="glyphicon glyphicon-user"></i>-->
+							<!--Ajustes</a>-->
+						</li>
+						<li>
+						    <%= link_to " Validacion", {controller: "admin_panel", action: "validacion"}, class: "glyphicon glyphicon-ok" %>
+							<!--<a href="#" target="_blank">-->
+							<!--<i class="glyphicon glyphicon-ok"></i>-->
+							<!--Validación </a>-->
+						</li>
+						<li>
+						    <%= link_to " Mensajes", {controller: "admin_panel", action: "ayuda"}, class: "glyphicon glyphicon-flag" %>
+							<!--<a href="#">-->
+							<!--<i class="glyphicon glyphicon-flag"></i>-->
+							<!--Ayuda </a>-->
+						</li>
+					</ul>
+				</div>
+			</div>
+        </nav>
+	</div>
+	
+<script>
+  /* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
