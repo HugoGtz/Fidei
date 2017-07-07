@@ -28,11 +28,9 @@ gem 'devise'
 # Cancancan for Roll users
 gem 'cancancan', '~> 1.10'
 # Flash messages, which notifies about successful and failed login attempts
-gem 'toastr-rails'
-
 gem 'chart-js-rails'
 
-
+gem 'sprockets-rails'
 gem 'therubyracer', platforms: :ruby
 
 

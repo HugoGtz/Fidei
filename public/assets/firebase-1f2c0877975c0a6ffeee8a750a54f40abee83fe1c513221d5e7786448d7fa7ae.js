@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#formSigUp").submit(function(){var n=$("#email").val(),r=$("#password").val();return newUser(n,r)})});
