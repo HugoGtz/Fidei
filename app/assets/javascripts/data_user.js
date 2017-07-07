@@ -1,6 +1,6 @@
 document.addEventListener("turbolinks:load", function() {
   firebase_data_user();
-})
+});
 
 var firebase_data_user = function firebase_data_user(){
 	
