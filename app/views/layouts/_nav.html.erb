@@ -38,7 +38,7 @@
                   			  <% if user_signed_in? %>
                   			  <div class="Top text-center">
                   			    <li class="btn" style="padding: 30px;">
-                  			     <% if current_user.superadmin_role? %>
+                  			     <% if current_user.supervisor_role? %>
                   			     <%= link_to "Mi Panel", admin_panel_index_path, :class => "logStyle", :style => "padding: 10px;" %>
                   			     <% else %>
                   			     <%= link_to "Mi Panel", user_profile_index_path, :class => "logStyle", :style => "padding: 10px;" %>
