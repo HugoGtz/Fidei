@@ -4,12 +4,12 @@ class UserProfileController < ApplicationController
     
 
     def index
-        @p1 = Payment.where(:user_id => current_user.id, :tipo_paquete => "1", :status => true )
+        @p1 = Payment.where(:user_id => current_user.id, :tipo_paquete => 1, :status => true )
         @fcount1 = Array.new
         @p1.each do |p|
             positions1 = Array.new
-            user = Arbol1.find_by(:payment_id => p.id, :user_id => p.user_id)
-            start =  user.posicion
+            user = Arbol1.find_by(:user_id => p.user_id, :payment_id => p.id).posicion
+            start =  user
             @count1 = 0;
             # Primer nivel debajo del inspeccionado
             positions1.push(left1 = start*2) # nivel 1 izquierdo
