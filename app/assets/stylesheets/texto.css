@@ -256,3 +256,7 @@ h5, .h5 {
     background-color: #a4e5ff;
     border-radius: 5px;
 }
+
+.linkhover:hover{
+    color: black!important;
+}
