@@ -213,7 +213,7 @@ class UserProfileController < ApplicationController
     
     
     def user
-        if ((user_signed_in?)&&(current_user))
+        if ((user_signed_in?)&&(current_user.user_role == true))
             @id = current_user.id
         else
             
