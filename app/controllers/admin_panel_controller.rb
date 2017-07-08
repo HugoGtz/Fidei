@@ -2,7 +2,13 @@ class AdminPanelController < ApplicationController
         before_action :rol, only: [:index,:validacion,:validar,:reportes,:ayuda]
 
     def index
+        @p1 = Arbol1.all
+        @p2 = Arbol2.all
+        @p3 = Arbol3.all
+        @p4 = Arbol4.all
+        
         render 'principal'
+        
     end
     
     def validacion

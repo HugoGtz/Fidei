@@ -34,7 +34,7 @@ var showdata = function(data){
 	$("#Identificacion_u").val(data.Identificacion);
 	$("#CURP_u").val(data.CURP);
 	$("#RFC_u").val(data.RFC);
-	// $("#Estado_u").val(data.Estado);
+	$("#Estado_u").val(data.Estado);
 	$("#Ciudad_u").val(data.Ciudad);
 	$("#Calle_u").val(data.Calle);
 	$("#Colonia_u").val(data.Colonia);
