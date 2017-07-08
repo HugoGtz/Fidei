@@ -44,6 +44,9 @@
                                     </tr>
                               <% end %>
                             </table>
+                            <% if @payments.size == 0 %>
+                            <center><h2>Por el momento no hay pagos para validar.</h2></center>
+                            <% end %>
                         </div>
                     </div>
                   </div>

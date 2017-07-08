@@ -125,7 +125,7 @@ var dataUser = function dataUser() {
         alert("Aun no has Aceptado terminos y condiciones o el contrato.")
         return false;
     }
-        }else{
+        else{
             swal("Algun dato no esta correcto porfavor verifique los telefonos, curp, cuenta interbancaria o RFC");
         }
     
