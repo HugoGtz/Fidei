@@ -8,8 +8,8 @@ class UserProfileController < ApplicationController
         @fcount1 = Array.new
         @p1.each do |p|
             positions1 = Array.new
-            user = Arbol1.find_by(:user_id => p.user_id, :payment_id => p.id).posicion
-            start =  user
+            user = Arbol1.find_by(:user_id => p.user_id, :payment_id => p.id)
+            start =  user.posicion
             @count1 = 0;
             # Primer nivel debajo del inspeccionado
             positions1.push(left1 = start*2) # nivel 1 izquierdo
@@ -41,7 +41,7 @@ class UserProfileController < ApplicationController
             @fcount1.push(@count1)
         end
         
-        @p2 = Payment.where(:user_id => current_user.id, :tipo_paquete => "2", :status => true )
+        @p2 = Payment.where(:user_id => current_user.id, :tipo_paquete => 2, :status => true )
         @fcount2 = Array.new
         @p2.each do |p|
             positions2 = Array.new
@@ -70,15 +70,15 @@ class UserProfileController < ApplicationController
             positions2.push(right3_4 = left3_4+1) # nivel 3 cuarto derecho
             
             positions2.each do |c|
-                posExist = Arbol1.find_by(:posicion => c)
+                posExist = Arbol2.find_by(:posicion => c)
                 if posExist
                     @count2+=1 
                 end
             end
-            @count2.push(@count2)
+            @fcount2.push(@count2)
         end
         
-        @p3 = Payment.where(:user_id => current_user.id, :tipo_paquete => "3", :status => true )
+        @p3 = Payment.where(:user_id => current_user.id, :tipo_paquete => 3, :status => true )
         @fcount3 = Array.new
         @p3.each do |p|
             positions3 = Array.new
@@ -107,7 +107,7 @@ class UserProfileController < ApplicationController
             positions3.push(right3_4 = left3_4+1) # nivel 3 cuarto derecho
             
             positions3.each do |c|
-                posExist = Arbol1.find_by(:posicion => c)
+                posExist = Arbol3.find_by(:posicion => c)
                 if posExist
                     @count3+=1 
                 end
@@ -115,11 +115,11 @@ class UserProfileController < ApplicationController
             @fcount3.push(@count3)
         end
         
-        @p4 = Payment.where(:user_id => current_user.id, :tipo_paquete => "4", :status => true )
+        @p4 = Payment.where(:user_id => current_user.id, :tipo_paquete => 4, :status => true )
         @fcount4 = Array.new
         @p4.each do |p|
             positions4 = Array.new
-            user = Arbol3.find_by(:payment_id => p.id, :user_id => p.user_id)
+            user = Arbol4.find_by(:payment_id => p.id, :user_id => p.user_id)
             start =  user.posicion
             @count4 = 0;
             # Primer nivel debajo del inspeccionado
@@ -144,7 +144,7 @@ class UserProfileController < ApplicationController
             positions4.push(right3_4 = left3_4+1) # nivel 3 cuarto derecho
             
             positions4.each do |c|
-                posExist = Arbol1.find_by(:posicion => c)
+                posExist = Arbol4.find_by(:posicion => c)
                 if posExist
                     @count4+=1 
                 end
