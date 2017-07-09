@@ -239,12 +239,12 @@ h5, .h5 {
 
 .tituloBene{
     text-align: center;
-    color: #004467;
+    color: white;
     font-weight: bold;
 }
 
 .txtBene{
-    text-align: justify;
+    text-align: center;
     
 }
 
@@ -259,4 +259,34 @@ h5, .h5 {
 
 .linkhover:hover{
     color: black!important;
+}
+
+.FondoInfo{
+    background-color: #5D6D7E;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    height: 400px;
+    
+}
+
+@media only screen and (min-width: 600px) {
+    .FondoInfo{
+    height: 450px;
+    
+}
+}
+
+@media only screen and (min-width: 768px) {
+    .FondoInfo{
+    height: 450px;
+    
+}
+}
+
+@media only screen and (min-width: 1000px) {
+    .FondoInfo{
+    height: 300px;
+    
+}
 }
