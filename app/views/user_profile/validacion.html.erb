@@ -28,8 +28,10 @@
                                   <td>
                                     <% if p.status == false  %>
                                       No validado
-                                    <% else %>
+                                    <% elsif p.status == true %>
                                       Activo
+                                    <% elsif p.rechazado == true %>
+                                      Rechazado, por favor revista tu correo electronico
                                     <% end %>
                                   </td>
                                   <td>
@@ -38,10 +40,10 @@
                                         <button type="button" class="btn btn-default" data-ref="<%= p.avatar.url %>" data-toggle="modal" data-target="#myModal">
                                           Recibo
                                         </button>
-                                      <% else %>
-                                        
+                                      <% elsif p.avatar_file_name == nil || p.rechazado == true%>
                                           <%= form.file_field :avatar, :class => "btn btn-default" %>
                                           <%= form.hidden_field :id, :value => p.id %>
+                                          <%= form.hidden_field :type, :value => true %>
                                       <% end %>  
                                   </td>
                                   <td>

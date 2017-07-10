@@ -42,7 +42,7 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.default_url_options = { :host => 'fidei-cocosource.c9users.io' }
+  config.action_mailer.default_url_options = { :host => 'productionfidei-aldompe.c9users.io' }
 
   config.action_mailer.delivery_method = :smtp
 
@@ -50,7 +50,6 @@ Rails.application.configure do
     address: "smtp.gmail.com",
     port: 587,
     domain: "gmail.com",
-    authentication: "plain",
     enable_starttls_auto: true,
     user_name: "cocosourc3@gmail.com",
     password: "elbunker.",

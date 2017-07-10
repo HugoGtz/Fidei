@@ -1,5 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
-
+  respond_to :json
   def create
     resource = User.find_for_database_authentication(email: params[:user][:email])
     return invalid_login_attempt unless resource
