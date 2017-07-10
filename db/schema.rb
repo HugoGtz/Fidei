@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170709053816) do
-=======
-ActiveRecord::Schema.define(version: 20170704213856) do
+ActiveRecord::Schema.define(version: 20170710175554) do
 
   create_table "arbol1s", force: :cascade do |t|
     t.integer "user_id",    limit: 3, default: 0
@@ -53,8 +50,9 @@ ActiveRecord::Schema.define(version: 20170704213856) do
     t.datetime "avatar_updated_at"
     t.boolean  "ready",               default: false
     t.boolean  "canceled",            default: false
+    t.string   "np"
+    t.boolean  "rechazado",           default: false
   end
->>>>>>> 4fb523d79f811a8f081b1489c930bf188cb40c44
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

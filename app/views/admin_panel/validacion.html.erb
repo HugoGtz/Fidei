@@ -40,6 +40,8 @@
                                         </td>
                                         <td>
                                             <%= link_to "Validar Pago.", admin_panel_validar_path(:payment_id => p.id, :tipo_paquete => p.tipo_paquete), data: { confirm: 'Estas seguro de validar este pago? Revisalo muy bien!' } ,:class => "btn btn-default", :style => "margin-bottom: 33px, margin-top: 33px " %>
+                                            <%= link_to "Rechazar Pago.", admin_panel_rechazar_path(:payment_id => p.id), data: { confirm: 'Estas seguro de rechazar este pago? Revisalo muy bien!' } ,:class => "btn btn-default", :style => "margin-bottom: 33px, margin-top: 33px " %>
+
                                         </td>
                                     </tr>
                               <% end %>

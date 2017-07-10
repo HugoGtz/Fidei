@@ -19,8 +19,7 @@
 	
 <div class="container" style="margin-top: 75px;">
     <div class="row">
-        <div class="col-md-offset-3">
-            <div class="col-md-8">
+        <div class="col-md-12">
                 <div class="FichaPago">
                    <h3>Ficha de Pago</h3>
                    <div class="contenedorFicha">
@@ -29,52 +28,37 @@
                        <div class="row" style="margin-bottom: 25px;">
                            <strong><h4>DATOS DE PAGO</h4></strong>
                            <div class="col-sm-12">
-                               <label>Beneficiario: </label> ENPRENMONEY S.A. DE C.V.</br>
-                               <label>Cuenta: </label> 7010 5047515</br>
+                               <label>BENEFICIARIO: </label> ENPRENMONEY S.A. DE C.V.</br>
+                               <label>CUENTA:  </label> 7010 5047515</br>
                                <label>CLABE: </label> 002320701050475154 </br>
                            </div>
                        </div>
                        
                        <div class="row">
-                           <div class="col-sm-6 fichita">
-                               <h4 class="text-center">FIDEI</h4>
-                           </div>
-                           <div class="col-sm-6 fichita">
-                               <h4 class="text-center">Numero de Pago: 000001</h4>
+                           <div class="col-sm-12 fichita">
+                               <h4 class="text-center">NUMERO DE REFERENCIA: <%= @np %></h4>
                            </div>
                        </div>
                        <div style="margin-bottom: 25px; margin-top: 25px;">
                        <div class="row">
-                        <div class="col-sm-6">
-                            <label>Nombre Cliente:</label>
-                        </div>
-                        <div class="col-sm-6">
-                            <label class="textoFicha2" id="nombres"></label>
+                        <div class="col-sm-12">
+                            <label>NOMBRE CLIENTE: </label><label class="textoFicha2" id="nombres"></label>
                         </div>
                        </div>
                        <div class="row">
-                           <div class="col-sm-6">
-                            <label>Plan:</label>  
-                        </div>
-                        <div class="col-sm-6">
-                            <label class="textoFicha2">4 </label>
+                           <div class="col-sm-12">
+                            <label>PLAN: </label>  <label class="textoFicha2"><%= @tipo %> </label>
                         </div>
                        </div>
                        <div class="row">
-                           <div class="col-sm-6">
-                            <label>Fecha de Generación de Ficha:</label>  
-                        </div>
-                        <div class="col-sm-6">
-                            <label class="textoFicha2">13/06/2017  </label>
+                           <div class="col-sm-12">
+                            <label>FECHA DE GENERACION DE FICHA: </label> <label class="textoFicha2"><%= Date.today %>  </label>
                         </div>
                        </div>
                        </div>
                        <div class="row fichitados">
-                        <div class="col-sm-6">
-                            <label style="font-size: 16px;" class="textoFicha">TOTAL A PAGAR:</label>
-                        </div>
-                        <div class="col-sm-6">
-                            <label style="font-size: 16px;" class="textoFicha2">$ 100,000</label>
+                        <div class="col-sm-12">
+                            <label style="font-size: 16px;">TOTAL A</label> <label>PAGAR:</label> <label style="font-size: 16px;" class="textoFicha2">$ <%= @costo %></label>
                         </div>
                        </div>
                        </br>
@@ -83,19 +67,19 @@
                        <center>
                            <%= wicked_pdf_image_tag("Banamex_Logo.png", :style => "width: 200px; margin: 10px;") %>
                        </center>
-                       
+                       <br>
+                       <label>*Impoortante: Antes de realizar tu deposito o transferencia, verifica que el concepto o giro del deposito sea el Numero de referencia que te otorgamos, cada referencia es única para cada pago.</label>
                        
                    </div>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 
 <script>
     document.addEventListener('turbolinks:load',function(){
         firebase_data_user();
-    }
+    });
     
     var firebase_data_user = function firebase_data_user(){
 	
@@ -110,5 +94,8 @@
 		}
 	});
 	
+}
+var showdata = function(data){
+	$("#nombres").html(data.nombre+" ");
 }
 </script>

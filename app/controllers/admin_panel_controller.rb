@@ -41,6 +41,18 @@ class AdminPanelController < ApplicationController
        
     end
     
+    def rechazar
+        id = params[:payment_id]
+        payment = Payment.find(id)
+            if payment.update(rechazado: true)
+
+                     redirect_to admin_panel_validacion_path
+                 
+            else
+                    redirect_to 
+            end
+    end
+    
     
     
     private

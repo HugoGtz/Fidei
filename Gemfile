@@ -42,7 +42,9 @@ gem 'paperclip-cloudinary'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+ # Gem to create pdf payment
+  gem 'wicked_pdf'
+  gem 'wkhtmltopdf-binary'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -56,8 +58,6 @@ group :development do
   gem 'spring'
   
   
-  # Gem to create pdf payment
-  gem 'wicked_pdf'
-  gem 'wkhtmltopdf-binary'
+ 
 end
 

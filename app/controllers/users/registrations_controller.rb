@@ -4,7 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     user = User.new((user_params).merge(pass_firebase: params[:user][:password]))
     if user.save
       sign_in(user)
-      return render :json=> {:success=>true, :auth_token=> pass}
+      return render :json=> {:success=>true}
     else
       set_flash_message(:alert, :invalid)
       render :json=> user.errors, :status=>422

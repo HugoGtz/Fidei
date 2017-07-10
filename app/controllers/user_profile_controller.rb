@@ -170,6 +170,10 @@ class UserProfileController < ApplicationController
     end
 
     def ficha 
+        @id = current_user.id
+        @tipo = params[:tipo_paquete]
+        @costo = params[:costo]
+        @np = params[:np]
         respond_to do |format|
         format.html
         format.pdf do
@@ -182,21 +186,18 @@ class UserProfileController < ApplicationController
 
             tipo_paquete = params[:tipo_paquete]
             costo = params[:costo]
-            @planes = Payment.where(user_id: current_user.id, tipo_paquete: tipo_paquete )
-            if (@planes.size < 3)
-                @payment = Payment.create(user_id: current_user.id,tipo_paquete: tipo_paquete, costo: costo, status: "f")
+            planes = Payment.where(user_id: current_user.id, tipo_paquete: tipo_paquete )
+            np = "P0"+tipo_paquete.to_s+"0"+gdata
+            if (planes.size < 3) 
+                @payment = Payment.create(tipo_paquete: tipo_paquete, costo: costo, status: "f", np: np)
                 if @payment.save
-
-                    redirect_to user_profile_validacion_path        
+                   redirect_to user_profile_ficha_path(tipo_paquete: tipo_paquete, costo: costo, np: np, :format => "pdf")
+                else
+                    redirect_to user_profile_index_path
                 end
-            else
-                redirect_to user_profile_index_path
-            end
-    end 
-
-    def updatePayment
-
+             end
     end
+
     def update
         @id = params[:payment][:id]
         @payment = Payment.find(@id)
@@ -208,6 +209,7 @@ class UserProfileController < ApplicationController
             end
         end
     end
+    
 
     private
 
@@ -225,6 +227,11 @@ class UserProfileController < ApplicationController
             redirect_to root_path, :flash => { :Error => "Aun no incias sesión!" }
         end
     end
-
-
+    private
+    def gdata
+        require 'securerandom'
+        u = SecureRandom.hex(5)
+        return u
+    end
 end 
+
