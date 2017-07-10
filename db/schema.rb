@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20170710175554) do
 
-
   create_table "arbol1s", force: :cascade do |t|
     t.integer "user_id",    limit: 3, default: 0
     t.integer "posicion"
@@ -76,14 +75,11 @@ ActiveRecord::Schema.define(version: 20170710175554) do
     t.boolean  "supervisor_role",        default: false
     t.boolean  "user_role",              default: true
     t.boolean  "firebase_form",          default: false
-<<<<<<< HEAD
     t.string   "pass_firebase"
-=======
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
->>>>>>> 0a56ec02d4c543d02a6ed948044949032223ce7d
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

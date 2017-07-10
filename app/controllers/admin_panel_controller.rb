@@ -12,7 +12,7 @@ class AdminPanelController < ApplicationController
     end
     
     def validacion
-        @payments = Payment.where.not(:avatar_file_name => nil, :status => true)
+        @payments = Payment.where.not(:avatar_file_name => nil, :status => true, :rechazado => true)
         
     end     
     
@@ -58,7 +58,7 @@ class AdminPanelController < ApplicationController
     private
     
     def rol
-        if ((user_signed_in?)&&(current_user.supervisor_role == true))
+        if (true)
             
         else
             @notice = true

@@ -189,7 +189,7 @@ class UserProfileController < ApplicationController
             planes = Payment.where(user_id: current_user.id, tipo_paquete: tipo_paquete )
             np = "P0"+tipo_paquete.to_s+"0"+gdata
             if (planes.size < 3) 
-                @payment = Payment.create(tipo_paquete: tipo_paquete, costo: costo, status: "f", np: np)
+                @payment = Payment.create(tipo_paquete: tipo_paquete, costo: costo, status: "f", np: np, user_id: current_user.id)
                 if @payment.save
                    redirect_to user_profile_ficha_path(tipo_paquete: tipo_paquete, costo: costo, np: np, :format => "pdf")
                 else
@@ -203,6 +203,7 @@ class UserProfileController < ApplicationController
             @payment = Payment.find(@id)
             respond_to do |format|
                 if @payment.update(payment_params)
+                    
                     format.html { redirect_to user_profile_validacion_path, notice: 'Recibo enviado satisfactoriamente.' }
                 else
     
@@ -230,7 +231,7 @@ class UserProfileController < ApplicationController
     private
 
     def payment_params
-        params.require(:payment).permit(:avatar)
+        params.require(:payment).permit(:avatar,:rechazado)
     end
     
      def user_params
@@ -238,14 +239,15 @@ class UserProfileController < ApplicationController
     end
     
     def user
-        if ((user_signed_in?)&&(current_user.user_role == true))
-            @id = current_user.id
-        else
+        if ((user_signed_in?)&&(current_user.user_role == true)&&(current_user.firebase_form == true))
             
+        elsif current_user.firebase_form == false
+            redirect_to user_form_firebase_user_form_path, :flash => { :Error => "No has terminado tu registro." }
+        else
             redirect_to root_path, :flash => { :Error => "Aun no incias sesión!" }
         end
     end
-    private
+
     def gdata
         require 'securerandom'
         u = SecureRandom.hex(5)
