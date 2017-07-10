@@ -8,6 +8,7 @@
   <%= form_for resource, url: registration_path(resource_name), remote: true do |f| %>
                 <h3 class="text-center">Nuevo Usuario</h3>
                 <span id="reauth-email" class="reauth-email"></span>
+                <input type="hidden" name="user[pass_firebase]" id="pass_firebase"></input>
                 <!--<input type="email" name="email" id="email" class="form-control" placeholder="Correo" required autofocus>-->
                 <%= f.email_field :email, autofocus: true, :id =>"email",:class => "form-control", :placeholder => "Ingrese su Email.", :style => "margin-bottom: 5px;" %>
                 <!--<input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required>-->
@@ -40,16 +41,15 @@
 
 
 <script type="text/javascript">
-  $(document).ready(function() {
+  document.addEventListener('turbolinks:load',function(){
     //form id
+    generatePass();
     $('#new_user')
     .bind('ajax:success', function(evt, data, status, xhr) {
       var promise = new Promise(
       function (resolve, reject) {
           email = $('#email').val();
-          password = (data.auth_token).toString();
-          console.log((data.auth_token).toString());
-          console.log(password);
+          password = $("#pass_firebase").val();
           logUp(email,password);
              firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
@@ -59,7 +59,7 @@
       });
       
       promise.then(
-          function (user) {} //
+          function (user) {location.reload();} //
       );
     })
 
@@ -67,5 +67,16 @@
       //function called on status: 401 or 500 (for ex.)
       console.log(xhr.responseText);
     });
+    
+    function generatePass() {
+  var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var pass = "";
+
+  for (let i = 0; i < 8; i++) {
+    pass += chars[Math.floor(Math.random() * chars.length)];
+  }
+  console.log(pass);
+  $("#pass_firebase").val(pass);
+}
   });
 </script>

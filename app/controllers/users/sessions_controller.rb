@@ -7,7 +7,7 @@ class Users::SessionsController < Devise::SessionsController
     if resource.valid_password?(params[:user][:password])
       sign_in :user, resource
       pass = User.find_by_id(current_user.id)
-     return render :json=> {:success=>true, :auth_token=> (pass.pass_firebase).to_str}
+     return render :json=> {:success=>true, :auth_token=> (pass.pass_firebase)}
     end
 
     invalid_login_attempt

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170515193328) do
+ActiveRecord::Schema.define(version: 20170709053816) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170515193328) do
     t.boolean  "supervisor_role",        default: false
     t.boolean  "user_role",              default: true
     t.boolean  "firebase_form",          default: false
+    t.string   "pass_firebase"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
