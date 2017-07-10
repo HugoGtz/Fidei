@@ -11,7 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170709053816) do
+=======
+ActiveRecord::Schema.define(version: 20170704213856) do
+
+  create_table "arbol1s", force: :cascade do |t|
+    t.integer "user_id",    limit: 3, default: 0
+    t.integer "posicion"
+    t.integer "payment_id"
+  end
+
+  create_table "arbol2s", force: :cascade do |t|
+    t.integer "user_id",    limit: 3, default: 0
+    t.integer "posicion"
+    t.integer "payment_id"
+  end
+
+  create_table "arbol3s", force: :cascade do |t|
+    t.integer "user_id",    limit: 3, default: 0
+    t.integer "posicion"
+    t.integer "payment_id"
+  end
+
+  create_table "arbol4s", force: :cascade do |t|
+    t.integer "user_id",    limit: 3, default: 0
+    t.integer "posicion"
+    t.integer "payment_id"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.string   "user_id"
+    t.integer  "tipo_paquete"
+    t.integer  "costo"
+    t.boolean  "status"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.boolean  "ready",               default: false
+    t.boolean  "canceled",            default: false
+  end
+>>>>>>> 4fb523d79f811a8f081b1489c930bf188cb40c44
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -24,6 +67,10 @@ ActiveRecord::Schema.define(version: 20170709053816) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "superadmin_role",        default: false

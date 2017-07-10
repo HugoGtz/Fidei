@@ -1,26 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Fidei</title>
+	<title>FIDEI</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- FontAwesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	<!--CDN FIREBASE-->
-	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+	<%= favicon_link_tag 'favicon.png' %>
+
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<meta name="turbolinks-cache-control" content="no-cache">
-	<!--FIREBASE-->
-	<script>
-		var config = {
-			apiKey: "AIzaSyA6OL-zRhqlAwzwCTK_eZ1_Gb4KIPhjA2c",
-			authDomain: "fidei-df894.firebaseapp.com",
-			databaseURL: "https://fidei-df894.firebaseio.com",
-			projectId: "fidei-df894",
-			storageBucket: "fidei-df894.appspot.com",
-			messagingSenderId: "717833398004"
-		};
-		firebase.initializeApp(config);
-	</script>
 
 	<% unless flash.empty? %>
 	<script type="text/javascript">
@@ -30,33 +18,55 @@
 		<% end %>
 	</script>
 	<% end %>
+	
+	
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
-
+	
+	<!--CDN FIREBASE-->
+	
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA6OL-zRhqlAwzwCTK_eZ1_Gb4KIPhjA2c",
+    authDomain: "fidei-df894.firebaseapp.com",
+    databaseURL: "https://fidei-df894.firebaseio.com",
+    projectId: "fidei-df894",
+    storageBucket: "fidei-df894.appspot.com",
+    messagingSenderId: "717833398004"
+  };
+  firebase.initializeApp(config);
+</script>
 </head>
 <body style="background-color: #fcf7f7; position: relative;">
 
 <!--Navbar de users_profile-->
 <% if(controller.controller_name == "user_profile") %>
- <%= render 'layouts/navUser.html.erb' %>
+ <%= render 'layouts/navUserDos.html.erb' %>
 <% end %>
 
 <!--Navbar de admin_panel-->
 <% if (controller.controller_name == "admin_panel") %>
-<%= render 'layouts/navAdmin.html.erb' %>
+<%= render 'layouts/navAdminDos.html.erb' %>
 <% end %>
 
 <% if((controller.controller_name == "welcome")) %>
 <%= render 'layouts/nav.html.erb' %>
 <% end %>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4fb523d79f811a8f081b1489c930bf188cb40c44
 <% if((controller.controller_name == "users")) %>
 <%= render 'layouts/nav.html.erb' %>
 <% end %>
+
 
 	<div class="main-container">
 		<%= yield %>

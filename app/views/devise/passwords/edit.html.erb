@@ -1,25 +1,51 @@
-<h2>Change your password</h2>
+<%= render 'layouts/navProvisional.html.erb' %>
+<% @adorable = rand(1..100) %>
+<div style="margin-top: 125px; padding-bottom: 40px;">
+        <div class="card card-container">
+            <p id="profile-name" class="profile-name-card"></p>
+            <img id="profile-img" class="profile-img-card" src="http://api.adorable.io/avatar/<%= @adorable %>" />
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%= devise_error_messages! %>
+            <%= f.hidden_field :reset_password_token %>
+                <h4 class="text-center">Cambiar Contraseña</h4>
+                <div class="field">
+                <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> caracteres mínimo)</em><br />
+                <% end %>
+                <%= f.password_field :password, autofocus: true, autocomplete: "off", :placeholder => "Nueva Contraseña", :class => "form-control", :style => "margin-bottom: 10px;" %>
+              </div>
+            
+              <div class="field">
+                <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Repetir contraseña", :class => "form-control" %>
+              </div>
+                <%= f.submit "Confirmar", :class => "btn btn-hero btn-block" %>
+            <% end %>
+        </div><!-- /card-container -->
+    </div>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
+<!--<h2>Change your password</h2>-->
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+<!--<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>-->
+<!--  <%= devise_error_messages! %>-->
+<!--  <%= f.hidden_field :reset_password_token %>-->
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+<!--  <div class="field">-->
+<!--    <%= f.label :password, "New password" %><br />-->
+<!--    <% if @minimum_password_length %>-->
+<!--      <em>(<%= @minimum_password_length %> characters minimum)</em><br />-->
+<!--    <% end %>-->
+<!--    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>-->
+<!--  </div>-->
 
-<%= render "devise/shared/links" %>
+<!--  <div class="field">-->
+<!--    <%= f.label :password_confirmation, "Confirm new password" %><br />-->
+<!--    <%= f.password_field :password_confirmation, autocomplete: "off" %>-->
+<!--  </div>-->
+
+<!--  <div class="actions">-->
+<!--    <%= f.submit "Change my password" %>-->
+<!--  </div>-->
+<!--<% end %>-->
+
+<!--<%= render "devise/shared/links" %>-->

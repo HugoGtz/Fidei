@@ -11,22 +11,21 @@
               </button>
               <a class="navbar-brand" href="..">
                 
-                <%= image_tag("logo.png", :style => "width: 200px; margin-top: -20px;") %>
+                <%= image_tag("logo.png", :style => "width: 150px; margin-top: -20px;", :class => "img-responsive") %>
                 </a>
             </div>
         
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li><a class="linksop" href="../../">Inicio</a></li>
-                <!--<li><a class="linksop" href="../../#sProyeccion">Proyección</a></li>-->
+                <li><a class="linksop" href="../../#sEmpresa">Empresa</a></li>
                 <li><a class="linksop" href="../../#sOperacion">Forma de Operación</a></li>
                 <li><a class="linksop" href="../../#sInfo">Información</a></li>
                 <li><a class="linksop" href="../../#sPlan">Planes</a></li>
-                <li><a class="linksop" href="../../#sEmpresa">Empresa</a></li>
                 <li><a class="linksop" href="../../#sContacto">Contacto</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
+                
                 <li class="dropdown">
                   <a class="dropdown-toggle linksop" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <% if user_signed_in? %>
@@ -35,11 +34,11 @@
                     Inicio de Sesión
                     <% end %>
                     <span class="caret"></span></a>
-                  			<ul id="login-dp" class="dropdown-menu">
+                  			<ul id="login-dp" class="dropdown-menu" style="background-color: #2c3e50">
                   			  <% if user_signed_in? %>
                   			  <div class="Top text-center">
                   			    <li class="btn" style="padding: 30px;">
-                  			     <% if current_user.superadmin_role? %>
+                  			     <% if current_user.supervisor_role? %>
                   			     <%= link_to "Mi Panel", admin_panel_index_path, :class => "logStyle", :style => "padding: 10px;" %>
                   			     <% else %>
                   			     <%= link_to "Mi Panel", user_profile_index_path, :class => "logStyle", :style => "padding: 10px;" %>
@@ -50,54 +49,50 @@
                   			    <%= link_to 'Cerrar Sesion', destroy_user_session_path, :method => :delete, :class => "logStyle", :style => "padding: 10px;" %>
                   			    </li>
                           <% else %>
-                          <li>
                           
-                          <div class="row">
-                  					   <div class="Top text-center">
-                  					     <a href="../users/sign_in" class="logStyle">
-                  					       <h3>INICIO DE SESIÓN</h3>
-                  					     </a>
-                  							</div>
-                  							<div class="col-md-12">
-                  								
-                  								<div class="social-buttons">
-                  								  <button onClick="logInFace()" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a></button>
-                  									<!--<a onClick="logInFace()" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>-->
-                  									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-                  								</div>
-                                                  - o -</br>
-                                  </br>
+                          <li><%= link_to 'Iniciar Sesión', new_user_session_path, :class => "linkhover", :style => "padding: 10px; color: white;" %></li>
+                          <li><%= link_to 'Registrarse', new_user_registration_path, :class => "linkhover", :style => "padding: 10px; margin-bottom: 10px; color: white;" %></li>
+                        <!--  <li>-->
+                          
+                        <!--  <div class="row">-->
+                  					 <!--  <div class="Top text-center">-->
+                  					 <!--    <a href="../users/sign_in" class="logStyle">-->
+                  					 <!--     <h4><i class="glyphicon glyphicon-user"></i> INICIO DE SESIÓN</h4>-->
+                  					 <!--    </a>-->
+                  						<!--	</div>-->
+                  						<!--	<div class="col-md-12">-->
+                        <!--          </br>-->
                   								 
                   
-                  										<div class="form-group">
-                  											 <label class="sr-only" for="exampleInputEmail2">Correo Electrónico</label>
-                  											 <input type="email" class="form-control" id="email" placeholder="Email" required>
-                  										</div>
-                  										<div class="form-group">
-                  											 <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
-                  											 <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
-                                                               <div class="help-block text-right"><a href="">¿Olvidaste tu Contaseña?</a></div>
-                  										</div>
-                  										<div class="form-group">
+                  						<!--				<div class="form-group">-->
+                  						<!--					 <label class="sr-only" for="exampleInputEmail2">Correo Electrónico</label>-->
+                  						<!--					 <input type="email" class="form-control" id="email" placeholder="Email" required>-->
+                  						<!--				</div>-->
+                  						<!--				<div class="form-group">-->
+                  						<!--					 <label class="sr-only" for="exampleInputPassword2">Contraseña</label>-->
+                  						<!--					 <input type="password" class="form-control" id="password" placeholder="Contraseña" required>-->
+                        <!--                                       <div class="help-block text-right"><a href="">¿Olvidaste tu Contaseña?</a></div>-->
+                  						<!--				</div>-->
+                  						<!--				<div class="form-group">-->
                   
-                  											 <button onClick="logIn()" class="btn btn-hero btn-block">Inciar Sesion</button>
+                  						<!--					 <button onClick="logIn()" class="btn btn-hero btn-block">Inciar Sesion</button>-->
                   
                   											 
                   
-                  										</div>
-                  										<div class="checkbox">
-                  											 <label>
-                  											 <input type="checkbox"> Recordar Contraseña
-                  											 </label>
-                  										</div>
+                  						<!--				</div>-->
+                  						<!--				<div class="checkbox">-->
+                  						<!--					 <label>-->
+                  						<!--					 <input type="checkbox"> Recordar Contraseña-->
+                  						<!--					 </label>-->
+                  						<!--				</div>-->
                   								
-                  							</div>
-                  							<div class="bottom text-center">
-                  								¿Eres Nuevo? <%= link_to 'Registrate ahora.', '../users/sign_up' %>  
-                  							</div>
-                  					 </div>
+                  						<!--	</div>-->
+                  						<!--	<div class="bottom text-center">-->
+                  						<!--		¿Eres Nuevo? <%= link_to 'Registrate ahora.', '../users/sign_up' %>  -->
+                  						<!--	</div>-->
+                  					 <!--</div>-->
                           
-                          </li>
+                        <!--  </li>-->
                           <% end %>
                   			</ul>
 
@@ -115,8 +110,9 @@
                   </ul>-->
                 </li>
               </ul>
+              </div>
+              </div>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
-                  </div>
         </nav>
                   

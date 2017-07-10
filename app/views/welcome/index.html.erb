@@ -3,6 +3,7 @@
             
             
         <div class="Slider" id="sInicio">
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
           <!-- Overlay -->
           <div class="overlay"></div>
@@ -12,12 +13,26 @@
             <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
             <li data-target="#bs-carousel" data-slide-to="1"></li>
             <li data-target="#bs-carousel" data-slide-to="2"></li>
+            <li data-target="#bs-carousel" data-slide-to="3"></li>
+            <!--<li data-target="#bs-carousel" data-slide-to="4"></li>-->
           </ol>
           
           <!-- Wrapper for slides -->
-          <div class="carousel-inner">
+          <div class="carousel-inner" role="listbox">
+            
             <div class="item slides active">
               <div class="slide-1"></div>
+              <div class="hero">        
+                <hgroup>
+                    <h1>Planea tu futuro</h1>        
+                    <h3>Solo tienes que registrarte</h3>
+                </hgroup>
+                <a href="users/sign_up"><button class="btn btn-hero btn-lg" role="button">Registrate</button></a>
+              </div>
+            </div>
+            
+            <div class="item slides">
+              <div class="slide-2"></div>
               <div class="hero">
                 <hgroup>
                     <h1>Inicia ahora</h1>        
@@ -26,8 +41,9 @@
                 <a href="users/sign_up"><button class="btn btn-hero btn-lg" role="button">Registrate</button></a>
               </div>
             </div>
+            
             <div class="item slides">
-              <div class="slide-2"></div>
+              <div class="slide-4"></div>
               <div class="hero">        
                 <hgroup>
                     <h1>invierte ahora</h1>        
@@ -46,9 +62,31 @@
                 <a href="users/sign_up"><button class="btn btn-hero btn-lg" role="button">Registrate</button></a>
               </div>
             </div>
+            
+            <!--<div class="item slides">-->
+            <!--  <div class="slide-5"></div>-->
+            <!--  <div class="hero">        -->
+            <!--    <hgroup>-->
+            <!--        <h1>Slider Extra 2</h1>        -->
+            <!--        <h3>Trabajando en equipo todo es posible </h3>-->
+            <!--    </hgroup>-->
+            <!--    <a href="users/sign_up"><button class="btn btn-hero btn-lg" role="button">Registrate</button></a>-->
+            <!--  </div>-->
+            <!--</div>-->
+            
           </div> 
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
         </div>
-        </div> 
+        </div>
+        </div>
+
       <!--
         <section style="background-color: #2c3e50; padding-top: 75px; padding-bottom: 75px;" id="sProyeccion">
           <div class="container">
@@ -82,6 +120,39 @@
         </section>
         -->
 
+         <section style="padding-top: 75px; padding-bottom: 75px; background-color: white;" id="sEmpresa">
+          <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              
+              <h1 class="text-center" style="color: #004467;"><strong>FIDEI</strong></h1></br>
+              <h4 class="text-center">Somos una empresa 100% Mexicana que nace a raíz de la problemática financiera que actualmente vivimos.</h4></br> <p class="empresatext">Es una empresa con el objetivo ofrecer alternativas financiaras para las personas y empresas, donde nuestros clientes puedan construir e incrementar su patrimonio a través de un plan de inversión por medio de redes de mercadeo que les permita obtener un gran rendimiento por medio del apalancamiento mutuo de un grupo de personas con un mismo fin en común, logrando su objetivo en poco tiempo, con menos esfuerzo, sin investigación en Buró de crédito, sin descapitalizarse, sin pagar intereses, sin sacrificar su flujo de efectivo. </p>
+            </div>
+            <div class="container">
+            <div class="row">
+
+            <div class="col-md-4">
+              <%= image_tag("mision.png", :style => "width: 50px; margin: auto; display: block;", :class => "img-responsive") %>
+              <h3 class="text-center" style="color: #004467;"><strong>MISIÓN</strong></h3>
+              <p style=" text-align: justify;">Hacer realidad los sueños de nuestros clientes Lo logramos con: propuestas y soluciones claras, asesoría personalizada y beneficios tangibles</p>
+              </div>
+            <div class="col-md-4">
+              <%= image_tag("vision.png", :style => "width: 50px; margin: auto; display: block;", :class => "img-responsive") %>
+              <h3 class="text-center" style="color: #004467;"><strong>VISIÓN</strong></h3>
+              <p style=" text-align: justify;">Ser el sistema de autofinanciamiento personal líder a nivel mundial</p>
+            </div>
+            <div class="col-md-4">
+              <%= image_tag("valores.png", :style => "width: 50px; margin: auto; display: block;", :class => "img-responsive") %>
+              <h3 class="text-center" style="color: #004467;"><strong>VALORES</strong></h3>
+              <p><li style=" text-align: justify;">Honestidad, transparencia e integridad en procesos.</li> <li style=" text-align: justify;">Calidez y respeto en el desempeño del personal.<br></li> <li style=" text-align: justify;">Empatía y dignidad con los clientes.<br></li> <li style=" text-align: justify;">Compromiso, trabajo en equipo y comunicación efectiva.<br></li> <li style=" text-align: justify;">Motivación constante y confianza mutua</li>
+              </p>
+            </div>
+            </div>
+            </div>
+            
+          </div>
+        </div>
+        </section>
         
         <section style="padding-top: 75px; padding-bottom: 75px;" id="sOperacion">
             <div class="container">
@@ -96,7 +167,7 @@
 
                 </div>
                 <div class="col-md-6 piramide">
-                   <%= image_tag("home/piramide.png", :style => "width: 400px; display:block; margin:auto; filter: invert(100%); -webkit-filter: invert(100%);") %>
+                   <%= image_tag("home/piramide.png", :style => "width: 400px; display:block; margin:auto;;", :class => "img-responsive") %>
                   </div>
                   <div class="col-md-6">
                     </br>
@@ -107,151 +178,246 @@
                       <p class="empresatext"><li>NIVEL 3: CONSTA DE 4 POSICIONES</li></p>
                       <p class="empresatext"><li>NIVEL 4: CONSTA DE 8 POSICIONES</li></p>
                       <p class="empresatext"><li>NIVEL 5: CONSTA DE 16 POSICIONES</li></p></br>
-                      <p class="empresatext"><strong>*Al completar esta serie de casillas será beneficiario del monto final.</strong></p>
                     </ul>
+                    <p class="empresatext"><strong>*Al completar esta serie de casillas será beneficiario del monto final.</strong></p>
                   </div>
                 </div>
             </div>
         </section>
+
         
         
         <section style="background-color: white; padding-top: 75px; padding-bottom: 75px;" id="sInfo">
           <div class="container">
             <div class="row">
+              
                   <h1 class="text-center" style=" color: #004467;"><strong>DISEÑADO PARA TÍ</strong></h1>
                   <h5 class="text-center">Fidei.com se creó precisamente para satisfacer la necesidad básica del mercado para que los usuarios puedan incrementar su patrimonio y capitalizarse en el menor tiempo posible.</h5></br></br>
                   <h2 class="text-center" style=" color: #004467;"><strong>BENEFICIOS EXCLUSIVOS</strong></h2></br>
-                  <div class="col-md-4 col-xs-6">
-                    <%= image_tag("home/coins.png", :style => "width: 50px;display:block; margin:auto;") %>
-                    <h4 class="tituloBene">INCREMENTE SU CAPITAL</h4>
-                    <p class="txtBene">Multiplique el valor del plan que ha elegido a un 500%.</p>
                   </div>
-                  <div class="col-md-4 col-xs-6">
-                    <%= image_tag("home/checkHome.png", :style => "width: 50px;display:block; margin:auto;") %>
-                    <h4 class="tituloBene">SIN ACTIVIDADES TEDIOSAS</h4>
-                    <p class="txtBene">Aquí su dinero se multiplicara sin que tenga usted que realizar actividades tediosas.</p>
-                  </div>
-                  <div class="col-md-4 col-xs-6">
-                    <%= image_tag("home/home.png", :style => "width: 50px; display:block; margin:auto;") %>
-                    <h4 class="tituloBene">SEGUIMIENTO EN TIEMPO REAL</h4>
-                    <p class="txtBene">Tiene una parte administrativa completa a su disposición para realizar el seguimiento de todo 24 horas al día, 7 días de la semana.</p>
-                  </div>
-                  <div class="col-md-4 col-xs-6">
-                    <%= image_tag("home/mobile.png", :style => "width: 50px;display:block; margin:auto;") %>
-                    <h4 class="tituloBene">SIMPLE Y FÁCIL DE UTILIZAR</h4>
-                    <p class="txtBene">Todo se ha diseñado para facilitar su gestión, incluyendo el acceso a nuestra plataforma a través del ordenador, tableta o teléfono móvil.</p>
-                  </div>
-                  <div class="col-md-4 col-xs-6">
-                    <%= image_tag("home/persons.png", :style => "width: 50px;display:block; margin:auto;") %>
-                    <h4 class="tituloBene">RED BINARIA</h4>
-                    <p class="txtBene">Acelere sus resultados utilizando el poder de la red binaria.</p>
-                  </div>
-                  <div class="col-md-4 col-xs-6">
-                    <%= image_tag("home/global.png", :style => "width: 50px;display:block; margin:auto;") %>
-                    <h4 class="tituloBene">PRESENCIA GLOBAL</h4>
-                    <p class="txtBene">Nuestros potentes servidores operan nuestros sistemas sofisticados en una plataforma global.</p>
-                  </div>
-                  
-
-            </div>
           </div>
+                  <div class="FondoInfo">
+                    <div class="container">
+                      <div class="row">
+                        <button class="left btn btn-primary btn-lg" style="" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                    <button class="right btn btn-primary btn-lg" style="float: right;" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></button>
+                  <div class="carousel slide" id="theCarousel">
+                    <div class="carousel-inner">
+                      <div class="item active">
+                        <div class="col-md-offset-3">
+                        <div class="col-md-4">
+                          <%= image_tag("home/coins.png", :style => "width: 50px;display:block; margin:auto;") %>
+                          <h4 class="tituloBene">INCREMENTE SU CAPITAL</h4>
+                          <p class="txtBene">Multiplique el valor del plan que ha elegido a un 500%.</p>
+                        </div>
+                        <div class="col-md-4">
+                           <%= image_tag("home/checkHome.png", :style => "width: 50px;display:block; margin:auto;") %>
+                          <h4 class="tituloBene">SIN ACTIVIDADES TEDIOSAS</h4>
+                          <p class="txtBene">Aquí su dinero se multiplicara sin que tenga usted que realizar actividades tediosas.</p>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="col-md-offset-3">
+                        <div class="col-md-4">
+                          <%= image_tag("home/home.png", :style => "width: 50px; display:block; margin:auto;") %>
+                          <h4 class="tituloBene">SEGUIMIENTO EN TIEMPO REAL</h4>
+                          <p class="txtBene">Tiene una parte administrativa completa a su disposición para realizar el seguimiento de todo 24 horas al día, 7 días de la semana.</p>
+                        </div>
+                        <div class="col-md-4">
+                          <%= image_tag("home/mobile.png", :style => "width: 50px;display:block; margin:auto;") %>
+                          <h4 class="tituloBene">SIMPLE Y FÁCIL DE UTILIZAR</h4>
+                          <p class="txtBene">Todo se ha diseñado para facilitar su gestión, incluyendo el acceso a nuestra plataforma a través del ordenador, tableta o teléfono móvil.</p>
+                        </div>
+                        </div>
+                      </div>
+                      
+                      <div class="item">
+                        <div class="col-md-offset-3">
+                        <div class="col-md-4">
+                          <%= image_tag("home/persons.png", :style => "width: 50px;display:block; margin:auto;") %>
+                          <h4 class="tituloBene">RED BINARIA</h4>
+                          <p class="txtBene">Acelere sus resultados utilizando el poder de la red binaria.</p>
+                        </div>
+                        <div class="col-md-4">
+                          <%= image_tag("home/global.png", :style => "width: 50px;display:block; margin:auto;") %>
+                          <h4 class="tituloBene">PRESENCIA GLOBAL</h4>
+                          <p class="txtBene">Nuestros potentes servidores operan nuestros sistemas sofisticados en una plataforma global.</p>
+                        </div>
+                        </div>
+                      </div>
+                      
+                      
+          
+                      
+                      <!--  Example item end -->
+                    </div>
+                    
+                    
+                  </div> 
+                  </div>
+                  <!--<div class="col-md-4 col-xs-6">-->
+                  <!--  <%= image_tag("home/coins.png", :style => "width: 50px;display:block; margin:auto;") %>-->
+                  <!--  <h4 class="tituloBene">INCREMENTE SU CAPITAL</h4>-->
+                  <!--  <p class="txtBene">Multiplique el valor del plan que ha elegido a un 500%.</p>-->
+                  <!--</div>-->
+                  <!--<div class="col-md-4 col-xs-6">-->
+                  <!--  <%= image_tag("home/checkHome.png", :style => "width: 50px;display:block; margin:auto;") %>-->
+                  <!--  <h4 class="tituloBene">SIN ACTIVIDADES TEDIOSAS</h4>-->
+                  <!--  <p class="txtBene">Aquí su dinero se multiplicara sin que tenga usted que realizar actividades tediosas.</p>-->
+                  <!--</div>-->
+                  <!--<div class="col-md-4 col-xs-6">-->
+                  <!--  <%= image_tag("home/home.png", :style => "width: 50px; display:block; margin:auto;") %>-->
+                  <!--  <h4 class="tituloBene">SEGUIMIENTO EN TIEMPO REAL</h4>-->
+                  <!--  <p class="txtBene">Tiene una parte administrativa completa a su disposición para realizar el seguimiento de todo 24 horas al día, 7 días de la semana.</p>-->
+                  <!--</div>-->
+                  <!--<div class="col-md-4 col-xs-6">-->
+                  <!--  <%= image_tag("home/mobile.png", :style => "width: 50px;display:block; margin:auto;") %>-->
+                  <!--  <h4 class="tituloBene">SIMPLE Y FÁCIL DE UTILIZAR</h4>-->
+                  <!--  <p class="txtBene">Todo se ha diseñado para facilitar su gestión, incluyendo el acceso a nuestra plataforma a través del ordenador, tableta o teléfono móvil.</p>-->
+                  <!--</div>-->
+                  <!--<div class="col-md-4 col-xs-6">-->
+                  <!--  <%= image_tag("home/persons.png", :style => "width: 50px;display:block; margin:auto;") %>-->
+                  <!--  <h4 class="tituloBene">RED BINARIA</h4>-->
+                  <!--  <p class="txtBene">Acelere sus resultados utilizando el poder de la red binaria.</p>-->
+                  <!--</div>-->
+                  <!--<div class="col-md-4 col-xs-6">-->
+                  <!--  <%= image_tag("home/global.png", :style => "width: 50px;display:block; margin:auto;") %>-->
+                  <!--  <h4 class="tituloBene">PRESENCIA GLOBAL</h4>-->
+                  <!--  <p class="txtBene">Nuestros potentes servidores operan nuestros sistemas sofisticados en una plataforma global.</p>-->
+                  <!--</div>-->
+                  
+                    </div>
+                    </div>
+                    
+                    
+
+                    
         </section>
+        
         
         <section style="padding-top: 75px; padding-bottom: 75px;" id="sPlan">
           <div class="container">
             <div class="row">
               <h1 class="text-center" style=" color: #004467;"><strong>ELIJA SU PLAN</strong></h1>
+              <div class="container">
               <h5 class="text-center">Es importante tener en cuenta que plan elegir y recuerda puedes retirar tu inversión inicial en el momento que tú elijas solo que perderás la posición adquirida. </h5>
               <p class="empresatext">!Es muy sencillo! Solo tienes que elegir qué plan se ajusta a tu perfil financiero, proporcionar información de registro básica, pagar el plan y esperar la activación de su cuenta,  que se producirá solo con una posterior confirmación de Correo Electrónico que normalmente tarda menos de 30 minutos</p></br>
-              <div class="col-md-3">
-                <div class="AniConten">
-                <div class="tituloC">
-                  <h2><strong>PLAN 1</strong></h2>
-                </div>
-                <div class="contenidoC">
-                  <h3 style="color: #004467;"><strong>INVIERTE:</strong></h3>
-                  <h3>$6,000</h3>
-                  <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>
-                  <h3>30,000</h3>
-                  <a href="../users/sign_up"><p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p></a>
-                </div>
-                </div>
               </div>
-              <div class="col-md-3 estru">
-                <div class="AniConten">
-                <div class="tituloC">
-                  <h2><strong>PLAN 2</strong></h2>
-                </div>
-                <div class="contenidoC">
-                  <h3 style="color: #004467;"><strong>INVIERTE:</strong></h3>
-                  <h3>$ 20,000</h3>
-                  <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>
-                  <h3>$ 100,000</h3>
-                  <a href="../users/sign_up"><p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p></a>
-                </div>
-                </div>
-              </div>
-              <div class="col-md-3 estru">
-                <div class="AniConten">
-                <div class="tituloC">
-                  <h2><strong>PLAN 3</strong></h2>
-                </div>
-                <div class="contenidoC">
-                  <h3 style="color: #004467;"><strong>INVIERTE:</strong></h3>
-                  <h3>$ 50,000</h3>
-                  <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>
-                  <h3>$ 250,000</h3>
-                  <a href="../users/sign_up"><p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p></a>
-                </div>
-              </div>
-              </div>
-              <div class="col-md-3 estru">
-                <div class="AniConten">
-                <div class="tituloC">
-                  <h2><strong>PLAN 4</strong></h2>
-                </div>
-                <div class="contenidoC">
-                  <h3 style="color: #004467;"><strong>INVIERTE:</strong></h3>
-                  <h3>$ 100,000</h3>
-                  <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>
-                  <h3>$ 500,000</h3>
-                  <a href="../users/sign_up"><p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p></a>
-                </div>
-              </div>
-              </div>
+              
+              <center>
+              <div class="col-md-3" style="margin-top: 25px;">
+                  <div class="circle c1 img-circle">
+                      <h4 class="blue">Plan 1</h4>
+                      <span class="price-large blue">$6,000</span>
+                      <p>Obtienes: $30,000</p>
+                      <button type="button" class="btn btn-info">Invertir</button>
+                  </div>
+              </div><!-- .Col-md-3 ends here -->
+          
+              <div class="col-md-3" style="margin-top: 25px;">
+                  <div class="circle c2 img-circle">
+                      <h4 class="yellow">Plan 2</h4>
+                      <span class="price-large yellow">$20,000</span>
+                      <p>Obtienes: $100,000</p>
+                      <button type="button" class="btn btn-warning">Invertir</button>
+                  </div>
+              </div><!-- .Col-md-3 ends here -->
+          
+          <div class="col-md-3" style="margin-top: 25px;">
+                  <div class="circle c3 img-circle">
+                      <h4 class="green">Plan 3</h4>
+                      <span class="price-large green">$50,000</span>
+                      <p>Obtienes: $250,000</p>
+                      <button type="button" class="btn btn-success">Invertir</button>
+                  </div>
+              </div><!-- .Col-md-3 ends here -->
+          
+          <div class="col-md-3" style="margin-top: 25px;">
+                  <div class="circle c4 img-circle">
+                      <h4 class="red">Plan 4</h4>
+                      <span class="price-large red">$100,00</span>
+                      <p>Obtienes: $500,000</p>
+                      <button type="button" class="btn btn-danger">Invertir</button>
+                  </div>
+              </div><!-- .Col-md-3 ends here -->
+              </center>
+               
+              
             </div>
           </div>
         </section>
+        
+        
+        <!--<section style="padding-top: 75px; padding-bottom: 75px;" id="sPlan">-->
+        <!--  <div class="container">-->
+        <!--    <div class="row">-->
+        <!--      <h1 class="text-center" style=" color: #004467;"><strong>ELIJA SU PLAN</strong></h1>-->
+        <!--      <div class="container">-->
+        <!--      <h5 class="text-center">Es importante tener en cuenta que plan elegir y recuerda puedes retirar tu inversión inicial en el momento que tú elijas solo que perderás la posición adquirida. </h5>-->
+        <!--      <p class="empresatext">!Es muy sencillo! Solo tienes que elegir qué plan se ajusta a tu perfil financiero, proporcionar información de registro básica, pagar el plan y esperar la activación de su cuenta,  que se producirá solo con una posterior confirmación de Correo Electrónico que normalmente tarda menos de 30 minutos</p></br>-->
+        <!--      </div>-->
+        <!--      <div class="col-md-3">-->
+        <!--        <div class="AniConten">-->
+        <!--        <div class="tituloC">-->
+        <!--          <h2><strong>PLAN 1</strong></h2>-->
+        <!--        </div>-->
+        <!--        <div class="contenidoC">-->
+        <!--          <h3 style="color: #004467;"><strong>INVIERTE:</strong></h3>-->
+        <!--          <h3>$6,000</h3>-->
+        <!--          <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>-->
+        <!--          <h3>30,000</h3>-->
+        <!--          <a href="../users/sign_up"><p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p></a>-->
+        <!--        </div>-->
+        <!--        </div>-->
+        <!--      </div>-->
+        <!--      <div class="col-md-3 estru">-->
+        <!--        <div class="AniConten">-->
+        <!--        <div class="tituloC">-->
+        <!--          <h2><strong>PLAN 2</strong></h2>-->
+        <!--        </div>-->
+        <!--        <div class="contenidoC">-->
+        <!--          <h3 style="color: #004467;"><strong>INVIERTE:</strong></h3>-->
+        <!--          <h3>$ 20,000</h3>-->
+        <!--          <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>-->
+        <!--          <h3>$ 100,000</h3>-->
+        <!--          <a href="../users/sign_up"><p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p></a>-->
+        <!--        </div>-->
+        <!--        </div>-->
+        <!--      </div>-->
+        <!--      <div class="col-md-3 estru">-->
+        <!--        <div class="AniConten">-->
+        <!--        <div class="tituloC">-->
+        <!--          <h2><strong>PLAN 3</strong></h2>-->
+        <!--        </div>-->
+        <!--        <div class="contenidoC">-->
+        <!--          <h3 style="color: #004467;"><strong>INVIERTE:</strong></h3>-->
+        <!--          <h3>$ 50,000</h3>-->
+        <!--          <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>-->
+        <!--          <h3>$ 250,000</h3>-->
+        <!--          <a href="../users/sign_up"><p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p></a>-->
+        <!--        </div>-->
+        <!--      </div>-->
+        <!--      </div>-->
+        <!--      <div class="col-md-3 estru">-->
+        <!--        <div class="AniConten">-->
+        <!--        <div class="tituloC">-->
+        <!--          <h2><strong>PLAN 4</strong></h2>-->
+        <!--        </div>-->
+        <!--        <div class="contenidoC">-->
+        <!--          <h3 style="color: #004467;"><strong>INVIERTE:</strong></h3>-->
+        <!--          <h3>$ 100,000</h3>-->
+        <!--          <h3 style="color: #004467;"><strong>BONO FINAL:</strong></h3>-->
+        <!--          <h3>$ 500,000</h3>-->
+        <!--          <a href="../users/sign_up"><p style="text-align: center;"><button class="btn btn-hero btn-lg" role="button">Invertir</button></p></a>-->
+        <!--        </div>-->
+        <!--      </div>-->
+        <!--      </div>-->
+        <!--    </div>-->
+        <!--  </div>-->
+        <!--</section>-->
 
-        <section style="padding-top: 75px; padding-bottom: 75px;  background-image: url(/assets/home/manos.jpg); background-color: white;" id="sEmpresa">
-          <div class="container">
-          <div class="row">
-            <div class="col-md-10">
-              <h1 class="text-center" style="color: #004467;"><strong>FIDEI</strong></h1></br>
-              <h4 class="text-center">Somos una empresa 100% Mexicana que nace a raíz de la problemática financiera que actualmente vivimos.</h4></br> <p class="empresatext">Es una empresa con el objetivo ofrecer alternativas financiaras para las personas y empresas, donde nuestros clientes puedan construir e incrementar su patrimonio a través de un plan de inversión por medio de redes de mercadeo que les permita obtener un gran rendimiento por medio del apalancamiento mutuo de un grupo de personas con un mismo fin en común, logrando su objetivo en poco tiempo, con menos esfuerzo, sin investigación en Buró de crédito, sin descapitalizarse, sin pagar intereses, sin sacrificar su flujo de efectivo. </p>
-            </div>
-            <div class="container">
-            <div class="row">
-
-            <div class="col-md-3">
-              <h3 class="text-center" style="color: #004467;"><strong>MISIÓN</strong></h3>
-              <p>Hacer realidad los sueños de nuestros clientes Lo logramos con: propuestas y soluciones claras, asesoría personalizada y beneficios tangibles</p>
-              </div>
-            <div class="col-md-3">
-              <h3 class="text-center" style="color: #004467;"><strong>VISIÓN</strong></h3>
-              <p>Ser el sistema de autofinanciamiento personal líder a nivel mundial</p>
-            </div>
-            <div class="col-md-3">
-              <h3 class="text-center" style="color: #004467;"><strong>VALORES</strong></h3>
-              <p><li>Honestidad, transparencia e integridad en procesos.</li> <li>Calidez y respeto en el desempeño del personal.<br></li> <li>Empatía y dignidad con los clientes.<br></li> <li>Compromiso, trabajo en equipo y comunicación efectiva.<br></li> <li>Motivación constante y confianza mutua</li>
-              </p>
-            </div>
-            </div>
-            </div>
-            
-          </div>
-        </div>
-        </section>
+       
         
         </div>
         
@@ -327,8 +493,45 @@
         
         <footer class="footer">
         	<div class="container text-center">
-        		<span style="color: white;">FIDEI 2016.  Marca registrada | <%= link_to 'Aviso de Privacidad', '../welcome/privacidad' %>| <%= link_to 'Términos y Condiciones del Servicio', '../welcome/terminos' %> | Todos los derechos reservados.</span>
+        		<span style="color: white;">FIDEI 2016.  Marca registrada | <%= link_to 'Aviso de Privacidad', '../welcome/privacidad', :style => "color: white;" %>| <%= link_to 'Términos y Condiciones del Servicio', '../welcome/terminos', :style => "color: white;"  %> | Todos los derechos reservados.</span>
           	</div>
         
         </footer>
     
+    
+<!--<script>-->
+<!--  $(".carousel").swipe({-->
+
+<!--  swipe: function(event, direction, distance, duration, fingerCount, fingerData) {-->
+
+<!--    if (direction == 'left') $(this).carousel('next');-->
+<!--    if (direction == 'right') $(this).carousel('prev');-->
+
+<!--  },-->
+<!--  allowPageScroll:"vertical"-->
+
+<!--});-->
+<!--</script>-->
+
+<script>
+  // Instantiate the Bootstrap carousel
+$('.multi-item-carousel').carousel({
+  interval: false
+});
+
+// for every slide in carousel, copy the next slide's item in the slide.
+// Do the same for the next, next item.
+$('.multi-item-carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+  
+  if (next.next().length>0) {
+    next.next().children(':first-child').clone().appendTo($(this));
+  } else {
+  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+  }
+});
+</script>
