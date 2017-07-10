@@ -1,5 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   respond_to :json
+  
   def create
     user = User.new((user_params).merge(pass_firebase: params[:user][:password]))
     if user.save
@@ -15,4 +16,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
       def user_params
         params.require(:user).permit(:email, :password, :password_confirmation)
       end
+      
 end

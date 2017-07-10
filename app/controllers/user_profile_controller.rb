@@ -1,6 +1,6 @@
 class UserProfileController < ApplicationController
     before_action :user, only: [:index,:ajustes,:validacion,:ayuda,:gFicha,:ficha,:updatePayment,:update]
-
+    
     
 
     def index
@@ -195,19 +195,35 @@ class UserProfileController < ApplicationController
                 else
                     redirect_to user_profile_index_path
                 end
-             end
+        end
     end
-
     def update
-        @id = params[:payment][:id]
-        @payment = Payment.find(@id)
-        respond_to do |format|
-            if @payment.update(payment_params)
-                format.html { redirect_to user_profile_validacion_path, notice: 'Recibo enviado satisfactoriamente.' }
-            else
-
+        if params.has_key?(:payment)
+            @id = params[:payment][:id]
+            @payment = Payment.find(@id)
+            respond_to do |format|
+                if @payment.update(payment_params)
+                    format.html { redirect_to user_profile_validacion_path, notice: 'Recibo enviado satisfactoriamente.' }
+                else
+    
+                end
+            end
+        else
+            @id = current_user.id
+            @user = User.find(@id)
+            respond_to do |format|
+                if @user.update(user_params)
+                    format.html { redirect_to user_profile_validacion_path, notice: 'Imagen subida satisfactoriamente.' }
+                else
+    
+                end
             end
         end
+        
+    end
+    
+    def updateAvatar
+        
     end
     
 
@@ -216,8 +232,10 @@ class UserProfileController < ApplicationController
     def payment_params
         params.require(:payment).permit(:avatar)
     end
-
     
+     def user_params
+        params.require(:user).permit(:avatar)
+    end
     
     def user
         if ((user_signed_in?)&&(current_user.user_role == true))
