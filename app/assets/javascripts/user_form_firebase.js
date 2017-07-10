@@ -84,23 +84,63 @@ if ($('input:checkbox[name=c1]:checked').val() == "true") {
 
 
 // exp reg
-
+var expname = /[A-Za-z]/
+var expnum = /[0-9]/
+var expide = /[A-Za-z0-9]/
 var exptel = /[0-9]{10}/ // expreg para los telefonos 10 digitos.
 var expcurp = /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9][12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/ //exp regular para curp
 var expCb = /[0-9]{18}/
 var expRfc = /^([A-ZÑ\x26]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1]))([A-Z\d]{3})?$/
 var error = "";
+
+if (expname.test(nombre) == false) {
+    error += "Nombre \n";
+}
+if (expname.test(apellidoP) == false) {
+    error += " Apellido Paterno \n";
+}
+
+if (expname.test(apellidoM) == false) {
+    error += " Apellido Materno \n";
+}
+
+if (expide.test(Ide) == false) {
+    error += " Num Identificacion \n";
+}
+
+if (expname.test(Estado) == false) {
+    error += " Estado \n";
+}
+
+if (expname.test(Ciudad) == false) {
+    error += " Ciudad \n";
+}
+
+if (expname.test(Colonia) == false) {
+    error += " Colonia \n";
+}
+
+if (expnum.test(CP) == false) {
+    error += " Codigo Postal \n";
+}
+
 if (validarInput(CURP) == false){
-    error += "CURP";
+    error += " CURP \n";
 }
 if (exptel.test(TF) == false) {
-    error += ", Num Telefono 1"
+    error += " Num Telefono 1 \n";
 }
+
+
 
 
 
 if (error != "") {
-  swal("Verfique que los datos "+error+" sean Correctos");
+  swal(
+    "Error",
+    "Verfique que los siguientes datos sean correctos o no falten: \n "+error+" Sean Correctos",
+    "warning"
+    );
 }else{
     if (AP && CT) {
       writeUserData(
