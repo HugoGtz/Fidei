@@ -93,3 +93,24 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('turbolinks:load',function(){
+        firebase_data_user();
+    }
+    
+    var firebase_data_user = function firebase_data_user(){
+	
+	firebase.auth().onAuthStateChanged(function(user) {
+		if (user) {
+			
+	var commentsRef = firebase.database().ref('users/' + user.uid);
+	commentsRef.on('value', function(data) {
+		showdata(data.val());
+		
+	});
+		}
+	});
+	
+}
+</script>
