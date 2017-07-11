@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+
   # routes user profile
   get 'user_profile/index'
   get 'user_profile/ajustes'
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
   get 'user_profile/ayuda'
   get 'user_profile/ficha'
   get 'user_profile/gFicha'
+  get 'user_profile/rFicha'
   
   # routes admin_panel
   get 'admin_panel/index', path: 'admin_panel'
@@ -30,6 +32,7 @@ Rails.application.routes.draw do
   get 'admin_panel/reportes'
   get 'admin_panel/ayuda'
   get 'admin_panel/validar'
+  get 'admin_panel/rechazar'
 
   resources :user_profile
   resources :user_settings

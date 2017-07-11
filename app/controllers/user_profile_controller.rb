@@ -1,6 +1,6 @@
 class UserProfileController < ApplicationController
     before_action :user, only: [:index,:ajustes,:validacion,:ayuda,:gFicha,:ficha,:updatePayment,:update]
-
+    
     
 
     def index
@@ -170,56 +170,93 @@ class UserProfileController < ApplicationController
     end
 
     def ficha 
-        render  'ficha'
+        @id = current_user.id
+        @tipo = params[:tipo_paquete]
+        @costo = params[:costo]
+        @np = params[:np]
+        render "ficha"
     end
 
     def gFicha
 
             tipo_paquete = params[:tipo_paquete]
             costo = params[:costo]
-            @planes = Payment.where(user_id: current_user.id, tipo_paquete: tipo_paquete )
-            if (@planes.size < 3)
-                @payment = Payment.create(user_id: current_user.id,tipo_paquete: tipo_paquete, costo: costo, status: "f")
+            planes = Payment.where(user_id: current_user.id, tipo_paquete: tipo_paquete )
+            np = "P0"+tipo_paquete.to_s+"0"+gdata
+            if (planes.size < 3) 
+                @payment = Payment.create(tipo_paquete: tipo_paquete, costo: costo, status: "f", np: np, user_id: current_user.id)
                 if @payment.save
-
-                    redirect_to user_profile_validacion_path        
-                end
-            else
-                redirect_to user_profile_index_path
-            end
-    end 
-
-    def updatePayment
-
+                   redirect_to user_profile_ficha_path(tipo_paquete: tipo_paquete, costo: costo, np: np)
+                else
+                    redirect_to user_profile_index_path
+		end
+		else
+		    redirect_to user_profile_index_path
+		end
+       
     end
+   def rFicha
+    	    @tipo = params[:tipo_paquete]
+            @costo = params[:costo]
+            @np = params[:np]
+	    
+	render "ficha"
+   end
     def update
-        @id = params[:payment][:id]
-        @payment = Payment.find(@id)
-        respond_to do |format|
-            if @payment.update(payment_params)
-                format.html { redirect_to user_profile_validacion_path, notice: 'Recibo enviado satisfactoriamente.' }
-            else
-
+        if params.has_key?(:payment)
+            @id = params[:payment][:id]
+            @payment = Payment.find(@id)
+            respond_to do |format|
+                if @payment.update(payment_params)
+                    
+                    format.html { redirect_to user_profile_validacion_path, notice: 'Recibo enviado satisfactoriamente.' }
+                else
+    
+                end
+            end
+        else
+            @id = current_user.id
+            @user = User.find(@id)
+            respond_to do |format|
+                if @user.update(user_params)
+                    format.html { redirect_to user_profile_validacion_path, notice: 'Imagen subida satisfactoriamente.' }
+                else
+    
+                end
             end
         end
+        
     end
+    
+    def updateAvatar
+        
+    end
+    
 
     private
 
     def payment_params
-        params.require(:payment).permit(:avatar)
+        params.require(:payment).permit(:avatar,:rechazado)
     end
-
     
+     def user_params
+        params.require(:user).permit(:avatar)
+    end
     
     def user
-        if ((user_signed_in?)&&(current_user.user_role == true))
-            @id = current_user.id
-        else
+        if ((user_signed_in?)&&(current_user.user_role == true)&&(current_user.firebase_form == true))
             
+        elsif current_user.firebase_form == false
+            redirect_to user_form_firebase_user_form_path, :flash => { :Error => "No has terminado tu registro." }
+        else
             redirect_to root_path, :flash => { :Error => "Aun no incias sesión!" }
         end
     end
 
-
+    def gdata
+        require 'securerandom'
+        u = SecureRandom.hex(5)
+        return u
+    end
 end 
+

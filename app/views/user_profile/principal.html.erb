@@ -17,7 +17,6 @@
                       <label>Personas: <%= @fcount1[index] %>/30</label> 
                        <div class="progress">
                         <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <%= (@fcount1[index]*3.3) %>%">
-                         
                         </div>
 			<center>
 			<strong style="font-weight: 900;">$ <%= (@fcount1[index]*1000) %></strong>
@@ -29,7 +28,7 @@
                         <% if @p1.count<3 %> 
                        <p style="text-align: center;"> 
                         
-                        <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "1", :costo => "6000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px " %>
+                        <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "1", :costo => "6000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px ", target: :_blank %>
                         </p>
                       <% end %>
                        
@@ -54,7 +53,6 @@
 			<center>
                         <strong style="font-weight: 900;">$ <%= (@fcount2[index]*3333.3) %></strong>
                         <center/>
-
                       </div>
                         
                       
@@ -62,7 +60,7 @@
                         <% if @p2.count<3 %> 
                        <p style="text-align: center;"> 
                         
-                        <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "2", :costo => "20000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px " %>
+                        <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "2", :costo => "20000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px ", target: :_blank %>
                         </p>
                       <% end %>
                        
@@ -96,7 +94,7 @@
                         <% if @p3.count<3 %> 
                        <p style="text-align: center;"> 
                         
-                        <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "3", :costo => "50000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px " %>
+                        <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "3", :costo => "50000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px ", target: :_blank %>
                         </p>
                       <% end %>
                        
@@ -130,7 +128,7 @@
                         <% if @p4.count<3 %> 
                        <p style="text-align: center;"> 
                         
-                        <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "4", :costo => "100000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px " %>
+                        <%= link_to "Generar Ficha", user_profile_gFicha_path(:tipo_paquete => "4", :costo => "100000"), :class => "btn btn-hero", :style => "margin-bottom: 33px, margin-top: 33px ", target: :_blank %>
                         </p>
                       <% end %>
                        

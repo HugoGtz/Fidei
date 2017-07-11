@@ -1,0 +1,1 @@
+var restablecer=function(){firebase.auth().sendPasswordResetEmail(emailAddress).then(function(){success_reset()},function(){})},success_reset=function(){swal("Correcto","Se a enviado un email para recuperar tu contrase\xf1a.","success")};

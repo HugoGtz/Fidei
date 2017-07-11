@@ -11,7 +11,6 @@
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<meta name="turbolinks-cache-control" content="no-cache">
 
-
 	<% unless flash.empty? %>
 	<script type="text/javascript">
 		<% flash.each do |f| %>
@@ -60,7 +59,6 @@
 <% if((controller.controller_name == "welcome")) %>
 <%= render 'layouts/nav.html.erb' %>
 <% end %>
-
 
 <% if((controller.controller_name == "users")) %>
 <%= render 'layouts/nav.html.erb' %>
