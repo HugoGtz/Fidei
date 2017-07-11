@@ -1,5 +1,5 @@
 class UserProfileController < ApplicationController
-    before_action :user, only: [:index,:ajustes,:validacion,:ayuda,:gFicha,:ficha,:updatePayment,:update]
+    before_action :user, only: [:index,:ajustes,:validacion,:ayuda,:gFicha,:ficha,:rFicha,:updatePayment,:update]
     
     
 

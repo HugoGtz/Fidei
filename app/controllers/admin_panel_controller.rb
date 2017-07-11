@@ -1,5 +1,5 @@
 class AdminPanelController < ApplicationController
-        before_action :rol, only: [:index,:validacion,:validar,:reportes,:ayuda]
+        before_action :rol, only: [:index,:validacion,:validar,:reportes,:ayuda, :rechazar]
 
     def index
         @p1 = Arbol1.all
@@ -59,7 +59,7 @@ class AdminPanelController < ApplicationController
     private
     
     def rol
-        if (true)
+        if ((user_signed_in?)&&(current_user.supervisor_role == true))
             
         else
             @notice = true
