@@ -14,6 +14,12 @@ class AdminPanelController < ApplicationController
     def validacion
         @payments = Payment.where.not(:avatar_file_name => nil, :status => true, :rechazado => true)
         
+    end
+    
+    def email
+        id = params[:user_id]
+        @email = User.find(id)
+        render json: @email
     end     
     
     def reportes

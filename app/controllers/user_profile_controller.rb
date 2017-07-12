@@ -5,6 +5,7 @@ class UserProfileController < ApplicationController
 
     def index
         @p1 = Payment.where(:user_id => current_user.id, :tipo_paquete => 1, :status => true )
+	@c1 = Payment.where(:user_id => current_user.id, :tipo_paquete => 1 )
         @fcount1 = Array.new
         @p1.each do |p|
             positions1 = Array.new
@@ -42,6 +43,7 @@ class UserProfileController < ApplicationController
         end
         
         @p2 = Payment.where(:user_id => current_user.id, :tipo_paquete => 2, :status => true )
+	@c2 = Payment.where(:user_id => current_user.id, :tipo_paquete => 2 )
         @fcount2 = Array.new
         @p2.each do |p|
             positions2 = Array.new
@@ -79,6 +81,7 @@ class UserProfileController < ApplicationController
         end
         
         @p3 = Payment.where(:user_id => current_user.id, :tipo_paquete => 3, :status => true )
+	@c3 = Payment.where(:user_id => current_user.id, :tipo_paquete => 3 )
         @fcount3 = Array.new
         @p3.each do |p|
             positions3 = Array.new
@@ -116,6 +119,7 @@ class UserProfileController < ApplicationController
         end
         
         @p4 = Payment.where(:user_id => current_user.id, :tipo_paquete => 4, :status => true )
+	@c4 = Payment.where(:user_id => current_user.id, :tipo_paquete => 4 )
         @fcount4 = Array.new
         @p4.each do |p|
             positions4 = Array.new
