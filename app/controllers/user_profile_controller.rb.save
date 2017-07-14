@@ -33,27 +33,13 @@ class UserProfileController < ApplicationController
             positions1.push(right3_2 = left3_2+1) # nivel 3 segundo derecho
             positions1.push(right3_3 = left3_3+1) # nivel 3 tercer derecho
             positions1.push(right3_4 = left3_4+1) # nivel 3 cuarto derecho
-	    
-	    positions1.push(left4_1 = left3_1*2) # nivel 4 primer izquierdo
-            positions1.push(left4_2 = right3_1*2) # nivel 4 segundo inzquierdo
-            positions1.push(left4_3 = left3_2*2) # nivel 4 tercer inzquierdo
-            positions1.push(left4_4 = right3_2*2) # nivel 4 cuarto inzquierdo
-	    positions1.push(left4_5 = left3_3*2) # nivel 4 primer izquierdo
-            positions1.push(left4_6 = right3_3*2) # nivel 4 segundo inzquierdo
-            positions1.push(left4_7 = left3_4*2) # nivel 4 tercer inzquierdo
-            positions1.push(left4_8 = right3_4*2) # nivel 4 cuarto inzquierdo
+            
+	    positions1.push(right4_1 = left3_1+1) # nivel 3 primer derecho
+            positions1.push(right4_2 = left3_2+1) # nivel 3 segundo derecho
+            positions1.push(right4_3 = left3_3+1) # nivel 3 tercer derecho
+            positions1.push(right4_4 = left3_4+1) # nivel 3 cuarto derecho
+		
 
-
- 
-	    positions1.push(right4_1 = left4_1+1) # nivel 4 primer derecho
-            positions1.push(right4_2 = left4_2+1) # nivel 4 segundo derecho
-            positions1.push(right4_3 = left4_3+1) # nivel 4 tercer derecho
-            positions1.push(right4_4 = left4_4+1) # nivel 4 cuarto derecho
-	    positions1.push(right3_5 = left4_5+1) # nivel 4 quinto derecho
-            positions1.push(right3_6 = left4_6+1) # nivel 4 sexto derecho
-            positions1.push(right3_7 = left4_7+1) # nivel 4 septimo derecho
-            positions1.push(right3_8 = left4_8+1) # nivel 4 octavo derecho
-           
             positions1.each do |c|
                 posExist = Arbol1.find_by(:posicion => c)
                 if posExist
@@ -92,26 +78,6 @@ class UserProfileController < ApplicationController
             positions2.push(right3_3 = left3_3+1) # nivel 3 tercer derecho
             positions2.push(right3_4 = left3_4+1) # nivel 3 cuarto derecho
             
-   	    positions2.push(left4_1 = left3_1*2) # nivel 4 primer izquierdo
-            positions2.push(left4_2 = right3_1*2) # nivel 4 segundo inzquierdo
-            positions2.push(left4_3 = left3_2*2) # nivel 4 tercer inzquierdo
-            positions2.push(left4_4 = right3_2*2) # nivel 4 cuarto inzquierdo
-            positions2.push(left4_5 = left3_3*2) # nivel 4 primer izquierdo
-            positions2.push(left4_6 = right3_3*2) # nivel 4 segundo inzquierdo
-            positions2.push(left4_7 = left3_4*2) # nivel 4 tercer inzquierdo
-            positions2.push(left4_8 = right3_4*2) # nivel 4 cuarto inzquierdo
-
-
-
-            positions2.push(right4_1 = left4_1+1) # nivel 4 primer derecho
-            positions2.push(right4_2 = left4_2+1) # nivel 4 segundo derecho
-            positions2.push(right4_3 = left4_3+1) # nivel 4 tercer derecho
-            positions2.push(right4_4 = left4_4+1) # nivel 4 cuarto derecho
-            positions2.push(right3_5 = left4_5+1) # nivel 4 quinto derecho
-            positions2.push(right3_6 = left4_6+1) # nivel 4 sexto derecho
-            positions2.push(right3_7 = left4_7+1) # nivel 4 septimo derecho
-            positions2.push(right3_8 = left4_8+1) # nivel 4 octavo derecho
-
             positions2.each do |c|
                 posExist = Arbol2.find_by(:posicion => c)
                 if posExist
@@ -150,26 +116,6 @@ class UserProfileController < ApplicationController
             positions3.push(right3_3 = left3_3+1) # nivel 3 tercer derecho
             positions3.push(right3_4 = left3_4+1) # nivel 3 cuarto derecho
             
-	    positions3.push(left4_1 = left3_1*2) # nivel 4 primer izquierdo
-            positions3.push(left4_2 = right3_1*2) # nivel 4 segundo inzquierdo
-            positions3.push(left4_3 = left3_2*2) # nivel 4 tercer inzquierdo
-            positions3.push(left4_4 = right3_2*2) # nivel 4 cuarto inzquierdo
-            positions3.push(left4_5 = left3_3*2) # nivel 4 primer izquierdo
-            positions3.push(left4_6 = right3_3*2) # nivel 4 segundo inzquierdo
-            positions3.push(left4_7 = left3_4*2) # nivel 4 tercer inzquierdo
-            positions3.push(left4_8 = right3_4*2) # nivel 4 cuarto inzquierdo
-
-
-
-            positions3.push(right4_1 = left4_1+1) # nivel 4 primer derecho
-            positions3.push(right4_2 = left4_2+1) # nivel 4 segundo derecho
-            positions3.push(right4_3 = left4_3+1) # nivel 4 tercer derecho
-            positions3.push(right4_4 = left4_4+1) # nivel 4 cuarto derecho
-            positions3.push(right3_5 = left4_5+1) # nivel 4 quinto derecho
-            positions3.push(right3_6 = left4_6+1) # nivel 4 sexto derecho
-            positions3.push(right3_7 = left4_7+1) # nivel 4 septimo derecho
-            positions3.push(right3_8 = left4_8+1) # nivel 4 octavo derecho
-
             positions3.each do |c|
                 posExist = Arbol3.find_by(:posicion => c)
                 if posExist
@@ -208,26 +154,6 @@ class UserProfileController < ApplicationController
             positions4.push(right3_3 = left3_3+1) # nivel 3 tercer derecho
             positions4.push(right3_4 = left3_4+1) # nivel 3 cuarto derecho
             
-	    positions4.push(left4_1 = left3_1*2) # nivel 4 primer izquierdo
-            positions4.push(left4_2 = right3_1*2) # nivel 4 segundo inzquierdo
-            positions4.push(left4_3 = left3_2*2) # nivel 4 tercer inzquierdo
-            positions4.push(left4_4 = right3_2*2) # nivel 4 cuarto inzquierdo
-            positions4.push(left4_5 = left3_3*2) # nivel 4 primer izquierdo
-            positions4.push(left4_6 = right3_3*2) # nivel 4 segundo inzquierdo
-            positions4.push(left4_7 = left3_4*2) # nivel 4 tercer inzquierdo
-            positions4.push(left4_8 = right3_4*2) # nivel 4 cuarto inzquierdo
-
-
-
-            positions4.push(right4_1 = left4_1+1) # nivel 4 primer derecho
-            positions4.push(right4_2 = left4_2+1) # nivel 4 segundo derecho
-            positions4.push(right4_3 = left4_3+1) # nivel 4 tercer derecho
-            positions4.push(right4_4 = left4_4+1) # nivel 4 cuarto derecho
-            positions4.push(right3_5 = left4_5+1) # nivel 4 quinto derecho
-            positions4.push(right3_6 = left4_6+1) # nivel 4 sexto derecho
-            positions4.push(right3_7 = left4_7+1) # nivel 4 septimo derecho
-            positions4.push(right3_8 = left4_8+1) # nivel 4 octavo derecho
-
             positions4.each do |c|
                 posExist = Arbol4.find_by(:posicion => c)
                 if posExist
@@ -266,10 +192,10 @@ class UserProfileController < ApplicationController
 
             tipo_paquete = params[:tipo_paquete]
             costo = params[:costo]
-            planes = Payment.where(user_id: current_user.id, tipo_paquete: tipo_paquete )
+            planes = Payment.where(user_id: params[:id], tipo_paquete: tipo_paquete )
             np = "P0"+tipo_paquete.to_s+"0"+gdata
             if (planes.size < 3) 
-                @payment = Payment.create(tipo_paquete: tipo_paquete, costo: costo, status: "f", np: np, user_id: current_user.id)
+                @payment = Payment.create(tipo_paquete: tipo_paquete, costo: costo, status: "f", np: np, user_id: params[:id])
                 if @payment.save
                    redirect_to user_profile_ficha_path(tipo_paquete: tipo_paquete, costo: costo, np: np)
                 else
@@ -331,7 +257,7 @@ class UserProfileController < ApplicationController
     def user
         if ((user_signed_in?)&&(current_user.user_role == true)&&(current_user.firebase_form == true))
             
-        elsif ((current_user.firebase_form) == false)
+        elsif current_user.firebase_form == false
             redirect_to user_form_firebase_user_form_path, :flash => { :Error => "No has terminado tu registro." }
         else
             redirect_to root_path, :flash => { :Error => "Aun no incias sesión!" }
