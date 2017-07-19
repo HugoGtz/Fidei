@@ -1,5 +1,5 @@
 class AdminPanelController < ApplicationController
-        before_action :rol, only: [:index,:validacion,:validar,:reportes,:ayuda]
+        before_action :rol, only: [:index,:validacion,:validar,:reportes,:ayuda, :rechazar]
 
     def index
         @p1 = Arbol1.all
@@ -14,6 +14,12 @@ class AdminPanelController < ApplicationController
     def validacion
         @payments = Payment.where.not(:avatar_file_name => nil, :status => true, :rechazado => true)
         
+    end
+    
+    def email
+        id = params[:user_id]
+        @email = User.find(id)
+        render json: @email
     end     
     
     def reportes
@@ -59,7 +65,7 @@ class AdminPanelController < ApplicationController
     private
     
     def rol
-        if (true)
+        if ((user_signed_in?)&&(current_user.supervisor_role == true))
             
         else
             @notice = true

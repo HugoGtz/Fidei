@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   get 'admin_panel/ayuda'
   get 'admin_panel/validar'
   get 'admin_panel/rechazar'
+  get 'admin_panel/email'
 
   resources :user_profile
   resources :user_settings
