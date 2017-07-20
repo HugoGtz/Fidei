@@ -197,7 +197,7 @@ h5, .h5 {
 .empresatext{
     margin: 0;
     margin-bottom: 30px;
-    font-size: 16px;
+    font-size: 18px;
     text-align: justify;
 }
 .nav > li > a:hover{
@@ -226,6 +226,7 @@ h5, .h5 {
     border: solid;
     border-width: 1px;
     border-color: gray;
+    font-size: 18px;
 }
 
 .contenido{
@@ -245,7 +246,7 @@ h5, .h5 {
 
 .txtBene{
     text-align: center;
-    
+    font-size: 18px;
 }
 
 .AniConten{

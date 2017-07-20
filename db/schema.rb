@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170710175554) do
+ActiveRecord::Schema.define(version: 20170711063448) do
 
   create_table "arbol1s", force: :cascade do |t|
     t.integer "user_id",    limit: 3, default: 0
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170710175554) do
     t.boolean  "canceled",            default: false
     t.string   "np"
     t.boolean  "rechazado",           default: false
+    t.boolean  "pagado",              default: false
   end
 
   create_table "users", force: :cascade do |t|
