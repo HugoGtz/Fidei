@@ -30,6 +30,10 @@ class AdminPanelController < ApplicationController
         render 'ayuda'
     end
     
+    def usuarios
+        render 'Usuarios'
+    end
+    
     def validar
         id = params[:payment_id]
         tipo = params[:tipo_paquete]
