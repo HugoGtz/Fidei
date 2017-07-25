@@ -33,6 +33,11 @@ class AdminPanelController < ApplicationController
         render 'ayuda'
     end
     
+    def usuarios
+        @users = User.all
+        render 'Usuarios'
+    end
+    
     def validar
         id = params[:payment_id]
         tipo = params[:tipo_paquete]
@@ -52,15 +57,11 @@ class AdminPanelController < ApplicationController
     end
     
     def showData
-        @users = User.all
-        
-        @u = Array.new
-        @users.each do |user|
-            @payments = Payment.where(user_id: user.id).select(:id, :user_id,:tipo_paquete, :created_at)
-            @u.push(@payments)
-        end
-        
-        render json: @u.to_json
+
+            user_id = params[:user_id]
+            tipo_paquete = params[:tipo_paquete]
+            @payments = Payment.where(user_id: user_id).select(:id, :user_id,:tipo_paquete, :created_at)
+             render json: @payments.to_json
         
     end
     
