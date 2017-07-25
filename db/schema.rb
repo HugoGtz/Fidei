@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20170711063448) do
   end
 
   create_table "payments", force: :cascade do |t|
-    t.integer  "user_id"
+    t.string   "user_id"
     t.integer  "tipo_paquete"
     t.integer  "costo"
     t.boolean  "status"

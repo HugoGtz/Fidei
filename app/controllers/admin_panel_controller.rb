@@ -1,11 +1,14 @@
 class AdminPanelController < ApplicationController
-        before_action :rol, only: [:index,:validacion,:validar,:reportes,:ayuda, :rechazar]
+        #before_action :rol, only: [:index,:validacion,:validar,:reportes,:ayuda, :rechazar]
 
     def index
         @p1 = Arbol1.all
         @p2 = Arbol2.all
         @p3 = Arbol3.all
         @p4 = Arbol4.all
+        
+       
+        
         
         render 'principal'
         
@@ -20,7 +23,7 @@ class AdminPanelController < ApplicationController
         id = params[:user_id]
         @email = User.find(id)
         render json: @email
-    end     
+    end
     
     def reportes
         render 'reportes'
@@ -46,6 +49,19 @@ class AdminPanelController < ApplicationController
                     
             end
        
+    end
+    
+    def showData
+        @users = User.all
+        
+        @u = Array.new
+        @users.each do |user|
+            @payments = Payment.where(user_id: user.id).select(:id, :user_id,:tipo_paquete, :created_at)
+            @u.push(@payments)
+        end
+        
+        render json: @u.to_json
+        
     end
     
     def rechazar

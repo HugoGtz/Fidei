@@ -61,6 +61,7 @@ class UserProfileController < ApplicationController
                 end
             end
             @fcount1.push(@count1)
+            
         end
         
         @p2 = Payment.where(:user_id => current_user.id, :tipo_paquete => 2, :status => true )
