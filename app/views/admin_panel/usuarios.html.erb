@@ -1,0 +1,95 @@
+<div id="page-content-wrapper">
+        <div class="page-content">
+            <div class="container-fluid">
+              <div class="container">
+                <div class="row" style="margin-top: 20px;">
+                      <h1 class="text-center" style="color: #004467;"><strong>AJUSTES</strong></h1>
+                    
+                       <table class="table table-condensed table-hover table-striped table-borderless" style="border-collapse:collapse;">
+                        <thead>
+                            <tr style="background-color: #2c3e50; color: white;">
+                                <th>Nombre</th>
+                                <th>Apellidos</th>
+                                <th>Correo</th>
+                                <th>Fecha de Registro</th>
+                                <th>Inversiones</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @users.each do |user| %>
+                            <tr data-toggle="collapse" data-target=".Planes<%= user.id%>" class="accordion-toggle">
+                                <td>Hugo Arnoldo</td>
+                                <td>Gutierrez</td>
+                                <td><%= user.email %></td>
+                                <td><%= user.created_at %></td>
+                                <td>5</td>
+                                <td><input type="button" class="btn btn-info" value="Información"></td>
+                            </tr>
+                            
+                            <tr alt="p1u"  data-toggle="collapse" data-target=".p1<%= user.id%>" class="accordion-toggle">
+                                <td onClick="getpayments(<%= user.id%>, 1)" class="hiddenRow" colspan="6"><div class="collapse Planes<%= user.id%> hiddenCont">PLAN 1</div></td>
+
+                            </tr>
+                                
+                            <!--    <tr id="p1u">-->
+                                         
+                                <!--<td class="hiddenRow"><div class="collapse p1<%= user.id%> hiddenCont"></div></td>-->
+                                <!--<td class="hiddenRow">-->
+                                <!--    <div class="collapse p1<%= user.id%> hiddenCont">Plan 1</div>-->
+                                <!--</td>-->
+                                <!--<td class="hiddenRow">-->
+                                <!--    <div class="collapse p1<%= user.id%> hiddenCont">Posición: 10</div>-->
+                                <!--</td>-->
+                                <!--<td class="hiddenRow">-->
+                                <!--    <div class="collapse p1<%= user.id%> hiddenCont">12/10/10</div>-->
+                                <!--</td>-->
+                                <!--<td class="hiddenRow">-->
+                                <!--    <div class="collapse p1<%= user.id%> hiddenCont"></div>-->
+                                <!--</td>-->
+                                <!--<td class="hiddenRow">-->
+                                <!--    <div class="collapse p1<%= user.id%> hiddenCont"><input type="button" class="btn btn-danger" value="Retirar"></div>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                                    
+                             <tr data-toggle="collapse" data-target=".p2<%= user.id%>" class="accordion-toggle">
+                                <td class="hiddenRow" colspan="6"><div class="collapse Planes<%= user.id%> hiddenCont">PLAN 2</div></td>
+
+                            </tr>
+                             <tr data-toggle="collapse" data-target=".p3<%= user.id%>" class="accordion-toggle">
+                                <td class="hiddenRow" colspan="6"><div class="collapse Planes<%= user.id%> hiddenCont">PLAN 3</div></td>
+
+                            </tr>
+                             <tr data-toggle="collapse" data-target=".p4<%= user.id%>" class="accordion-toggle">
+                                <td class="hiddenRow" colspan="6"><div class="collapse Planes<%= user.id%> hiddenCont">PLAN 4</div></td>
+
+                            </tr>
+                            
+                           
+                          <% end %>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getpayments(user_id,tipo_paquete){
+       $.get( "<%= admin_panel_showData_path %>",{
+            user_id: user_id,
+            tipo_paquete: tipo_paquete
+        }, function( data ) {
+            var selector = "#p"+tipo_paquete+"u";
+            var tds = "";
+            for (var i in data){
+                tds += '<td id="'+data[i].id+'" class="hiddenRow"><div class="collapse p1'+data[i].user_id+' hiddenCont"></div></td> <td class="hiddenRow"> <div class="collapse p1'+data[i].user_id+' hiddenCont">Plan '+data[i].tipo_paquete+'</div> </td> <td class="hiddenRow"> <div class="collapse p1'+data[i].user_id+' hiddenCont">Posición: 10</div> </td> <td class="hiddenRow"> <div class="collapse p1'+data[i].user_id+' hiddenCont">'+data[i].created_at+'</div> </td> <td class="hiddenRow"> <div class="collapse p1'+data[i].user_id+' hiddenCont"></div> </td> <td class="hiddenRow"> <div class="collapse p1'+data[i].user_id+' hiddenCont"><input type="button" class="btn btn-danger" value="Retirar"></div> </td>'
+            }
+            $(selector).append(tds);
+        });
+    }
+    
+</script>

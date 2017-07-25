@@ -35,7 +35,7 @@ class AdminPanelController < ApplicationController
     
     def usuarios
         @users = User.all
-        render 'Usuarios'
+        render 'usuarios'
     end
     
     def validar
@@ -60,8 +60,8 @@ class AdminPanelController < ApplicationController
 
             user_id = params[:user_id]
             tipo_paquete = params[:tipo_paquete]
-            @payments = Payment.where(user_id: user_id).select(:id, :user_id,:tipo_paquete, :created_at)
-             render json: @payments.to_json
+            @payments = Payment.where(user_id: user_id, tipo_paquete: tipo_paquete).select(:id, :user_id,:tipo_paquete, :created_at)
+             render json: @payments
         
     end
     
