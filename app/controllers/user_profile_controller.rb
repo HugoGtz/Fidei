@@ -1,16 +1,18 @@
 class UserProfileController < ApplicationController
-    before_action :user, only: [:index,:ajustes,:validacion,:ayuda,:gFicha,:ficha,:updatePayment,:update]
-
+    before_action :user, only: [:index,:ajustes,:validacion,:ayuda,:gFicha,:ficha,:rFicha,:updatePayment,:update]
+    
     
 
     def index
-        @p1 = Payment.where(:user_id => current_user.id, :tipo_paquete => "1", :status => true )
+        @p1 = Payment.where(:user_id => current_user.id, :tipo_paquete => 1, :status => true )
+	@c1 = Payment.where(:user_id => current_user.id, :tipo_paquete => 1 )
         @fcount1 = Array.new
         @p1.each do |p|
             positions1 = Array.new
             user = Arbol1.find_by(:payment_id => p.id, :user_id => p.user_id)
+
             start =  user.posicion
-            @count1 = 0;
+            @count1 = 0
             # Primer nivel debajo del inspeccionado
             positions1.push(left1 = start*2) # nivel 1 izquierdo
             positions1.push(right1 = left1+1) # niver 1 derecho
@@ -31,7 +33,27 @@ class UserProfileController < ApplicationController
             positions1.push(right3_2 = left3_2+1) # nivel 3 segundo derecho
             positions1.push(right3_3 = left3_3+1) # nivel 3 tercer derecho
             positions1.push(right3_4 = left3_4+1) # nivel 3 cuarto derecho
-            
+	    
+	    positions1.push(left4_1 = left3_1*2) # nivel 4 primer izquierdo
+            positions1.push(left4_2 = right3_1*2) # nivel 4 segundo inzquierdo
+            positions1.push(left4_3 = left3_2*2) # nivel 4 tercer inzquierdo
+            positions1.push(left4_4 = right3_2*2) # nivel 4 cuarto inzquierdo
+	    positions1.push(left4_5 = left3_3*2) # nivel 4 primer izquierdo
+            positions1.push(left4_6 = right3_3*2) # nivel 4 segundo inzquierdo
+            positions1.push(left4_7 = left3_4*2) # nivel 4 tercer inzquierdo
+            positions1.push(left4_8 = right3_4*2) # nivel 4 cuarto inzquierdo
+
+
+ 
+	    positions1.push(right4_1 = left4_1+1) # nivel 4 primer derecho
+            positions1.push(right4_2 = left4_2+1) # nivel 4 segundo derecho
+            positions1.push(right4_3 = left4_3+1) # nivel 4 tercer derecho
+            positions1.push(right4_4 = left4_4+1) # nivel 4 cuarto derecho
+	    positions1.push(right3_5 = left4_5+1) # nivel 4 quinto derecho
+            positions1.push(right3_6 = left4_6+1) # nivel 4 sexto derecho
+            positions1.push(right3_7 = left4_7+1) # nivel 4 septimo derecho
+            positions1.push(right3_8 = left4_8+1) # nivel 4 octavo derecho
+           
             positions1.each do |c|
                 posExist = Arbol1.find_by(:posicion => c)
                 if posExist
@@ -41,13 +63,14 @@ class UserProfileController < ApplicationController
             @fcount1.push(@count1)
         end
         
-        @p2 = Payment.where(:user_id => current_user.id, :tipo_paquete => "2", :status => true )
+        @p2 = Payment.where(:user_id => current_user.id, :tipo_paquete => 2, :status => true )
+	@c2 = Payment.where(:user_id => current_user.id, :tipo_paquete => 2 )
         @fcount2 = Array.new
         @p2.each do |p|
             positions2 = Array.new
             user = Arbol2.find_by(:payment_id => p.id, :user_id => p.user_id)
             start =  user.posicion
-            @count2 = 0;
+            @count2 = 0
             # Primer nivel debajo del inspeccionado
             positions2.push(left1 = start*2) # nivel 1 izquierdo
             positions2.push(right1 = left1+1) # niver 1 derecho
@@ -69,22 +92,43 @@ class UserProfileController < ApplicationController
             positions2.push(right3_3 = left3_3+1) # nivel 3 tercer derecho
             positions2.push(right3_4 = left3_4+1) # nivel 3 cuarto derecho
             
+   	    positions2.push(left4_1 = left3_1*2) # nivel 4 primer izquierdo
+            positions2.push(left4_2 = right3_1*2) # nivel 4 segundo inzquierdo
+            positions2.push(left4_3 = left3_2*2) # nivel 4 tercer inzquierdo
+            positions2.push(left4_4 = right3_2*2) # nivel 4 cuarto inzquierdo
+            positions2.push(left4_5 = left3_3*2) # nivel 4 primer izquierdo
+            positions2.push(left4_6 = right3_3*2) # nivel 4 segundo inzquierdo
+            positions2.push(left4_7 = left3_4*2) # nivel 4 tercer inzquierdo
+            positions2.push(left4_8 = right3_4*2) # nivel 4 cuarto inzquierdo
+
+
+
+            positions2.push(right4_1 = left4_1+1) # nivel 4 primer derecho
+            positions2.push(right4_2 = left4_2+1) # nivel 4 segundo derecho
+            positions2.push(right4_3 = left4_3+1) # nivel 4 tercer derecho
+            positions2.push(right4_4 = left4_4+1) # nivel 4 cuarto derecho
+            positions2.push(right3_5 = left4_5+1) # nivel 4 quinto derecho
+            positions2.push(right3_6 = left4_6+1) # nivel 4 sexto derecho
+            positions2.push(right3_7 = left4_7+1) # nivel 4 septimo derecho
+            positions2.push(right3_8 = left4_8+1) # nivel 4 octavo derecho
+
             positions2.each do |c|
-                posExist = Arbol1.find_by(:posicion => c)
+                posExist = Arbol2.find_by(:posicion => c)
                 if posExist
                     @count2+=1 
                 end
             end
-            @count2.push(@count2)
+            @fcount2.push(@count2)
         end
         
-        @p3 = Payment.where(:user_id => current_user.id, :tipo_paquete => "3", :status => true )
+        @p3 = Payment.where(:user_id => current_user.id, :tipo_paquete => 3, :status => true )
+	@c3 = Payment.where(:user_id => current_user.id, :tipo_paquete => 3 )
         @fcount3 = Array.new
         @p3.each do |p|
             positions3 = Array.new
             user = Arbol3.find_by(:payment_id => p.id, :user_id => p.user_id)
             start =  user.posicion
-            @count3 = 0;
+            @count3 = 0
             # Primer nivel debajo del inspeccionado
             positions3.push(left1 = start*2) # nivel 1 izquierdo
             positions3.push(right1 = left1+1) # niver 1 derecho
@@ -106,8 +150,28 @@ class UserProfileController < ApplicationController
             positions3.push(right3_3 = left3_3+1) # nivel 3 tercer derecho
             positions3.push(right3_4 = left3_4+1) # nivel 3 cuarto derecho
             
+	    positions3.push(left4_1 = left3_1*2) # nivel 4 primer izquierdo
+            positions3.push(left4_2 = right3_1*2) # nivel 4 segundo inzquierdo
+            positions3.push(left4_3 = left3_2*2) # nivel 4 tercer inzquierdo
+            positions3.push(left4_4 = right3_2*2) # nivel 4 cuarto inzquierdo
+            positions3.push(left4_5 = left3_3*2) # nivel 4 primer izquierdo
+            positions3.push(left4_6 = right3_3*2) # nivel 4 segundo inzquierdo
+            positions3.push(left4_7 = left3_4*2) # nivel 4 tercer inzquierdo
+            positions3.push(left4_8 = right3_4*2) # nivel 4 cuarto inzquierdo
+
+
+
+            positions3.push(right4_1 = left4_1+1) # nivel 4 primer derecho
+            positions3.push(right4_2 = left4_2+1) # nivel 4 segundo derecho
+            positions3.push(right4_3 = left4_3+1) # nivel 4 tercer derecho
+            positions3.push(right4_4 = left4_4+1) # nivel 4 cuarto derecho
+            positions3.push(right3_5 = left4_5+1) # nivel 4 quinto derecho
+            positions3.push(right3_6 = left4_6+1) # nivel 4 sexto derecho
+            positions3.push(right3_7 = left4_7+1) # nivel 4 septimo derecho
+            positions3.push(right3_8 = left4_8+1) # nivel 4 octavo derecho
+
             positions3.each do |c|
-                posExist = Arbol1.find_by(:posicion => c)
+                posExist = Arbol3.find_by(:posicion => c)
                 if posExist
                     @count3+=1 
                 end
@@ -115,13 +179,14 @@ class UserProfileController < ApplicationController
             @fcount3.push(@count3)
         end
         
-        @p4 = Payment.where(:user_id => current_user.id, :tipo_paquete => "4", :status => true )
+        @p4 = Payment.where(:user_id => current_user.id, :tipo_paquete => 4, :status => true )
+	@c4 = Payment.where(:user_id => current_user.id, :tipo_paquete => 4 )
         @fcount4 = Array.new
         @p4.each do |p|
             positions4 = Array.new
-            user = Arbol3.find_by(:payment_id => p.id, :user_id => p.user_id)
+            user = Arbol4.find_by(:payment_id => p.id, :user_id => p.user_id)
             start =  user.posicion
-            @count4 = 0;
+            @count4 = 0
             # Primer nivel debajo del inspeccionado
             positions4.push(left1 = start*2) # nivel 1 izquierdo
             positions4.push(right1 = left1+1) # niver 1 derecho
@@ -143,8 +208,28 @@ class UserProfileController < ApplicationController
             positions4.push(right3_3 = left3_3+1) # nivel 3 tercer derecho
             positions4.push(right3_4 = left3_4+1) # nivel 3 cuarto derecho
             
+	    positions4.push(left4_1 = left3_1*2) # nivel 4 primer izquierdo
+            positions4.push(left4_2 = right3_1*2) # nivel 4 segundo inzquierdo
+            positions4.push(left4_3 = left3_2*2) # nivel 4 tercer inzquierdo
+            positions4.push(left4_4 = right3_2*2) # nivel 4 cuarto inzquierdo
+            positions4.push(left4_5 = left3_3*2) # nivel 4 primer izquierdo
+            positions4.push(left4_6 = right3_3*2) # nivel 4 segundo inzquierdo
+            positions4.push(left4_7 = left3_4*2) # nivel 4 tercer inzquierdo
+            positions4.push(left4_8 = right3_4*2) # nivel 4 cuarto inzquierdo
+
+
+
+            positions4.push(right4_1 = left4_1+1) # nivel 4 primer derecho
+            positions4.push(right4_2 = left4_2+1) # nivel 4 segundo derecho
+            positions4.push(right4_3 = left4_3+1) # nivel 4 tercer derecho
+            positions4.push(right4_4 = left4_4+1) # nivel 4 cuarto derecho
+            positions4.push(right3_5 = left4_5+1) # nivel 4 quinto derecho
+            positions4.push(right3_6 = left4_6+1) # nivel 4 sexto derecho
+            positions4.push(right3_7 = left4_7+1) # nivel 4 septimo derecho
+            positions4.push(right3_8 = left4_8+1) # nivel 4 octavo derecho
+
             positions4.each do |c|
-                posExist = Arbol1.find_by(:posicion => c)
+                posExist = Arbol4.find_by(:posicion => c)
                 if posExist
                     @count4+=1 
                 end
@@ -170,56 +255,93 @@ class UserProfileController < ApplicationController
     end
 
     def ficha 
-        render  'ficha'
+        @id = current_user.id
+        @tipo = params[:tipo_paquete]
+        @costo = params[:costo]
+        @np = params[:np]
+        render "ficha"
     end
 
     def gFicha
 
             tipo_paquete = params[:tipo_paquete]
             costo = params[:costo]
-            @planes = Payment.where(user_id: current_user.id, tipo_paquete: tipo_paquete )
-            if (@planes.size < 3)
-                @payment = Payment.create(user_id: current_user.id,tipo_paquete: tipo_paquete, costo: costo, status: "f")
+            planes = Payment.where(user_id: current_user.id, tipo_paquete: tipo_paquete )
+            np = "P0"+tipo_paquete.to_s+"0"+gdata
+            if (planes.size < 3) 
+                @payment = Payment.create(tipo_paquete: tipo_paquete, costo: costo, status: "f", np: np, user_id: current_user.id)
                 if @payment.save
-
-                    redirect_to user_profile_validacion_path        
-                end
-            else
-                redirect_to user_profile_index_path
-            end
-    end 
-
-    def updatePayment
-
+                   redirect_to user_profile_ficha_path(tipo_paquete: tipo_paquete, costo: costo, np: np)
+                else
+                    redirect_to user_profile_index_path
+		end
+		else
+		    redirect_to user_profile_index_path
+		end
+       
     end
+   def rFicha
+    	    @tipo = params[:tipo_paquete]
+            @costo = params[:costo]
+            @np = params[:np]
+	    
+	render "ficha"
+   end
     def update
-        @id = params[:payment][:id]
-        @payment = Payment.find(@id)
-        respond_to do |format|
-            if @payment.update(payment_params)
-                format.html { redirect_to user_profile_validacion_path, notice: 'Recibo enviado satisfactoriamente.' }
-            else
-
+        if params.has_key?(:payment)
+            @id = params[:payment][:id]
+            @payment = Payment.find(@id)
+            respond_to do |format|
+                if @payment.update(payment_params)
+                    
+                    format.html { redirect_to user_profile_validacion_path, notice: 'Recibo enviado satisfactoriamente.' }
+                else
+    
+                end
+            end
+        else
+            @id = current_user.id
+            @user = User.find(@id)
+            respond_to do |format|
+                if @user.update(user_params)
+                    format.html { redirect_to user_profile_validacion_path, notice: 'Imagen subida satisfactoriamente.' }
+                else
+    
+                end
             end
         end
+        
     end
+    
+    def updateAvatar
+        
+    end
+    
 
     private
 
     def payment_params
-        params.require(:payment).permit(:avatar)
+        params.require(:payment).permit(:avatar,:rechazado)
     end
-
     
+     def user_params
+        params.require(:user).permit(:avatar)
+    end
     
     def user
-        if ((user_signed_in?)&&(current_user))
-            @id = current_user.id
-        else
+        if ((user_signed_in?)&&(current_user.user_role == true)&&(current_user.firebase_form == true))
             
+        elsif ((current_user.firebase_form) == false)
+            redirect_to user_form_firebase_user_form_path, :flash => { :Error => "No has terminado tu registro." }
+        else
             redirect_to root_path, :flash => { :Error => "Aun no incias sesión!" }
         end
     end
 
-
+    def gdata
+        require 'securerandom'
+        u = SecureRandom.hex(5)
+        return u
+    end
 end 
+

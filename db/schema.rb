@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704213856) do
+ActiveRecord::Schema.define(version: 20170711063448) do
 
   create_table "arbol1s", force: :cascade do |t|
     t.integer "user_id",    limit: 3, default: 0
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20170704213856) do
   end
 
   create_table "payments", force: :cascade do |t|
-    t.string   "user_id"
+    t.integer  "user_id"
     t.integer  "tipo_paquete"
     t.integer  "costo"
     t.boolean  "status"
@@ -50,6 +50,9 @@ ActiveRecord::Schema.define(version: 20170704213856) do
     t.datetime "avatar_updated_at"
     t.boolean  "ready",               default: false
     t.boolean  "canceled",            default: false
+    t.string   "np"
+    t.boolean  "rechazado",           default: false
+    t.boolean  "pagado",              default: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -73,6 +76,11 @@ ActiveRecord::Schema.define(version: 20170704213856) do
     t.boolean  "supervisor_role",        default: false
     t.boolean  "user_role",              default: true
     t.boolean  "firebase_form",          default: false
+    t.string   "pass_firebase"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

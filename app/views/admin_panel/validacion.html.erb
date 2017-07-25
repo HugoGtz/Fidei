@@ -18,6 +18,7 @@
                                 <tr style="background-color: #2c3e50; color: white;">
                                     <th>ID Usuario</th>
                                     <th>Plan</th>
+				    <th>Email</th>
                                     <th>Fecha de Inscripción</th>
                                     <th>No. Referencia</th>
                                     <th>Recibo</th>
@@ -27,6 +28,17 @@
                                     <tr class="warning">
                                         <td><%= p.user_id %></td>
                                         <td>Plan <%= p.tipo_paquete %></td>
+					 <td class="email<%=p.user_id%>">
+                                          <script>
+                                            $.get("<%= admin_panel_email_path %>",
+                                                {
+                                                    user_id: <%= p.user_id %>
+                                                },
+                                                function(data){
+                                                  $(".email<%= p.user_id %>").html(data.email);
+                                                });
+                                          </script>
+                                        </td>
                                         <td><%= p.created_at %></td>
                                         <td>
                                             <% if p.status == false  %>
@@ -34,16 +46,23 @@
                                             <% end %>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-default" data-ref="<%= p.avatar.url %>" data-toggle="modal" data-target="#myModal">
+                                            <button type="button" class="btn btn-info" data-ref="<%= p.avatar.url %>" data-toggle="modal" data-target="#myModal">
                                               Recibo
                                             </button>
                                         </td>
                                         <td>
-                                            <%= link_to "Validar Pago.", admin_panel_validar_path(:payment_id => p.id, :tipo_paquete => p.tipo_paquete), data: { confirm: 'Estas seguro de validar este pago? Revisalo muy bien!' } ,:class => "btn btn-default", :style => "margin-bottom: 33px, margin-top: 33px " %>
+                                            <%= link_to "Validar Pago.", admin_panel_validar_path(:payment_id => p.id, :tipo_paquete => p.tipo_paquete), data: { 
+confirm: 'Estas seguro de validar este pago? Revisalo muy bien!' } ,:class => "btn btn-success btn-sm", :style => "margin-bottom: 33px, margin-top: 33px " %>
+                                            <%= link_to "Rechazar Pago.", admin_panel_rechazar_path(:payment_id => p.id), data: { confirm: 'Estas seguro de 
+rechazar este pago? Revisalo muy bien!' } ,:class => "btn btn-danger btn-sm", :style => "margin-bottom: 33px, margin-top: 33px " %>
+
                                         </td>
                                     </tr>
                               <% end %>
                             </table>
+                            <% if @payments.size == 0 %>
+                            <center><h2>Por el momento no hay pagos para validar.</h2></center>
+                            <% end %>
                         </div>
                     </div>
                   </div>

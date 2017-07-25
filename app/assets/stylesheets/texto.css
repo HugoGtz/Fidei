@@ -197,7 +197,7 @@ h5, .h5 {
 .empresatext{
     margin: 0;
     margin-bottom: 30px;
-    font-size: 16px;
+    font-size: 18px;
     text-align: justify;
 }
 .nav > li > a:hover{
@@ -226,6 +226,7 @@ h5, .h5 {
     border: solid;
     border-width: 1px;
     border-color: gray;
+    font-size: 18px;
 }
 
 .contenido{
@@ -239,13 +240,13 @@ h5, .h5 {
 
 .tituloBene{
     text-align: center;
-    color: #004467;
+    color: white;
     font-weight: bold;
 }
 
 .txtBene{
-    text-align: justify;
-    
+    text-align: center;
+    font-size: 18px;
 }
 
 .AniConten{
@@ -255,4 +256,38 @@ h5, .h5 {
 .AniConten:hover{
     background-color: #a4e5ff;
     border-radius: 5px;
+}
+
+.linkhover:hover{
+    color: black!important;
+}
+
+.FondoInfo{
+    background-color: #5D6D7E;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    height: 400px;
+    
+}
+
+@media only screen and (min-width: 600px) {
+    .FondoInfo{
+    height: 450px;
+    
+}
+}
+
+@media only screen and (min-width: 768px) {
+    .FondoInfo{
+    height: 450px;
+    
+}
+}
+
+@media only screen and (min-width: 1000px) {
+    .FondoInfo{
+    height: 300px;
+    
+}
 }

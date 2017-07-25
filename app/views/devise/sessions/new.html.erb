@@ -9,7 +9,7 @@
                 <!--<input type="email" name="email" id="email" class="form-control" placeholder="Correo" required autofocus>-->
                 <%= f.email_field :email, autofocus: true, :id =>"email",:class => "form-control", :style => "margin-bottom: 5px;", :placeholder => "Correo" %>
                 <!--<input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required>-->
-                <%= f.password_field :password, autocomplete: "off", :id => "password", :class => "form-control", :placeholder => "Contraseña" %>
+                    <%= f.password_field :password, autocomplete: "off", :id => "password", :class => "form-control", :placeholder => "Contraseña" %>
                
                 <% if devise_mapping.rememberable? -%>
                   <div class="field">
@@ -28,14 +28,15 @@
     </div>
     
 <script type="text/javascript">
-  $(document).ready(function() {
+document.addEventListener('turbolinks:load',function(){
     //form id
     $('#new_user')
     .bind('ajax:success', function(evt, data, status, xhr) {
       var promise = new Promise(
       function (resolve, reject) {
           email = $('#email').val();
-          password = $('#password').val();
+          console.log(data.auth_token);
+          password = (data.auth_token);
           sessionEmail(email,password);
           firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
@@ -58,6 +59,7 @@
       )
       console.log(xhr.responseText);
     });
+    
   });
 </script>
 

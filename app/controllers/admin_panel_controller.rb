@@ -1,13 +1,25 @@
 class AdminPanelController < ApplicationController
-        before_action :rol, only: [:index,:validacion,:validar,:reportes,:ayuda]
+        before_action :rol, only: [:index,:validacion,:validar,:reportes,:ayuda, :rechazar]
 
     def index
+        @p1 = Arbol1.all
+        @p2 = Arbol2.all
+        @p3 = Arbol3.all
+        @p4 = Arbol4.all
+        
         render 'principal'
+        
     end
     
     def validacion
-        @payments = Payment.where.not(:avatar_file_name => nil, :status => true)
+        @payments = Payment.where.not(:avatar_file_name => nil, :status => true, :rechazado => true)
         
+    end
+    
+    def email
+        id = params[:user_id]
+        @email = User.find(id)
+        render json: @email
     end     
     
     def reportes
@@ -22,8 +34,9 @@ class AdminPanelController < ApplicationController
         id = params[:payment_id]
         tipo = params[:tipo_paquete]
         payment = Payment.find(id)
+	user_id = payment.user_id
             if payment.update(status: true)
-                 if posicionar(id,tipo)
+                 if posicionar(id,tipo,user_id)
                      redirect_to admin_panel_validacion_path
                  else
                      render  inline: tipo
@@ -33,6 +46,18 @@ class AdminPanelController < ApplicationController
                     
             end
        
+    end
+    
+    def rechazar
+        id = params[:payment_id]
+        payment = Payment.find(id)
+            if payment.update(rechazado: true)
+
+                     redirect_to admin_panel_validacion_path
+                 
+            else
+                    redirect_to 
+            end
     end
     
     
@@ -48,7 +73,7 @@ class AdminPanelController < ApplicationController
         end
     end
     
-    def posicionar(id,tipo)
+    def posicionar(id,tipo,user_id)
         
         case tipo
         when "1"
@@ -60,7 +85,7 @@ class AdminPanelController < ApplicationController
                 ant = posant.posicion
             ant += 1
             end
-            posicion = Arbol1.create(user_id: current_user.id, posicion: ant, payment_id: id)
+            posicion = Arbol1.create(user_id: user_id , posicion: ant, payment_id: id)
             if posicion.save
                 return true
             end
@@ -77,7 +102,7 @@ class AdminPanelController < ApplicationController
                 ant = posant.posicion
                 ant += 1
             end
-            posicion = Arbol2.create(user_id: current_user.id, posicion: ant, payment_id: id)
+            posicion = Arbol2.create(user_id: user_id, posicion: ant, payment_id: id)
             if posicion.save
                 return true
             end
@@ -93,7 +118,7 @@ class AdminPanelController < ApplicationController
                     ant += 1
                 
             end
-            posicion = Arbol3.create(user_id: current_user.id, posicion: ant, payment_id: id)
+            posicion = Arbol3.create(user_id: user_id, posicion: ant, payment_id: id)
             if posicion.save
                 return true
             end
@@ -108,7 +133,7 @@ class AdminPanelController < ApplicationController
                 ant = posant.posicion
             ant += 1
             end
-            posicion = Arbol4.create(user_id: current_user.id, posicion: ant, payment_id: id)
+            posicion = Arbol4.create(user_id: user_id, posicion: ant, payment_id: id)
             if posicion.save
                 return true
             end

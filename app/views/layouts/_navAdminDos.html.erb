@@ -6,7 +6,7 @@
                 <div  class="navbar-brand">
                     <p id="menu-toggle" style="color: white;" class="glyphicon glyphicon-menu-hamburger btn-menu toggle" onclick="openNav()">
                     </p>
-    				<a href="index"><%= image_tag("logo.png", :style => "width: 150px; margin-top: -20px;") %></a>
+    				<%= link_to image_tag("logo.png", :style => "width: 150px; margin-top: -20px;"), admin_panel_index_path %>
                 </div>
 			</div>
 		</div>
@@ -14,7 +14,7 @@
 	</nav>
 	
 	
-	<div id="mySidenav" class="sidenav">
+	<div id="mySidenav" class="sidenav" data-turbolinks-permanent>
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	  
 	  <nav id="spy">
@@ -37,26 +37,26 @@
 				</div>
 				<div class="profile-usermenu">
 					<ul class="nav">
-						<li class="active">
-						    <%= link_to " Principal", {controller: "admin_panel", action: "index"}, class: "glyphicon glyphicon-home" %>
+						<li class="qwert active">
+						    <%= link_to " Principal", {controller: "admin_panel", action: "index"}, class: "glyphicon glyphicon-home", :onClick => "closeNav()" %>
 							<!--<a href="#">-->
 							<!--<i class="glyphicon glyphicon-home"></i>-->
 							<!--Principal </a>-->
 						</li>
-						<li>
-						    <%= link_to " Reportes", {controller: "admin_panel", action: "reportes"}, class: "glyphicon glyphicon-stats" %>
+						<li class="qwert">
+						    <%= link_to " Reportes", {controller: "admin_panel", action: "reportes"}, class: "glyphicon glyphicon-stats" , :onClick => "closeNav()"%>
 							<!--<a href="#">-->
 							<!--<i class="glyphicon glyphicon-user"></i>-->
 							<!--Ajustes</a>-->
 						</li>
-						<li>
-						    <%= link_to " Validacion", {controller: "admin_panel", action: "validacion"}, class: "glyphicon glyphicon-ok" %>
+						<li class="qwert">
+						    <%= link_to " Validacion", {controller: "admin_panel", action: "validacion"}, class: "glyphicon glyphicon-ok",  :onClick => "closeNav()"%>
 							<!--<a href="#" target="_blank">-->
 							<!--<i class="glyphicon glyphicon-ok"></i>-->
 							<!--Validación </a>-->
 						</li>
-						<li>
-						    <%= link_to " Mensajes", {controller: "admin_panel", action: "ayuda"}, class: "glyphicon glyphicon-flag" %>
+						<li class="qwert">
+						    <%= link_to " Mensajes", {controller: "admin_panel", action: "ayuda"}, class: "glyphicon glyphicon-flag", :onClick => "closeNav()"%>
 							<!--<a href="#">-->
 							<!--<i class="glyphicon glyphicon-flag"></i>-->
 							<!--Ayuda </a>-->

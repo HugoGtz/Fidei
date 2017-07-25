@@ -1,11 +1,11 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   respond_to :json
+  
   def create
-
-    user = User.new(user_params)
+    user = User.new((user_params).merge(pass_firebase: params[:user][:password]))
     if user.save
       sign_in(user)
-      return render nothing: true
+      return render :json=> {:success=>true}
     else
       set_flash_message(:alert, :invalid)
       render :json=> user.errors, :status=>422
@@ -13,8 +13,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   protected
-
       def user_params
-        params.require(:user).permit(:email, :password, :password_confirmation) 
+        params.require(:user).permit(:email, :password, :password_confirmation)
       end
+      
 end

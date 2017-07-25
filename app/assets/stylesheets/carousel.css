@@ -101,22 +101,22 @@
   background-position: center center;
   background-repeat: no-repeat;
 }
-.fade-carousel .slides .slide-1 {
+.fade-carousel .slides .slide-2 {
   background-image: url(/assets/home/slider1.jpg);
   opacity: .9;
 }
-.fade-carousel .slides .slide-2 {
+.fade-carousel .slides .slide-4 {
   background-image: url(/assets/home/slider2.jpg);
 }
 .fade-carousel .slides .slide-3 {
-  background-image: url(/assets/home/slider5.png);
+  background-image: url(/assets/home/slider3.jpg);
 }
-.fade-carousel .slides .slide-4 {
-  background-image: url(/assets/home/slider4.jpg);
+.fade-carousel .slides .slide-1 {
+  background-image: url(/assets/home/slider4.png);
 }
 
 .fade-carousel .slides .slide-5 {
-  background-image: url(/assets/home/slider3.jpg);
+  background-image: url(/assets/home/slider5.jpg);
 }
 
 
