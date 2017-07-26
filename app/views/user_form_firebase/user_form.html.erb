@@ -248,6 +248,17 @@
                 <input type="text" id="CB" class="form-control formulariostyle" placeholder="Clabe Interbancaria*" >
                 <input type="text" id="B1" class="form-control formulariostyle" placeholder="Beneficiario en caso de muerte 1*" >
                 <input type="text" id="B2" class="form-control formulariostyle" placeholder="Beneficiario en caso de muerte 2*" >
+                <center>
+                <p>¿Tienes código de invitación?</p>
+                <label class="radio-inline">
+                  <input type="radio" name="radiobotn" id="OpcionTrue" class="radioBtn" value="no" checked> No
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="radiobotn" id="OpcionFalse" class="radioBtn" value="yes"> Si
+                </label>
+                </center>
+                <input type="text" id="promotorToken" name="promotorToken" class="form-control formulariostyle" placeholder="Código de Invitación*" style="margin-top: 10px;" disabled="disabled">
+                
                 <div class="checkbox">
                   <label><input id="AP" name="t1" type="checkbox" value="true"><%= link_to 'Acepto el Aviso de Privacidad', '../welcome/privacidad', :target => "_blank" %></label>
                 </div>
@@ -264,3 +275,13 @@
             
   </div><!-- /card-container -->
   
+  
+<script>
+  $(".radioBtn").click(function() {
+    $("#promotorToken").attr("disabled", true);
+    if ($("input[name=radiobotn]:checked").val() == "yes") {
+        $("#promotorToken").attr("disabled", false);
+    }
+});
+
+</script>
