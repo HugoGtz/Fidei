@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'user_profile/ficha'
   get 'user_profile/gFicha'
   get 'user_profile/rFicha'
+  get 'user_profile/promotores'
   
   # routes admin_panel
   get 'admin_panel/index', path: 'admin_panel'
@@ -36,6 +37,7 @@ Rails.application.routes.draw do
   get 'admin_panel/email'
   get 'admin_panel/showData'
   get 'admin_panel/usuarios'
+  get 'admin_panel/promotores'
   
   
   resources :user_profile

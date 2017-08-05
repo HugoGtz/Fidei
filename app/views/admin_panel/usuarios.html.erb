@@ -2,73 +2,190 @@
         <div class="page-content">
             <div class="container-fluid">
               <div class="container">
-                <div class="row" style="margin-top: 20px;">
-                      <h1 class="text-center" style="color: #004467;"><strong>AJUSTES</strong></h1>
+                <div class="row" style="margin-top: 75px;">
+                      <h1 class="text-center" style="color: #004467;"><strong>REGISTROS</strong></h1>
+
+                        <div class="col-md-12">
+                        <div class="table-responsive">
+                
+                        
+                              <table id="mytable" class="table table-bordred table-striped table-hover">
+                     
+                    <thead>
+                    <tr style="background-color: #2c3e50; color: white;">
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Correo</th>
+                    <th>Fecha ingreso</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                     </thead>
+                    <tbody>
                     
-                       <table class="table table-condensed table-hover table-striped table-borderless" style="border-collapse:collapse;">
-                        <thead>
-                            <tr style="background-color: #2c3e50; color: white;">
-                                <th>Nombre</th>
-                                <th>Apellidos</th>
-                                <th>Correo</th>
-                                <th>Fecha de Registro</th>
-                                <th>Inversiones</th>
-                                <th>Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% @users.each do |user| %>
-                            <tr data-toggle="collapse" data-target=".Planes<%= user.id%>" class="accordion-toggle">
-                                <td>Hugo Arnoldo</td>
-                                <td>Gutierrez</td>
-                                <td><%= user.email %></td>
-                                <td><%= user.created_at %></td>
-                                <td>5</td>
-                                <td><input type="button" class="btn btn-info" value="Información"></td>
-                            </tr>
-                            
-                            <tr alt="p1u"  data-toggle="collapse" data-target=".p1<%= user.id%>" class="accordion-toggle">
-                                <td onClick="getpayments(<%= user.id%>, 1)" class="hiddenRow" colspan="6"><div class="collapse Planes<%= user.id%> hiddenCont">PLAN 1</div></td>
+                    <tr>
+                    <td>Pruebas</td>
+                    <td>Fidei</td>
+                    <td>prueba@fidei.mx</td>
+                    <td>12/10/17</td>
+                    <td><p data-placement="top" data-toggle="tooltip" title="Editar"><button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                    <td><p data-placement="top" data-toggle="tooltip" title="Inversion"><button class="btn btn-warning btn-xs" data-title="Inversion" data-toggle="modal" data-target="#Inversion" ><span class="glyphicon glyphicon-piggy-bank"></span></button></p></td>
+                    <td><p data-placement="top" data-toggle="tooltip" title="Eliminar"><button class="btn btn-danger btn-xs" data-title="Eliminar" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                    </tr>
+                    
 
-                            </tr>
+                    </tbody>
+                        
+                </table>
+                
                                 
-                            <!--    <tr id="p1u">-->
-                                         
-                                <!--<td class="hiddenRow"><div class="collapse p1<%= user.id%> hiddenCont"></div></td>-->
-                                <!--<td class="hiddenRow">-->
-                                <!--    <div class="collapse p1<%= user.id%> hiddenCont">Plan 1</div>-->
-                                <!--</td>-->
-                                <!--<td class="hiddenRow">-->
-                                <!--    <div class="collapse p1<%= user.id%> hiddenCont">Posición: 10</div>-->
-                                <!--</td>-->
-                                <!--<td class="hiddenRow">-->
-                                <!--    <div class="collapse p1<%= user.id%> hiddenCont">12/10/10</div>-->
-                                <!--</td>-->
-                                <!--<td class="hiddenRow">-->
-                                <!--    <div class="collapse p1<%= user.id%> hiddenCont"></div>-->
-                                <!--</td>-->
-                                <!--<td class="hiddenRow">-->
-                                <!--    <div class="collapse p1<%= user.id%> hiddenCont"><input type="button" class="btn btn-danger" value="Retirar"></div>-->
-                                <!--</td>-->
-                            <!--</tr>-->
-                                    
-                             <tr data-toggle="collapse" data-target=".p2<%= user.id%>" class="accordion-toggle">
-                                <td class="hiddenRow" colspan="6"><div class="collapse Planes<%= user.id%> hiddenCont">PLAN 2</div></td>
-
-                            </tr>
-                             <tr data-toggle="collapse" data-target=".p3<%= user.id%>" class="accordion-toggle">
-                                <td class="hiddenRow" colspan="6"><div class="collapse Planes<%= user.id%> hiddenCont">PLAN 3</div></td>
-
-                            </tr>
-                             <tr data-toggle="collapse" data-target=".p4<%= user.id%>" class="accordion-toggle">
-                                <td class="hiddenRow" colspan="6"><div class="collapse Planes<%= user.id%> hiddenCont">PLAN 4</div></td>
-
-                            </tr>
+                            </div>
                             
-                           
-                          <% end %>
-                        </tbody>
-                    </table>
+                        </div>
+                
+                
+                <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                      <div class="modal-dialog">
+                    <div class="modal-content">
+                          <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                        <h4 class="modal-title custom_align" id="Heading">Información de Usuario</h4>
+                      </div>
+                        <div class="modal-body">
+                            <h4>DATOS PERSONALES</h4>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label>Nombre: </label><p>Hugo Arnoldo</p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label>Apellidos: </label><p>Gutierrez</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label>CURP: </label><p>ASDAD92381</p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label>RFC: </label><p>ASDAD92381</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label>Fecha de Nacimiento: </label><p>12/12/12</p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label>Identificación: </label><p>0000000000</p>
+                                </div>
+                            </div><br>
+                            <h4>DATOS DE CONTACTO</h4>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label>Estado: </label><p>Jalisco</p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label>Ciudad: </label><p>Zapopan</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label>Colonia: </label><p>Jardines del Sol</p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label>Calle: </label><p>Kabah #1475</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label>Código Postal: </label><p>45555</p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label>Teléfono: </label><p>0000000000</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label>Teléfono Secundario: </label><p>0000000000</p>
+                                </div>
+                            </div><br>
+                            <h4>DATOS DE CUENTA</h4>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label>Beneficiario: </label><p>HUGUIN</p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label>Beneficiario 2: </label><p>Huguin</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label>Clabe Interbancaria: </label><p>000000000000000</p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label>Cod. Invitación: </label><p>0000000000</p>
+                                </div>
+                            </div>
+                      </div>
+                          <div class="modal-footer ">
+                              <center>
+                                  <h4>ROLES DE USUARIO</h4>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-ok-sign"></span> Usuario</button>
+                        <button type="button" class="btn btn-warning" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-ok-sign"></span> Promotor</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-ok-sign"></span> Administrador</button>
+                        </center>
+                      </div>
+                        </div>
+                    <!-- /.modal-content --> 
+                  </div>
+                      <!-- /.modal-dialog --> 
+                    </div>
+                    
+                    <div class="modal fade" id="Inversion" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                      <div class="modal-dialog">
+                    <div class="modal-content">
+                          <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                        <h4 class="modal-title custom_align" id="Heading">Inversiones: 5</h4>
+                      </div>
+                        <div class="modal-body">
+                        <center>
+                       <button type="button" class="btn btn-info" >PLAN 1</button>
+                       <button type="button" class="btn btn-warning" >PLAN 2</button>
+                       <button type="button" class="btn btn-success" >PLAN 3</button>
+                       <button type="button" class="btn btn-danger" >PLAN 4</button>
+                       </center>
+                       
+                      </div>
+                        <div class="modal-footer ">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cerrar</button>
+                      </div>
+                        </div>
+                    <!-- /.modal-content --> 
+                  </div>
+                      <!-- /.modal-dialog --> 
+                    </div>
+                    
+                    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                      <div class="modal-dialog">
+                    <div class="modal-content">
+                          <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                        <h4 class="modal-title custom_align" id="Heading">Eliminar Registro</h4>
+                      </div>
+                          <div class="modal-body">
+                       
+                       <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> ¿Estás seguro que deseas eliminar éste registro?</div>
+                       
+                      </div>
+                        <div class="modal-footer ">
+                        <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Si</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+                      </div>
+                        </div>
+                    <!-- /.modal-content --> 
+                  </div>
+                      <!-- /.modal-dialog --> 
+                    </div>
                 </div>
                 </div>
                 </div>
@@ -91,5 +208,5 @@
             $(selector).append(tds);
         });
     }
-    
+
 </script>

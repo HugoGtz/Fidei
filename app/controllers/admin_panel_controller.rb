@@ -33,6 +33,10 @@ class AdminPanelController < ApplicationController
         render 'ayuda'
     end
     
+    def promotores
+        render 'promotores'
+    end
+    
     def usuarios
         @users = User.all
         render 'usuarios'

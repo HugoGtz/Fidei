@@ -251,6 +251,10 @@ class UserProfileController < ApplicationController
             @payments = Payment.where(:user_id => current_user.id)
     end
     
+    def promotores
+        render 'promotores'
+    end
+    
     def ayuda
         render 'ayuda'
     end
